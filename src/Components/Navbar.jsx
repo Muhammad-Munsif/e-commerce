@@ -1,9 +1,9 @@
 // src/components/Navbar.js
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ShoppingCart, Menu, X } from 'lucide-react';
-import { useCart } from '../hooks/useCart';
-import { useState } from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { ShoppingCart, Menu, X } from "lucide-react";
+import { useCart } from "../hooks/useCart";
+import { useState } from "react";
 
 const Navbar = () => {
   const { totalQuantity } = useCart();
@@ -20,10 +20,16 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-600 hover:text-gray-900 transition duration-300">
+            <Link
+              to="/"
+              className="text-gray-600 hover:text-gray-900 transition duration-300"
+            >
               Home
             </Link>
-            <Link to="/products" className="text-gray-600 hover:text-gray-900 transition duration-300">
+            <Link
+              to="/products"
+              className="text-gray-600 hover:text-gray-900 transition duration-300"
+            >
               Products
             </Link>
           </div>
@@ -44,7 +50,11 @@ const Navbar = () => {
               className="md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>

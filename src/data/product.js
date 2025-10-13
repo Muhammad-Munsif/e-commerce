@@ -1,4 +1,60 @@
-const data = [
+bbnn  // src/data/products.js
+export const products = [
+  {
+    id: 1,
+    name: "Wireless Bluetooth Headphones",
+    price: 99.99,
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
+    category: "Electronics",
+    description: "High-quality wireless headphones with noise cancellation.",
+    rating: 4.5,
+  },
+  {
+    id: 2,
+    name: "Smart Watch",
+    price: 199.99,
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
+    category: "Electronics",
+    description: "Feature-rich smartwatch with health monitoring.",
+    rating: 4.3,
+  },
+  {
+    id: 3,
+    name: "Laptop Backpack",
+    price: 49.99,
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500",
+    category: "Accessories",
+    description: "Durable laptop backpack with multiple compartments.",
+    rating: 4.7,
+  },
+  {
+    id: 4,
+    name: "Gaming Mouse",
+    price: 79.99,
+    image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500",
+    category: "Electronics",
+    description: "Precision gaming mouse with RGB lighting.",
+    rating: 4.4,
+  },
+  {
+    id: 5,
+    name: "Mechanical Keyboard",
+    price: 129.99,
+    image: "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=500",
+    category: "Electronics",
+    description: "Mechanical keyboard with customizable keys.",
+    rating: 4.6,
+  },
+  {
+    id: 6,
+    name: "Water Bottle",
+    price: 24.99,
+    image: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=500",
+    category: "Accessories",
+    description: "Insulated stainless steel water bottle.",
+    rating: 4.8,
+  },
+
   {
     "id": 1,
     "category": "Shoes",

@@ -1,14 +1,34 @@
-import React from 'react'
-import Navbar from './Components/Navbar'
-import Contact from './pages/Contact'
+// src/App.jsx
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+// import Home from './pages/Home';
+// import Products from './pages/Products';
+// import ProductDetail from './pages/ProductDetail';
+// import Cart from './pages/Cart';
 
-const App = () => {
+function App() {
   return (
-    <div className='bg-gray-200 min-h-screen '>
-      <Navbar/>
-      <Contact/>
-    </div>
-  )
+    <Provider store={store}>
+      <Router>
+        <div className="App min-h-screen flex flex-col">
+          <Navbar />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/product/:id" element={<ProductDetail />} />
+              <Route path="/cart" element={<Cart />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </Provider>
+  );
 }
 
-export default App
+export default App;

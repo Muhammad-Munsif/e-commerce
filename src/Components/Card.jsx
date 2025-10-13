@@ -1,5 +1,5 @@
 import React from 'react'
-import mockdata from '../data/mockdata'
+// import { product } from '../data/product';
 import Person from '../assets/person1.webp'
 import { Menu, MenuIcon, MenuSquare, MessageCircle, NotebookIcon } from 'lucide-react'
 const Card = () => {

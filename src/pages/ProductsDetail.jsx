@@ -1,21 +1,21 @@
 // src/pages/ProductDetail.jsx
-import React from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Star, ShoppingCart } from 'lucide-react';
-import { useCart } from '../hooks/useCart';
-import { products } from '../data/products';
+import React from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { ArrowLeft, Star, ShoppingCart } from "lucide-react";
+import { useCart } from "../hooks/useCart";
+import { products } from "../data/products";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { addItem } = useCart();
-  const product = products.find(p => p.id === parseInt(id));
+  const product = products.find((p) => p.id === parseInt(id));
 
   // If product not found, redirect to products page after a short delay
   React.useEffect(() => {
     if (!product) {
       const timer = setTimeout(() => {
-        navigate('/products');
+        navigate("/products");
       }, 2000);
       return () => clearTimeout(timer);
     }
@@ -25,7 +25,9 @@ const ProductDetail = () => {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Product Not Found</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            Product Not Found
+          </h2>
           <p className="text-gray-600">Redirecting to products page...</p>
         </div>
       </div>
@@ -64,7 +66,7 @@ const ProductDetail = () => {
               <h1 className="text-3xl font-bold text-gray-800 mb-4">
                 {product.name}
               </h1>
-              
+
               <div className="flex items-center mb-4">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
@@ -72,8 +74,8 @@ const ProductDetail = () => {
                       key={i}
                       className={`w-5 h-5 ${
                         i < Math.floor(product.rating)
-                          ? 'text-yellow-400 fill-current'
-                          : 'text-gray-300'
+                          ? "text-yellow-400 fill-current"
+                          : "text-gray-300"
                       }`}
                     />
                   ))}

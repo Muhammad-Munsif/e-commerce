@@ -1,9 +1,9 @@
 // src/pages/Home.jsx
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Shield, Truck, Headphones } from 'lucide-react';
-import ProductCard from '../components/ProductCard';
-import { products } from '../data/products';
+import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Shield, Truck, Headphones } from "lucide-react";
+import ProductCard from "../components/ProductCard";
+import { products } from "../data/products";
 
 const Home = () => {
   const featuredProducts = products.slice(0, 4);
@@ -42,7 +42,7 @@ const Home = () => {
               <h3 className="text-xl font-semibold mb-2">Free Shipping</h3>
               <p className="text-gray-600">Free shipping on orders over $50</p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-green-600" />
@@ -50,7 +50,7 @@ const Home = () => {
               <h3 className="text-xl font-semibold mb-2">Secure Payment</h3>
               <p className="text-gray-600">100% secure payment processing</p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Headphones className="w-8 h-8 text-purple-600" />
@@ -65,9 +65,11 @@ const Home = () => {
       {/* Featured Products */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Featured Products</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Featured Products
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map(product => (
+            {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>

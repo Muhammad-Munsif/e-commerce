@@ -1,10 +1,15 @@
 // src/hooks/useCart.js
-import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, removeFromCart, deleteFromCart, clearCart } from '../store/cartSlice';
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToCart,
+  removeFromCart,
+  deleteFromCart,
+  clearCart,
+} from "../store/cartSlice";
 
 export const useCart = () => {
   const dispatch = useDispatch();
-  const cart = useSelector(state => state.cart);
+  const cart = useSelector((state) => state.cart);
 
   return {
     items: cart.items,

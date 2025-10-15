@@ -10,12 +10,13 @@ const Navbar = () => {
         </div>
         <div className='relative flex-1 mx-4'>
           <form>
-            <input type="text" placeholder='search product' className='w-full py-2 px-4'/>
+            <input type="text" placeholder='search product' className='w-full border-1 border-gray-200 rounded py-2 px-4'/>
             <FaSearch  className='absolute top-3 right-3 text-red-500'/>
           </form>
         </div>
         <div className='flex items-center space-x-4'>
-          <Link to='/cart'>
+        {/* this route is used for cart */}
+          <Link to='/'>
           <FaShoppingCart />
           </Link>
           <button className='hidden md:block'>
@@ -26,6 +27,13 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+        <div className='flex justify-center items-center space-x-10 py-4 text-sm
+         font-bold'>
+          <Link className='hover:underline'> Home </Link>
+          <Link className='hover:underline'> About </Link>
+          <Link className='hover:underline'> Shop </Link>
+          <Link className='hover:underline'> Contact </Link>
+        </div>
     </nav>
   )
 }

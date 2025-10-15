@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import { Provider } from "react-redux";
 // import { store } from "./store/store";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import Home from './pages/Home';
 
 
@@ -22,7 +22,7 @@ function App() {
               {/* <Route path="/cart" element={<Cart />} /> */}
             </Routes>
           </main>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </Router>
     // </Provider>

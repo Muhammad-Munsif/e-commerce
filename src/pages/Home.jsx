@@ -2,6 +2,7 @@ import React from 'react';
 import Person from '../assets/person2.jpg'
 import InfoSection from '../Components/InfoSection';
 import CategorySection from '../Components/CategorySection';
+
 const Home = () => {
   const Categories = [
     "Electronics",

@@ -14,7 +14,6 @@ const Footer = () => {
               products at great prices.
             </p>
           </div>
-
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
@@ -44,7 +43,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <ul className="text-gray-400 space-y-2">
@@ -54,7 +52,6 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
           <p>&copy; 2024 ShopEasy. All rights reserved.</p>
         </div>

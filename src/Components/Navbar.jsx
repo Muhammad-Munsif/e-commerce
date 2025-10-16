@@ -33,10 +33,10 @@ const Navbar = () => {
         className="flex justify-center items-center space-x-10 py-4 text-sm
          font-bold"
       >
-        <Link className="hover:underline"> Home </Link>
-        <Link className="hover:underline"> About </Link>
-        <Link className="hover:underline"> Shop </Link>
-        <Link className="hover:underline"> Contact </Link>
+        <Link to='/' className="hover:underline"> Home </Link>
+        <Link to='/' className="hover:underline"> About </Link>
+        <Link to='/shop' className="hover:underline"> Shop </Link>
+        <Link to='/' className="hover:underline"> Contact </Link>
       </div>
     </nav>
   );

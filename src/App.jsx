@@ -1,31 +1,28 @@
 // src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import { Provider } from "react-redux";
-// import { store } from "./store/store";
-import Navbar from "./components/Navbar";
-// import Footer from "./components/Footer";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 import Home from './pages/Home';
+import Shop from './pages/Shop';
 
 
 function App() {
   return (
-    // <Provider store={store}>
       <Router>
         <div className="">
           <Navbar />
           <main className="">
             <Routes>
               <Route path="/" element={<Home />} />
-              {/* <Route path="/products" element={<Products />} /> */}
+              <Route path="/shop" element={<Shop />} />
               {/* <Route path="/product/:id" element={<ProductDetail />} /> */}
               {/* <Route path="/cart" element={<Cart />} /> */}
             </Routes>
           </main>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </Router>
-    // </Provider>
   );
 }
 

@@ -35,9 +35,9 @@ export const mockData = [
     },
     {
         id: 4,
-        image: bluetooth,
+        image: jewellary,
         name: "product 4",
-        price: 20.25
+        price: 54.20
     },
     {
         id: 5,
@@ -53,9 +53,9 @@ export const mockData = [
     },
     {
         id: 7,
-        image: jewellary,
+        image: bluetooth,
         name: "product 7",
-        price: 54.20
+        price: 20.25
     },
     {
         id: 8,

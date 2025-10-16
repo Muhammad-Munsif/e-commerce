@@ -1,18 +1,82 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Categories, mockData } from "../assets/mockData";
 import Person from "../assets/person2.jpg";
 import InfoSection from "../Components/InfoSection";
 import CategorySection from "../Components/CategorySection";
+import { useDispatch, useSelector } from "react-redux";
+import { setProducts } from "../redux/productSlice";
+import ProductCard from "../Components/ProductCard";
 
 const Home = () => {
-  const Categories = [
-    "Electronics",
-    "Fashion",
-    "Home & Kitchen",
-    "Beauty",
-    "Sports",
-    "Automative",
-  ];
+// const mockData =[
+//     {
+//         id : 1,
+//         image :shoes,
+//         name : "product 1",
+//         price : 23.54
+//     },
+//     {
+//         id : 2,
+//         image :watch,
+//         name : "product 2",
+//         price : 40.54
+//     },
+//     {
+//         id : 3,
+//         image :shirt,
+//         name : "product 3",
+//         price : 35.12
+//     },
+//     {
+//         id : 4,
+//         image :bluetooth,
+//         name : "product 4",
+//         price : 20.25
+//     },
+//     {
+//         id : 5,
+//         image :gold,
+//         name : "product 5",
+//         price : 40.54
+//     },
+//     {
+//         id : 6,
+//         image :shoes,
+//         name : "product 6",
+//         price : 2
+//     },
+//     {
+//         id : 7,
+//         image :jewellary,
+//         name : "product 7",
+//         price : 54.20
+//     },
+//     {
+//         id : 8,
+//         image :gold,
+//         name : "product 8",
+//         price : 75.45
+//     },
+//     {
+//         id : 9,
+//         image :shirt,
+//         name : "product 9",
+//         price : 23.54
+//     },
+//     {
+//         id : 10,
+//         image :shoes,
+//         name : "product 10",
+//         price : 50.54
+//     },
+// ]
 
+  const dispatch = useDispatch()
+  const products = useSelector(state=> state.product)
+
+  useEffect(()=>{
+    dispatch(setProducts(mockData))
+  }, [])
   return (
     <div className="bg-white ">
       <div className="container mx-auto mt-2 px-4 md:px-16 lg:px-24 py-4 flex flex-col md:flex-row space-x-2">
@@ -45,6 +109,17 @@ const Home = () => {
       </div>
       <InfoSection />
       <CategorySection />
+
+      <div>
+        <h2>Top Products</h2>
+        <div>
+          {
+            products.products.slice(0, 5).map(((product, index) =>(
+              <ProductCard product={product}  key={index}/>
+            )))
+          }
+        </div>
+      </div>
     </div>
   );
 };

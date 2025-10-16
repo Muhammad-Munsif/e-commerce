@@ -11,7 +11,7 @@ const Footer = () => {
 
           {/* 1. e-Shop Section */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">e-Shop</h3>
+            <h3 className="text-xl font-semibold mb-4">Easyshop</h3>
             <p className="text-gray-400 text-sm max-w-sm">
               Your one-stop shop for all your needs. Shop with us and experience the best online shopping experience.
             </p>
@@ -68,7 +68,7 @@ const Footer = () => {
         {/* Footer Bottom / Copyright */}
         <div className="flex flex-col sm:flex-row justify-between items-center pt-4 text-xs text-gray-500">
           <p className="mb-2 sm:mb-0">
-            &copy; 2024 e-Shop. All rights reserved.
+            &copy; 2025 Easyshop. All rights reserved.
           </p>
           <div className="flex space-x-4">
             <a href="#" className="hover:text-white">Privacy Policy</a>

@@ -22,9 +22,13 @@ const Navbar = () => {
         </div>
         <div className="flex items-center space-x-4">
           {/* this route is used for cart */}
-          <Link to="/cart">
-            <FaShoppingCart />
-            {products.length > 0 ? products.length : <></>}
+          <Link to="/cart" className="relative">
+            <FaShoppingCart  className="text-lg"/>
+            {products.length > 0 && (
+              <span className="absolute top-0 left-3 w-3 text-xs bg-red-600 rounded-full flex items-center justify-center text-white" >
+                {products.length}
+              </span>
+            )}
           </Link>
           <button className="hidden md:block">Login | Register</button>
           <button className="block md:hidden">

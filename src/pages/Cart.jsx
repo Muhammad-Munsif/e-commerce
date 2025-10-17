@@ -4,17 +4,21 @@ import emptyCart from "../assets/emptyCart.jpg";
 import { FaTrashAlt, FaPlus, FaMinus } from "react-icons/fa";
 import Model from "../Components/Model";
 import ChangeAddress from "../Components/ChangeAddress";
-import {decreaseQuantity, increaseQuantity, removeFromCart} from '../redux/cartSlice';
+import {
+  decreaseQuantity,
+  increaseQuantity,
+  removeFromCart,
+} from "../redux/cartSlice";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const [address, setAddress] = useState("main street, 12");
-  const [isModelOpen, setIsModelOpen] = useState(false)
+  const [isModelOpen, setIsModelOpen] = useState(false);
 
   const cart = useSelector((state) => state.cart);
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   return (
     <div className="container mx-auto py-8 min-h-96 px-4 md:px-16 lg:px-24">
       {cart.products.length > 0 ? (
@@ -68,18 +72,22 @@ const Cart = () => {
                       <div className="flex justify-between items-center">
                         <div className="flex items-center space-x-3">
                           <div className="flex items-center border border-gray-300 rounded-lg">
-                            <button 
+                            <button
                               className="p-2 hover:bg-gray-100 transition-colors"
-                              onClick={() => dispatch(decreaseQuantity(product.id))}
+                              onClick={() =>
+                                dispatch(decreaseQuantity(product.id))
+                              }
                             >
                               <FaMinus className="w-3 h-3 text-gray-600" />
                             </button>
                             <span className="px-4 py-2 font-medium">
                               {product.quantity}
                             </span>
-                            <button 
+                            <button
                               className="p-2 hover:bg-gray-100 transition-colors"
-                              onClick={() => dispatch(increaseQuantity(product.id))}
+                              onClick={() =>
+                                dispatch(increaseQuantity(product.id))
+                              }
                             >
                               <FaPlus className="w-3 h-3 text-gray-600" />
                             </button>
@@ -122,7 +130,9 @@ const Cart = () => {
                         <div className="flex items-center border border-gray-300 rounded-lg">
                           <button
                             className="p-2 hover:bg-gray-100 transition-colors"
-                            onClick={() => dispatch(decreaseQuantity(product.id))}
+                            onClick={() =>
+                              dispatch(decreaseQuantity(product.id))
+                            }
                           >
                             <FaMinus className="w-3 h-3 text-gray-600" />
                           </button>
@@ -131,7 +141,9 @@ const Cart = () => {
                           </span>
                           <button
                             className="p-2 hover:bg-gray-100 transition-colors"
-                            onClick={() => dispatch(increaseQuantity(product.id))}
+                            onClick={() =>
+                              dispatch(increaseQuantity(product.id))
+                            }
                           >
                             <FaPlus className="w-3 h-3 text-gray-600" />
                           </button>
@@ -143,7 +155,7 @@ const Cart = () => {
                         </p>
                       </div>
                       <div className="col-span-1 flex justify-center">
-                        <button 
+                        <button
                           className="text-red-500 hover:text-red-700 p-2 hover:bg-red-50 rounded-full transition-colors"
                           onClick={() => dispatch(removeFromCart(product.id))}
                         >
@@ -183,7 +195,7 @@ const Cart = () => {
                       </span>
                       <span className="text-sm font-medium">{address}</span>
                     </div>
-                    <button 
+                    <button
                       className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors"
                       onClick={() => setIsModelOpen(true)}
                     >
@@ -200,8 +212,9 @@ const Cart = () => {
                 </div>
 
                 <button
-                onClick={() => navigate('/checkout')}
-                className="w-full bg-red-600 hover:bg-red-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors duration-200 shadow-md hover:shadow-lg">
+                  onClick={() => navigate("/checkout")}
+                  className="w-full bg-red-600 hover:bg-red-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors duration-200 shadow-md hover:shadow-lg"
+                >
                   Proceed to Checkout
                 </button>
 
@@ -211,11 +224,11 @@ const Cart = () => {
               </div>
             </div>
           </div>
-          <Model 
-            isModelOpen={isModelOpen}
-            setIsModelOpen={setIsModelOpen}
-          >
-            <ChangeAddress  setAddress={setAddress} setIsModelOpen={setIsModelOpen}/>
+          <Model isModelOpen={isModelOpen} setIsModelOpen={setIsModelOpen}>
+            <ChangeAddress
+              setAddress={setAddress}
+              setIsModelOpen={setIsModelOpen}
+            />
           </Model>
         </div>
       ) : (

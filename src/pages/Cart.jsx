@@ -200,7 +200,7 @@ const Cart = () => {
                 </div>
 
                 <button
-                onClick={() => navigate('/Checkout')}
+                onClick={() => navigate('/checkout')}
                 className="w-full bg-red-600 hover:bg-red-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors duration-200 shadow-md hover:shadow-lg">
                   Proceed to Checkout
                 </button>

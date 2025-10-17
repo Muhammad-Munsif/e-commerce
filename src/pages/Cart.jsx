@@ -1,12 +1,18 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import emptyCart from "../assets/emptyCart.jpg";
 import { FaTrashAlt, FaPlus, FaMinus } from "react-icons/fa";
+import Model from "../Components/Model";
+import ChangeAddress from "../Components/ChangeAddress";
+import {decreaseQuantity, increaseQuantity, removeFromCart} from '../redux/cartSlice';
 
 const Cart = () => {
-  const cart = useSelector((state) => state.cart);
   const [address, setAddress] = useState("main street, 12");
+  const [isModelOpen, setIsModelOpen] = useState(false)
 
+
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch()
   return (
     <div className="container mx-auto py-8 min-h-96 px-4 md:px-16 lg:px-24">
       {cart.products.length > 0 ? (
@@ -75,7 +81,10 @@ const Cart = () => {
                           <p className="text-lg font-bold text-gray-900">
                             ${(product.quantity * product.price).toFixed(2)}
                           </p>
-                          <button className="text-red-500 hover:text-red-700 mt-2 p-1">
+                          <button
+                           className="text-red-500 hover:text-red-700 mt-2 p-1"
+                            onClick={() => dispatch(removeFromCart(product.id))}
+                           >
                             <FaTrashAlt className="w-4 h-4" />
                           </button>
                         </div>
@@ -103,13 +112,19 @@ const Cart = () => {
                       </div>
                       <div className="col-span-2 flex justify-center">
                         <div className="flex items-center border border-gray-300 rounded-lg">
-                          <button className="p-2 hover:bg-gray-100 transition-colors">
+                          <button
+                           className="p-2 hover:bg-gray-100 transition-colors"
+                           onClick={() => dispatch(decreaseQuantity(product.id))}
+                           >
                             <FaMinus className="w-3 h-3 text-gray-600" />
                           </button>
                           <span className="px-4 py-2 font-medium min-w-12 text-center">
                             {product.quantity}
                           </span>
-                          <button className="p-2 hover:bg-gray-100 transition-colors">
+                          <button
+                           className="p-2 hover:bg-gray-100 transition-colors"
+                           onClick={() => dispatch(increaseQuantity(product.id))}
+                           >
                             <FaPlus className="w-3 h-3 text-gray-600" />
                           </button>
                         </div>
@@ -157,7 +172,8 @@ const Cart = () => {
                       </span>
                       <span className="text-sm font-medium">{address}</span>
                     </div>
-                    <button className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors">
+                    <button className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors"
+                     onClick={() => setIsModelOpen(true)}>
                       Change address
                     </button>
                   </div>
@@ -180,6 +196,11 @@ const Cart = () => {
               </div>
             </div>
           </div>
+          <Model 
+          isModelOpen={isModelOpen}
+           setIsModelOpen={setIsModelOpen}>
+            <ChangeAddress  setAddress={setAddress} setIsModelOpen={setIsModelOpen}/>
+          </Model>
         </div>
       ) : (
         /* Empty Cart State */

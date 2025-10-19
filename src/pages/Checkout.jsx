@@ -7,7 +7,11 @@ const Checkout = () => {
   const [shippingToggle, setShippingToggle] = useState(false);
   const [paymentToggle, setPaymentToggle] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState("cod");
-
+  const [shippingInfo, setShippingInfo] = useState({
+    address : '',
+    city : '',
+    zip : ''
+  })
 
   const cart = useSelector((state) => state.cart);
   return (
@@ -167,7 +171,7 @@ const Checkout = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="text-gray-800">
+                  <div className="text-gray-800 mt-2">
                     ${product.price * product.quantity}
                   </div>
                 </div>

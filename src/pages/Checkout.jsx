@@ -3,7 +3,7 @@ import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-const Checkout = ({setOrder}) => {
+const Checkout = ({ setOrder }) => {
   const [billingToggle, setBillingToggle] = useState(false);
   const [shippingToggle, setShippingToggle] = useState(false);
   const [paymentToggle, setPaymentToggle] = useState(false);
@@ -16,17 +16,17 @@ const Checkout = ({setOrder}) => {
 
   const handleOrder = () => {
     const newOrder = {
-      products : cart.products,
-      orderNumber : "12345",
-      shippingInformation : shippingInfo,
-      totalPrice : cart.totalPrice
-    }
-    setOrder(newOrder)
-    navigate('/order-confirmation')
-  }
+      products: cart.products,
+      orderNumber: "12345",
+      shippingInformation: shippingInfo,
+      totalPrice: cart.totalPrice,
+    };
+    setOrder(newOrder);
+    navigate("/order-confirmation");
+  };
 
   const cart = useSelector((state) => state.cart);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div className="container mx-auto py-8 min-h-96 px-4 md:px-16 lg:px-24">
       <h1 className="text-3xl font-bold text-gray-800 mb-2">Shopping Cart</h1>
@@ -91,7 +91,12 @@ const Checkout = ({setOrder}) => {
                   name="addresss"
                   placeholder="Enter your address"
                   className="w-full px-3 py-2 border border-gray-100"
-                  onChange={(e) => setShippingInfo({...shippingInfo, address: e.target.value})}
+                  onChange={(e) =>
+                    setShippingInfo({
+                      ...shippingInfo,
+                      address: e.target.value,
+                    })
+                  }
                 />
               </div>
               <div>
@@ -101,7 +106,9 @@ const Checkout = ({setOrder}) => {
                   name="city"
                   placeholder="Enter your city"
                   className="w-full px-3 py-2 border border-gray-100"
-                  onChange={(e) => setShippingInfo({...shippingInfo, city : e.target.value})}
+                  onChange={(e) =>
+                    setShippingInfo({ ...shippingInfo, city: e.target.value })
+                  }
                 />
               </div>
               <div>
@@ -111,7 +118,12 @@ const Checkout = ({setOrder}) => {
                   name="zipcode"
                   placeholder="Enter your country zipcode"
                   className="w-full px-3 py-2 border border-gray-100"
-                  onChange={(e) =>setShippingInfo({...shippingInfo, zipcode : e.target.value})}
+                  onChange={(e) =>
+                    setShippingInfo({
+                      ...shippingInfo,
+                      zipcode: e.target.value,
+                    })
+                  }
                 />
               </div>
             </div>
@@ -233,7 +245,10 @@ const Checkout = ({setOrder}) => {
               </span>
             </div>
           </div>
-          <button className="w-full bg-red-600 text-white py-2 mt-6 hover:bg-red-800" onClick={handleOrder}>
+          <button
+            className="w-full bg-red-600 text-white py-2 mt-6 hover:bg-red-800"
+            onClick={handleOrder}
+          >
             Place Order
           </button>
         </div>

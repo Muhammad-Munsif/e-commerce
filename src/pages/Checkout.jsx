@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
-const Checkout = () => {
+const Checkout = ({setOrder}) => {
   const [billingToggle, setBillingToggle] = useState(false);
   const [shippingToggle, setShippingToggle] = useState(false);
   const [paymentToggle, setPaymentToggle] = useState(false);
@@ -10,7 +10,7 @@ const Checkout = () => {
   const [shippingInfo, setShippingInfo] = useState({
     address: "",
     city: "",
-    zip: "",
+    zipcode: "",
   });
 
   const cart = useSelector((state) => state.cart);
@@ -78,6 +78,7 @@ const Checkout = () => {
                   name="addresss"
                   placeholder="Enter your address"
                   className="w-full px-3 py-2 border border-gray-100"
+                  onChange={(e) => setShippingInfo({...shippingInfo, address: e.target.value})}
                 />
               </div>
               <div>
@@ -87,6 +88,7 @@ const Checkout = () => {
                   name="city"
                   placeholder="Enter your city"
                   className="w-full px-3 py-2 border border-gray-100"
+                  onChange={(e) => setShippingInfo({...shippingInfo, city : e.target.value})}
                 />
               </div>
               <div>
@@ -96,6 +98,7 @@ const Checkout = () => {
                   name="zipcode"
                   placeholder="Enter your country zipcode"
                   className="w-full px-3 py-2 border border-gray-100"
+                  onChange={(e) =>setShippingInfo({...shippingInfo, zipcode : e.target.value})}
                 />
               </div>
             </div>
@@ -217,7 +220,7 @@ const Checkout = () => {
               </span>
             </div>
           </div>
-          <button className="w-full bg-red-600 text-white py-2 mt-6 hover:bg-red-800">
+          <button className="w-full bg-red-600 text-white py-2 mt-6 hover:bg-red-800" onClick={handleOrder}>
             Place Order
           </button>
         </div>

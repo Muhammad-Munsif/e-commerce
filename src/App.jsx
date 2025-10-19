@@ -1,5 +1,5 @@
 // src/App.jsx
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
@@ -10,6 +10,7 @@ import Checkout from "./pages/Checkout";
 
 
 function App() {
+  const [order, setOrder] = useState(null)
   return (
       <Router>
         <div className="">
@@ -19,7 +20,7 @@ function App() {
               <Route path="/*" element={<Home />} />
               <Route path="/shop" element={<Shop />} />
               <Route path="/cart" element={<Cart />} />
-              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/checkout" element={<Checkout  setOrder={setOrder}/>} />
             </Routes>
           </main>
           <Footer />

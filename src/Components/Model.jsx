@@ -2,7 +2,6 @@ import React from "react";
 
 const Model = ({ isModelOpen, setIsModelOpen, children }) => {
   if (!isModelOpen) return null;
-
   return (
     <div
       className="fixed inset-0 bg-gray-50 bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-4 transition-opacity duration-300"
@@ -30,5 +29,4 @@ const Model = ({ isModelOpen, setIsModelOpen, children }) => {
     </div>
   );
 };
-
 export default Model;

@@ -32,7 +32,6 @@ const Cart = () => {
               Review your items and proceed to checkout
             </p>
           </div>
-
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Cart Items */}
             <div className="lg:w-2/3">
@@ -44,7 +43,6 @@ const Cart = () => {
                 <div className="col-span-2 text-center">SUBTOTAL</div>
                 <div className="col-span-1 text-center">ACTION</div>
               </div>
-
               {/* Cart Items List */}
               <div className="space-y-4">
                 {cart.products.map((product) => (
@@ -106,7 +104,6 @@ const Cart = () => {
                         </div>
                       </div>
                     </div>
-
                     {/* Desktop Layout */}
                     <div className="hidden md:grid grid-cols-12 gap-4 items-center">
                       <div className="col-span-5 flex items-center space-x-4">
@@ -167,14 +164,12 @@ const Cart = () => {
                 ))}
               </div>
             </div>
-
             {/* Order Summary */}
             <div className="lg:w-1/3">
               <div className="bg-white rounded-lg border border-gray-200 p-6 sticky top-8">
                 <h3 className="text-xl font-bold text-gray-800 mb-6">
                   Order Summary
                 </h3>
-
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">
@@ -203,14 +198,12 @@ const Cart = () => {
                     </button>
                   </div>
                 </div>
-
                 <div className="border-t border-gray-200 pt-4 mb-6">
                   <div className="flex justify-between items-center text-lg font-bold">
                     <span>Total</span>
                     <span>${cart.totalPrice.toFixed(2)}</span>
                   </div>
                 </div>
-
                 <button
                   onClick={() => navigate("/checkout")}
                   className="w-full bg-red-600 hover:bg-red-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors duration-200 shadow-md hover:shadow-lg"
@@ -253,5 +246,4 @@ const Cart = () => {
     </div>
   );
 };
-
 export default Cart;

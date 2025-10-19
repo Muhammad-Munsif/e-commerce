@@ -6,7 +6,6 @@ import {
   FaLinkedinIn,
   FaGithub,
 } from "react-icons/fa";
-
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white pt-10 pb-4 px-4 sm:px-8 md:px-16">
@@ -21,7 +20,6 @@ const Footer = () => {
               the best online shopping experience.
             </p>
           </div>
-
           {/* 2. Quick Links Section */}
           <div>
             <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
@@ -60,7 +58,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
           {/* 3. Follow Us / Newsletter Section */}
           <div>
             <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
@@ -95,7 +92,6 @@ const Footer = () => {
                 <FaLinkedinIn size={16} />
               </a>
             </div>
-
             {/* Email Subscription */}
             <form className="flex mt-6">
               <input
@@ -113,7 +109,6 @@ const Footer = () => {
             </form>
           </div>
         </div>
-
         {/* Footer Bottom / Copyright */}
         <div className="flex flex-col sm:flex-row justify-between items-center pt-4 text-xs text-gray-500">
           <p className="mb-2 sm:mb-0">
@@ -132,5 +127,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;

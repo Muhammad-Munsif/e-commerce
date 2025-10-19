@@ -8,7 +8,9 @@ import store from "./redux/store.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    {/* To add a provider it will make our code is eacy */}
     <Provider store={store}>
+      this is ma first parent Components
       <App />
     </Provider>
   </React.StrictMode>

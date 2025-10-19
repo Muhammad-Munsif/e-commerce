@@ -123,8 +123,30 @@ const Checkout = () => {
                 />
                 <label className="block text-gray-700 ml-2">Debit Card</label>
               </div>
+            {paymentMethod === "dc" && (
+              <div className="bg-gray-100 p-4 rounded-lg mb-4">
+                <h3 className="text-xl font-semibold mb-4">Debit Card Information</h3>
+                <div className="mb-4">
+                  <label className="block text-gray-700 font-semibold m-2">Card Number</label>
+                  <input type="text" placeholder="Enter your card number" className="border-1 border-gray-200 w-full rounded p-2" required/>
+                  </div>
+                  <div className="mb-4">
+                    <label className="block text-gray-700 font-semibold mb-2">Card Holder Name</label>
+                    <input type="text" placeholder="Enter card holder name" className="border-1 border-gray-200 w-full rounded p-2" required/>
+                  </div>
+                  <div className="flex justify-between mb-4">
+                    <div className="w-1/2 mr-2">
+                      <label className="block text-gray-700 font-semibold mb-2">Expire Date</label>
+                      <input type="text" placeholder="MM/YY" className="border-1 border-gray-200 p-2 rounded w-full" required/>
+                    </div>
+                    <div className="w-1/2 ml-2">
+                      <label className="block text-gray-700 font-semibold mb-2">CVV</label>
+                      <input type="text" className="w-full p-2 border-1 border-gray-200 rounded mb-2" required/>
+                    </div>
+                  </div>
+              </div>
+            )}
             </div>
-            {paymentMethod}
           </div>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-md"></div>

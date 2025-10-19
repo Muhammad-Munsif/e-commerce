@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = ({setOrder}) => {
   const [billingToggle, setBillingToggle] = useState(false);
@@ -13,7 +14,19 @@ const Checkout = ({setOrder}) => {
     zipcode: "",
   });
 
+  const handleOrder = () => {
+    const newOrder = {
+      products : cart.products,
+      orderNumber : "12345",
+      shippingInformation : shippingInfo,
+      totalPrice : cart.totalPrice
+    }
+    setOrder(newOrder)
+    navigate('/order-confirmation')
+  }
+
   const cart = useSelector((state) => state.cart);
+  const navigate = useNavigate()
   return (
     <div className="container mx-auto py-8 min-h-96 px-4 md:px-16 lg:px-24">
       <h1 className="text-3xl font-bold text-gray-800 mb-2">Shopping Cart</h1>

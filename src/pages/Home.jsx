@@ -7,9 +7,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProducts } from "../redux/productSlice";
 import ProductCard from "../Components/ProductCard";
 import Shop from "./Shop";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const products = useSelector((state) => state.product);
   useEffect(() => {
     dispatch(setProducts(mockData));
@@ -42,7 +44,9 @@ const Home = () => {
               <p className="text-xl mt-2.5 text-gray-800 font-bold">
                 Million + Products
               </p>
-              <button className="text-white bg-red-600 hover:bg-red-700 mt-2.5 px-8 py-1.5 transform transition-transform duration-300 hover:scale-105">
+              <button className="text-white bg-red-600 hover:bg-red-700 mt-2.5 px-8 py-1.5 transform transition-transform duration-300 hover:scale-105"
+              onClick={() => navigate('/shop')}
+              >
                 SHOP NOW
               </button>
             </div>

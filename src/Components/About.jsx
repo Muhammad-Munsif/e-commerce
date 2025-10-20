@@ -147,7 +147,7 @@ const About = () => {
                 className="rounded-2xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-yellow-400 text-gray-900 p-6 rounded-2xl shadow-lg">
-                <div className="text-2xl font-bold">5 Years</div>
+                <div className="text-2xl font-bold">1 Years</div>
                 <div>of Excellence</div>
               </div>
             </div>

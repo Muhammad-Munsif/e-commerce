@@ -3,6 +3,7 @@ import Person3 from "../assets/person3.jpg";
 import Women from "../assets/women.jpg";
 import Kids from "../assets/kid.jpg";
 const CategorySection = () => {
+  
   const categories = [
     {
       tital: "Men",

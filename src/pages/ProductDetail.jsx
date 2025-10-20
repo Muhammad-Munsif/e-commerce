@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FaCarSide, FaQuestion } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { addToCart } from "../redux/cartSlice";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -12,6 +13,14 @@ const ProductDetail = () => {
     const newProduct = products.find((product) => product.id === parseInt(id));
     setProduct(newProduct);
   }, [id]);
+
+  const dispatch = useDispatch()
+  const handleAddToCart = (e, product) => {
+    e.stopPropagation();
+    e.preventDefault();
+    dispatch(addToCart(product));
+    alert("Product Added Successfully");
+  };
 
   if (!product) return <div>Loading...</div>;
   return (
@@ -24,7 +33,7 @@ const ProductDetail = () => {
         <div className="flex flex-col items-center gap-y-2 p-4 md:w-1/2 shadow-md md:p-16 h-96">
           <h2 className="text-3xl font-semibold mb-2">{product.name}</h2>
           <p className="text-xl font-semibold text-gray-800 mb-4">
-            {product.price}
+            ${product.price}
           </p>
           <div className="flex items-center gap-x-2">
             {/* <label htmlFor="quantity" className='mr-2'>Quantity:</label> */}
@@ -33,7 +42,9 @@ const ProductDetail = () => {
               id="quantity"
               className="border-1 border-gray-200 w-16"
             />
-            <button className="bg-red-600 py-1.5 px-4 rounded hover:bg-red-800 text-white">
+            <button className="bg-red-600 py-1.5 px-4 rounded hover:bg-red-800 text-white" 
+            onClick={(e) => handleAddToCart(e, product)}
+            >
               Add to cart
             </button>
           </div>

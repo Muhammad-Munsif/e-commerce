@@ -73,13 +73,13 @@ const Navbar = () => {
         <Link to="/" className="hover:underline">
           Home
         </Link>
-        <Link to="/" className="hover:underline">
+        <Link to="/about" className="hover:underline">
           About
         </Link>
         <Link to="/shop" className="hover:underline">
           Shop
         </Link>
-        <Link to="/" className="hover:underline">
+        <Link to="/contact-support" className="hover:underline">
           Contact
         </Link>
       </div>

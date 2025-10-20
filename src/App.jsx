@@ -10,6 +10,9 @@ import Checkout from "./pages/Checkout";
 import Order from "./pages/Order";
 import FilterData from "./pages/FilterData";
 import ProductDetail from "./pages/ProductDetail";
+import ContactSupport from './Components/ContactSupport';
+import Faq from "./Components/Faq";
+import About from "./Components/About";
 
 function App() {
   const [order, setOrder] = useState(null);
@@ -32,6 +35,9 @@ function App() {
             />
             <Route path="/filter-data" element={<FilterData />} />
             <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/contact-support" element={<ContactSupport />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </main>
         <Footer />

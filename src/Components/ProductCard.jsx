@@ -13,7 +13,7 @@ const ProductCard = ({ product }) => {
     alert("Product Added Successfully");
   };
   return (
-    <Link to={`product/${product.id}`}>
+    <Link to={`/product/${product.id}`}>
     <div className="bg-white shadow p-4 rounded relative transform transition-transform duration-300">
       <img
         src={product.image}

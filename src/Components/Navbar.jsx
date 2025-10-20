@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import Model from "./Model";
 import Login from "./Login";
 import Register from "./Register";
+import { setSearchTerm } from "../redux/productSlice";
 const Navbar = () => {
   const [isModleOpen, setIsModelOpen] = useState(false)
   const [isLogin, setIsLogin] = useState(true)
+  const [search, setSearch] = useState()
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const openSignUp = () =>{
     setIsLogin(false)
@@ -17,6 +21,12 @@ const Navbar = () => {
     setIsLogin(true)
     setIsModelOpen(true)
   }
+  const handelSearch = (e) =>{
+    e.preventDefault()
+    dispatch(setSearchTerm(search))
+    navigate('/filter-data')
+  }
+
   const products = useSelector((state) => state.cart.products);
   return (
     <nav className="bg-white shadow-md ">
@@ -25,8 +35,9 @@ const Navbar = () => {
           <Link to="/">Easyshop</Link>
         </div>
         <div className="relative flex-1 mx-4">
-          <form>
+          <form onSubmit={handelSearch}>
             <input
+            onChange={(e) => setSearch(e.target.value)}
               type="text"
               placeholder="search product"
               className="w-full border-1 border-gray-200 rounded py-2 px-4"

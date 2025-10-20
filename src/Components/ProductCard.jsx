@@ -2,6 +2,7 @@ import React from "react";
 import { FaStar } from "react-icons/fa";
 import { addToCart } from "../redux/cartSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -12,6 +13,7 @@ const ProductCard = ({ product }) => {
     alert("Product Added Successfully");
   };
   return (
+    <Link to={`product/${product.id}`}>
     <div className="bg-white shadow p-4 rounded relative transform transition-transform duration-300">
       <img
         src={product.image}
@@ -34,6 +36,7 @@ const ProductCard = ({ product }) => {
         <span className="hidden group-hover:block">Add to cart</span>
       </div>
     </div>
+    </Link>
   );
 };
 

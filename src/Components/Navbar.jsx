@@ -20,7 +20,6 @@ const Navbar = () => {
   const openLogin = () => {
     setIsLogin(true);
     setIsModelOpen(true);
-    
   };
   const handelSearch = (e) => {
     e.preventDefault();

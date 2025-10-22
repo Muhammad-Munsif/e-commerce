@@ -11,10 +11,10 @@ const ProductCard = ({ product }) => {
     e.stopPropagation();
     e.preventDefault();
     dispatch(addToCart(product));
-    toast.success("Product Added Successfully",{
-      position: 'top-left',
-      theme : 'light',
-      autoClose : 3000
+    toast.success("Product Added Successfully", {
+      position: "top-left",
+      theme: "light",
+      autoClose: 3000,
     });
   };
   return (

@@ -3,7 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = ({ openSignUp }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -32,26 +32,29 @@ const Login = ({ openSignUp }) => {
             <input type="checkbox" className="form-checkbox" />
             <span className="ml-2 text-gray-700">Remember Me</span>
           </label>
-          
-          <button 
-            type="button" 
+
+          <button
+            type="button"
             className="text-red-800 hover:underline font-medium"
-            onClick={() => navigate('/forget-password')}
+            onClick={() => navigate("/forget-password")}
           >
             Forgot Password?
           </button>
         </div>
-        
+
         <div className="mb-4">
-          <button type="submit" className="w-full bg-red-600 py-2 text-white rounded-lg hover:bg-red-700">
+          <button
+            type="submit"
+            className="w-full bg-red-600 py-2 text-white rounded-lg hover:bg-red-700"
+          >
             Login
           </button>
         </div>
       </form>
-      
+
       <div className="text-center">
         <span className="text-gray-700">Don't have an Account? </span>
-        <button 
+        <button
           className="text-red-800 hover:underline font-medium"
           onClick={openSignUp}
         >

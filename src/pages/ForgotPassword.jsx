@@ -55,12 +55,15 @@ const ForgotPassword = ({ openLogin, openSignUp }) => {
         </div>
 
         <div className="mb-4">
-          <button type="submit" className="w-full bg-red-600 py-2 text-white rounded">
+          <button
+            type="submit"
+            className="w-full bg-red-600 py-2 text-white rounded"
+          >
             Send Reset Link
           </button>
         </div>
       </form>
-      
+
       <div className="text-center mb-4">
         <button className="text-red-800" onClick={openLogin}>
           ← Back to Login

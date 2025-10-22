@@ -75,4 +75,64 @@ export const mockData = [
         name: "product 10",
         price: 50.54
     },
+    {
+        id: 11,
+        image: shoes,
+        name: "product 11",
+        price: 23.54
+    },
+    {
+        id: 12,
+        image: watch,
+        name: "product 12",
+        price: 40.54
+    },
+    {
+        id: 13,
+        image: shirt,
+        name: "product 13",
+        price: 35.12
+    },
+    {
+        id: 14,
+        image: jewellary,
+        name: "product 14",
+        price: 54.20
+    },
+    {
+        id: 15,
+        image: gold,
+        name: "product 15",
+        price: 40.54
+    },
+     {
+        id: 16,
+        image: shoes,
+        name: "product 16",
+        price: 2
+    },
+    {
+        id: 17,
+        image: bluetooth,
+        name: "product 17",
+        price: 20.25
+    },
+    {
+        id: 18,
+        image: gold,
+        name: "product 18",
+        price: 75.45
+    },
+    {
+        id: 19,
+        image: shirt,
+        name: "product 19",
+        price: 23.54
+    },
+    {
+        id: 20,
+        image: shoes,
+        name: "product 20",
+        price: 50.54
+    },
 ];

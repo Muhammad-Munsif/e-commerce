@@ -170,7 +170,7 @@ const Checkout = ({ setOrder }) => {
                     <input
                       type="text"
                       placeholder="Enter your card number"
-                      className="border-1 border-gray-200 w-full rounded p-2"
+                      className="border border-gray-200 w-full rounded p-2"
                       required
                     />
                   </div>
@@ -181,7 +181,7 @@ const Checkout = ({ setOrder }) => {
                     <input
                       type="text"
                       placeholder="Enter card holder name"
-                      className="border-1 border-gray-200 w-full rounded p-2"
+                      className="border border-gray-200 w-full rounded p-2"
                       required
                     />
                   </div>
@@ -193,7 +193,7 @@ const Checkout = ({ setOrder }) => {
                       <input
                         type="text"
                         placeholder="MM/YY"
-                        className="border-1 border-gray-200 p-2 rounded w-full"
+                        className="border border-gray-200 p-2 rounded w-full"
                         required
                       />
                     </div>
@@ -203,7 +203,7 @@ const Checkout = ({ setOrder }) => {
                       </label>
                       <input
                         type="text"
-                        className="w-full p-2 border-1 border-gray-200 rounded mb-2"
+                        className="w-full p-2 border border-gray-200 rounded mb-2"
                         required
                       />
                     </div>

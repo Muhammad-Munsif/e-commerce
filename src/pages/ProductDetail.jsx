@@ -40,7 +40,7 @@ const ProductDetail = () => {
             <input
               type="number"
               id="quantity"
-              className="border-1 border-gray-200 w-16"
+              className="border border-gray-200 w-16"
             />
             <button className="bg-red-600 py-1.5 px-4 rounded hover:bg-red-800 text-white" 
             onClick={(e) => handleAddToCart(e, product)}

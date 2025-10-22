@@ -17,7 +17,7 @@ const FilterData = () => {
         </div>
       ) : (
         <div className="flex items-center justify-center">
-          <img src={NoFoundImg} alt="" />
+          <img src={NoFoundImg} alt="" className="w-96 h-96"/>
         </div>
       )}
     </div>

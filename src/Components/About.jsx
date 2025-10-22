@@ -290,11 +290,11 @@ const About = () => {
                 </p>
                 <p className="flex items-center">
                   <FaPhone className="w-4 h-4 mr-2" />
-                  +1 (555) 123-4567
+                  03129194375
                 </p>
                 <p className="flex items-center">
                   <FaEnvelope className="w-4 h-4 mr-2" />
-                  hello@shopease.com
+                  m.munsif4375@gmail.com
                 </p>
               </div>
             </div>

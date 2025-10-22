@@ -40,7 +40,7 @@ const Navbar = () => {
               onChange={(e) => setSearch(e.target.value)}
               type="text"
               placeholder="search product"
-              className="w-full border-1 border-gray-200 rounded py-2 px-4"
+              className="w-full border border-gray-200 rounded py-2 px-4"
             />
             <FaSearch className="absolute top-3 right-3 text-red-500" />
           </form>

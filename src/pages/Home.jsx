@@ -24,7 +24,7 @@ const Home = () => {
             <div className="bg-red-600 text-xs px-2 py-2.5 font-bold text-white">
               Shop by Categories
             </div>
-            <ul className="space-y-4 bg-gray-100 p-3 border-1 border-gray-300 h-[350px]">
+            <ul className="space-y-4 bg-gray-100 p-3 border border-gray-300 h-[350px]">
               {Categories.map((category, index) => (
                 <li
                   key={index}
@@ -44,7 +44,7 @@ const Home = () => {
               <p className="text-xl mt-2.5 text-gray-800 font-bold">
                 Million + Products
               </p>
-              <button className="text-white bg-red-600 hover:bg-red-700 mt-2.5 px-8 py-1.5 transform transition-transform duration-300 hover:scale-105"
+              <button className="text-white rounded bg-red-600 hover:bg-red-700 mt-2.5 px-8 py-1.5 transform transition-transform duration-300 hover:scale-105"
               onClick={() => navigate('/shop')}
               >
                 SHOP NOW

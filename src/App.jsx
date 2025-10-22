@@ -13,6 +13,7 @@ import ProductDetail from "./pages/ProductDetail";
 import ContactSupport from './Components/ContactSupport';
 import Faq from "./Components/Faq";
 import About from "./Components/About";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
   const [order, setOrder] = useState(null);
@@ -38,6 +39,7 @@ function App() {
             <Route path="/contact-support" element={<ContactSupport />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/about" element={<About />} />
+            <Route path="/forget-password" element={<ForgotPassword />} />
           </Routes>
         </main>
         <Footer />

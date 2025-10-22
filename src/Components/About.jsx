@@ -15,7 +15,7 @@ import {
   FaTwitter,
   FaLinkedin,
 } from "react-icons/fa";
-import profile from '../assets/profile.jpeg'
+import profile from "../assets/profile.jpeg";
 const About = () => {
   const navigate = useNavigate();
 
@@ -144,7 +144,7 @@ const About = () => {
               <img
                 src={profile}
                 alt="Our team"
-               className="rounded-2xl shadow-2xl object-cover w-full h-[400px] lg:h-[500px]"
+                className="rounded-2xl shadow-2xl object-cover w-full h-[400px] lg:h-[500px]"
               />
               <div className="absolute -bottom-6 -left-6 bg-yellow-400 text-gray-900 p-6 rounded-2xl shadow-lg">
                 <div className="text-2xl font-bold">1 Years</div>

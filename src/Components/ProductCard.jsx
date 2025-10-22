@@ -3,6 +3,7 @@ import { FaStar } from "react-icons/fa";
 import { addToCart } from "../redux/cartSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -10,7 +11,11 @@ const ProductCard = ({ product }) => {
     e.stopPropagation();
     e.preventDefault();
     dispatch(addToCart(product));
-    alert("Product Added Successfully");
+    toast.success("Product Added Successfully",{
+      position: 'top-left',
+      theme : 'light',
+      autoClose : 3000
+    });
   };
   return (
     <Link to={`/product/${product.id}`}>

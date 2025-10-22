@@ -3,6 +3,7 @@ import { FaCarSide, FaQuestion } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addToCart } from "../redux/cartSlice";
+import { toast } from "react-toastify";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -19,7 +20,10 @@ const ProductDetail = () => {
     e.stopPropagation();
     e.preventDefault();
     dispatch(addToCart(product));
-    alert("Product Added Successfully");
+    toast.success("Product Added Successfully",{
+      position: 'bottom-center',
+      autoClose: 3000
+    });
   };
 
   if (!product) return <div>Loading...</div>;

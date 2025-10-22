@@ -97,7 +97,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-20">
+      <section className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Story</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto">
@@ -144,7 +144,7 @@ const About = () => {
               <img
                 src={profile}
                 alt="Our team"
-                className="rounded-2xl shadow-2xl"
+               className="rounded-2xl shadow-2xl object-cover w-full h-[400px] lg:h-[500px]"
               />
               <div className="absolute -bottom-6 -left-6 bg-yellow-400 text-gray-900 p-6 rounded-2xl shadow-lg">
                 <div className="text-2xl font-bold">1 Years</div>
@@ -247,7 +247,7 @@ const About = () => {
       </section>
 
       {/* Contact CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-700 text-white">
+      <section className="py-16 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
@@ -262,7 +262,7 @@ const About = () => {
               Contact Support
             </button>
             <button
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/shop")}
               className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
             >
               Start Shopping
@@ -270,57 +270,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      {/* <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">ShopEase</h3>
-              <p className="text-gray-400">
-                Your trusted partner for quality products and exceptional service.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Contact Info</h4>
-              <div className="space-y-2 text-gray-400">
-                <p className="flex items-center">
-                  <FaMapMarkerAlt className="w-4 h-4 mr-2" />
-                  123 Commerce Street, NY 10001
-                </p>
-                <p className="flex items-center">
-                  <FaPhone className="w-4 h-4 mr-2" />
-                  03129194375
-                </p>
-                <p className="flex items-center">
-                  <FaEnvelope className="w-4 h-4 mr-2" />
-                  m.munsif4375@gmail.com
-                </p>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
-                <FaFacebook className="w-6 h-6 text-gray-400 hover:text-white cursor-pointer" />
-                <FaInstagram className="w-6 h-6 text-gray-400 hover:text-white cursor-pointer" />
-                <FaTwitter className="w-6 h-6 text-gray-400 hover:text-white cursor-pointer" />
-                <FaLinkedin className="w-6 h-6 text-gray-400 hover:text-white cursor-pointer" />
-              </div>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Legal</h4>
-              <div className="space-y-2 text-gray-400">
-                <p className="hover:text-white cursor-pointer">Privacy Policy</p>
-                <p className="hover:text-white cursor-pointer">Terms of Service</p>
-                <p className="hover:text-white cursor-pointer">Return Policy</p>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>© 2024 ShopEase. Made with <FaHeart className="inline w-4 h-4 text-red-500" /> for our customers.</p>
-          </div>
-        </div>
-      </footer> */}
     </div>
   );
 };

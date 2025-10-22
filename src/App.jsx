@@ -14,6 +14,7 @@ import ContactSupport from './Components/ContactSupport';
 import Faq from "./Components/Faq";
 import About from "./Components/About";
 import ForgotPassword from "./pages/ForgotPassword";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const [order, setOrder] = useState(null);
@@ -43,6 +44,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <ToastContainer />
       </div>
     </Router>
   );

@@ -238,8 +238,9 @@ const Cart = () => {
           <p className="text-gray-600 mb-8 text-center max-w-md">
             Looks like you haven't added any items to your cart yet.
           </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
-          onClick={() => navigate('/shop')}
+          <button
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
+            onClick={() => navigate("/shop")}
           >
             Continue Shopping
           </button>

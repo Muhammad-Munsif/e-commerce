@@ -31,7 +31,10 @@ const Register = ({ openLogin }) => {
         </div>
 
         <div className="mb-4">
-          <button type="submit" className="w-full rounded-lg bg-red-600 py-2 text-white">
+          <button
+            type="submit"
+            className="w-full rounded-lg bg-red-600 py-2 text-white"
+          >
             Sign Up
           </button>
         </div>

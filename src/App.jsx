@@ -10,7 +10,7 @@ import Checkout from "./pages/Checkout";
 import Order from "./pages/Order";
 import FilterData from "./pages/FilterData";
 import ProductDetail from "./pages/ProductDetail";
-import ContactSupport from './Components/ContactSupport';
+import ContactSupport from "./Components/ContactSupport";
 import Faq from "./Components/Faq";
 import About from "./Components/About";
 import ForgotPassword from "./pages/ForgotPassword";
@@ -26,14 +26,20 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
-            
+
             {/* Category Pages */}
-            <Route path="/electronics" element={<Shop category="Electronics" />} />
+            <Route
+              path="/electronics"
+              element={<Shop category="Electronics" />}
+            />
             <Route path="/fashion" element={<Shop category="Fashion" />} />
-            <Route path="/home-kitchen" element={<Shop category="Home & Kitchen" />} />
+            <Route
+              path="/home-kitchen"
+              element={<Shop category="Home & Kitchen" />}
+            />
             <Route path="/beauty" element={<Shop category="Beauty" />} />
             <Route path="/sports" element={<Shop category="Sports" />} />
-            
+
             <Route path="/cart" element={<Cart />} />
             <Route
               path="/checkout"

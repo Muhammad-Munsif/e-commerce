@@ -8,7 +8,7 @@ export const productsData = [
     category: "Electronics",
     rating: 4.5,
     image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300",
-    description: "High-quality wireless headphones with noise cancellation"
+    description: "High-quality wireless headphones with noise cancellation",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const productsData = [
     category: "Electronics",
     rating: 4.3,
     image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300",
-    description: "Advanced smartwatch with health monitoring"
+    description: "Advanced smartwatch with health monitoring",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ export const productsData = [
     category: "Electronics",
     rating: 4.0,
     image: "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=300",
-    description: "Fast wireless charging for all compatible devices"
+    description: "Fast wireless charging for all compatible devices",
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ export const productsData = [
     category: "Electronics",
     rating: 4.7,
     image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=300",
-    description: "55-inch 4K Smart TV with HDR"
+    description: "55-inch 4K Smart TV with HDR",
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ export const productsData = [
     category: "Electronics",
     rating: 4.6,
     image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=300",
-    description: "High-performance gaming laptop with RTX graphics"
+    description: "High-performance gaming laptop with RTX graphics",
   },
   {
     id: 6,
@@ -53,7 +53,7 @@ export const productsData = [
     category: "Electronics",
     rating: 4.8,
     image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300",
-    description: "Latest smartphone with advanced camera system"
+    description: "Latest smartphone with advanced camera system",
   },
 
   // Fashion (6 products)
@@ -64,7 +64,7 @@ export const productsData = [
     category: "Fashion",
     rating: 4.2,
     image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=300",
-    description: "Vintage style denim jacket for everyday wear"
+    description: "Vintage style denim jacket for everyday wear",
   },
   {
     id: 8,
@@ -73,7 +73,7 @@ export const productsData = [
     category: "Fashion",
     rating: 4.4,
     image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300",
-    description: "Comfortable leather sneakers in multiple colors"
+    description: "Comfortable leather sneakers in multiple colors",
   },
   {
     id: 9,
@@ -82,7 +82,7 @@ export const productsData = [
     category: "Fashion",
     rating: 4.6,
     image: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=300",
-    description: "Elegant silk dress perfect for summer occasions"
+    description: "Elegant silk dress perfect for summer occasions",
   },
   {
     id: 10,
@@ -91,7 +91,7 @@ export const productsData = [
     category: "Fashion",
     rating: 4.5,
     image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=300",
-    description: "Luxury designer handbag with multiple compartments"
+    description: "Luxury designer handbag with multiple compartments",
   },
   {
     id: 11,
@@ -100,7 +100,7 @@ export const productsData = [
     category: "Fashion",
     rating: 4.1,
     image: "https://images.unsplash.com/photo-1601924994980-3f5a5f590e62?w=300",
-    description: "Warm wool scarf for cold weather"
+    description: "Warm wool scarf for cold weather",
   },
   {
     id: 12,
@@ -109,7 +109,7 @@ export const productsData = [
     category: "Fashion",
     rating: 4.3,
     image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300",
-    description: "Lightweight running shoes with cushion technology"
+    description: "Lightweight running shoes with cushion technology",
   },
 
   // Home & Kitchen (6 products)
@@ -120,7 +120,7 @@ export const productsData = [
     category: "Home & Kitchen",
     rating: 4.7,
     image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300",
-    description: "10-piece non-stick cookware set for modern kitchens"
+    description: "10-piece non-stick cookware set for modern kitchens",
   },
   {
     id: 14,
@@ -129,7 +129,7 @@ export const productsData = [
     category: "Home & Kitchen",
     rating: 4.4,
     image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300",
-    description: "Programmable coffee maker with app control"
+    description: "Programmable coffee maker with app control",
   },
   {
     id: 15,
@@ -138,7 +138,7 @@ export const productsData = [
     category: "Home & Kitchen",
     rating: 4.8,
     image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=300",
-    description: "Queen size memory foam mattress for better sleep"
+    description: "Queen size memory foam mattress for better sleep",
   },
   {
     id: 16,
@@ -147,7 +147,7 @@ export const productsData = [
     category: "Home & Kitchen",
     rating: 4.5,
     image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=300",
-    description: "Smart robot vacuum with mapping technology"
+    description: "Smart robot vacuum with mapping technology",
   },
   {
     id: 17,
@@ -156,7 +156,7 @@ export const productsData = [
     category: "Home & Kitchen",
     rating: 4.3,
     image: "https://images.unsplash.com/photo-1587334984005-5eb1adc0b67a?w=300",
-    description: "HEPA air purifier for large rooms"
+    description: "HEPA air purifier for large rooms",
   },
   {
     id: 18,
@@ -165,7 +165,7 @@ export const productsData = [
     category: "Home & Kitchen",
     rating: 4.6,
     image: "https://images.unsplash.com/photo-1594736797933-d0ea3ff8db41?w=300",
-    description: "Professional 8-piece knife set with block"
+    description: "Professional 8-piece knife set with block",
   },
 
   // Beauty (6 products)
@@ -176,7 +176,7 @@ export const productsData = [
     category: "Beauty",
     rating: 4.5,
     image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300",
-    description: "Vitamin C serum for youthful glowing skin"
+    description: "Vitamin C serum for youthful glowing skin",
   },
   {
     id: 20,
@@ -185,7 +185,7 @@ export const productsData = [
     category: "Beauty",
     rating: 4.4,
     image: "https://images.unsplash.com/photo-1522338140264-35f7b40e1ef4?w=300",
-    description: "Ionic hair dryer for fast drying and shine"
+    description: "Ionic hair dryer for fast drying and shine",
   },
   {
     id: 21,
@@ -194,7 +194,7 @@ export const productsData = [
     category: "Beauty",
     rating: 4.7,
     image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=300",
-    description: "Eau de parfum gift set with three fragrances"
+    description: "Eau de parfum gift set with three fragrances",
   },
   {
     id: 22,
@@ -203,7 +203,7 @@ export const productsData = [
     category: "Beauty",
     rating: 4.2,
     image: "https://images.unsplash.com/photo-1587017539507-77d1a284e8b3?w=300",
-    description: "12-piece professional makeup brush set"
+    description: "12-piece professional makeup brush set",
   },
   {
     id: 23,
@@ -212,7 +212,7 @@ export const productsData = [
     category: "Beauty",
     rating: 4.6,
     image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=300",
-    description: "Natural clay mask for deep cleansing"
+    description: "Natural clay mask for deep cleansing",
   },
   {
     id: 24,
@@ -221,7 +221,7 @@ export const productsData = [
     category: "Beauty",
     rating: 4.3,
     image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300",
-    description: "Lighted makeup mirror with adjustable brightness"
+    description: "Lighted makeup mirror with adjustable brightness",
   },
 
   // Sports (6 products)
@@ -232,7 +232,7 @@ export const productsData = [
     category: "Sports",
     rating: 4.5,
     image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300",
-    description: "Non-slip yoga mat with carrying strap"
+    description: "Non-slip yoga mat with carrying strap",
   },
   {
     id: 26,
@@ -241,7 +241,7 @@ export const productsData = [
     category: "Sports",
     rating: 4.4,
     image: "https://images.unsplash.com/photo-1576243345690-4e4b79b63288?w=300",
-    description: "Advanced fitness tracker with heart rate monitor"
+    description: "Advanced fitness tracker with heart rate monitor",
   },
   {
     id: 27,
@@ -250,7 +250,7 @@ export const productsData = [
     category: "Sports",
     rating: 4.7,
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300",
-    description: "Space-saving adjustable dumbbells 5-50 lbs"
+    description: "Space-saving adjustable dumbbells 5-50 lbs",
   },
   {
     id: 28,
@@ -259,7 +259,7 @@ export const productsData = [
     category: "Sports",
     rating: 4.6,
     image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=300",
-    description: "Folding treadmill with incline and programs"
+    description: "Folding treadmill with incline and programs",
   },
   {
     id: 29,
@@ -268,7 +268,7 @@ export const productsData = [
     category: "Sports",
     rating: 4.3,
     image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=300",
-    description: "Official size basketball for indoor/outdoor"
+    description: "Official size basketball for indoor/outdoor",
   },
   {
     id: 30,
@@ -277,6 +277,6 @@ export const productsData = [
     category: "Sports",
     rating: 4.5,
     image: "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=300",
-    description: "Waterproof camping tent with rainfly"
-  }
+    description: "Waterproof camping tent with rainfly",
+  },
 ];

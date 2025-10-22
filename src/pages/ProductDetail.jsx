@@ -15,14 +15,14 @@ const ProductDetail = () => {
     setProduct(newProduct);
   }, [id]);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const handleAddToCart = (e, product) => {
     e.stopPropagation();
     e.preventDefault();
     dispatch(addToCart(product));
-    toast.success("Product Added Successfully",{
-      position: 'bottom-center',
-      autoClose: 3000
+    toast.success("Product Added Successfully", {
+      position: "bottom-center",
+      autoClose: 3000,
     });
   };
 
@@ -46,8 +46,9 @@ const ProductDetail = () => {
               id="quantity"
               className="border border-gray-200 w-16"
             />
-            <button className="bg-red-600 py-1.5 px-4 rounded hover:bg-red-800 text-white" 
-            onClick={(e) => handleAddToCart(e, product)}
+            <button
+              className="bg-red-600 py-1.5 px-4 rounded hover:bg-red-800 text-white"
+              onClick={(e) => handleAddToCart(e, product)}
             >
               Add to cart
             </button>

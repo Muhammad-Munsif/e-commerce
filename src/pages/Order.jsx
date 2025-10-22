@@ -1,13 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { 
-  FaCheckCircle, 
-  FaHome, 
-  FaShoppingBag, 
-  FaShippingFast, 
+import {
+  FaCheckCircle,
+  FaHome,
+  FaShoppingBag,
+  FaShippingFast,
   FaDollarSign,
   FaQuestionCircle,
-  FaMapMarkerAlt
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { MdOutlineLocalShipping } from "react-icons/md";
@@ -23,9 +23,12 @@ const Order = ({ order }) => {
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <IoIosCheckmarkCircle className="w-10 h-10 text-green-600" />
           </div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-3">Thank you for your order!</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-3">
+            Thank you for your order!
+          </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Your order has been placed successfully. You will receive an email confirmation shortly.
+            Your order has been placed successfully. You will receive an email
+            confirmation shortly.
           </p>
         </div>
 
@@ -35,10 +38,13 @@ const Order = ({ order }) => {
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4">
             <div className="flex items-center">
               <FaShoppingBag className="w-5 h-5 text-white mr-2" />
-              <h3 className="text-xl font-semibold text-white">Order Summary</h3>
+              <h3 className="text-xl font-semibold text-white">
+                Order Summary
+              </h3>
             </div>
             <p className="text-blue-100 mt-1 ml-7">
-              Order Number: <span className="font-mono">{order.orderNumber}</span>
+              Order Number:{" "}
+              <span className="font-mono">{order.orderNumber}</span>
             </p>
           </div>
 
@@ -52,9 +58,14 @@ const Order = ({ order }) => {
                   Shipping Information
                 </h4>
                 <div className="space-y-2 text-gray-700">
-                  <p className="font-medium">{order.shippingInformation.name}</p>
+                  <p className="font-medium">
+                    {order.shippingInformation.name}
+                  </p>
                   <p>{order.shippingInformation.address}</p>
-                  <p>{order.shippingInformation.city}, {order.shippingInformation.zipcode}</p>
+                  <p>
+                    {order.shippingInformation.city},{" "}
+                    {order.shippingInformation.zipcode}
+                  </p>
                 </div>
               </div>
 
@@ -84,18 +95,20 @@ const Order = ({ order }) => {
               </h4>
               <div className="space-y-3">
                 {order.products.map((product) => (
-                  <div 
-                    key={product.id} 
+                  <div
+                    key={product.id}
                     className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                   >
                     <div className="flex items-center space-x-4">
-                      <img 
-                        src={product.image} 
+                      <img
+                        src={product.image}
                         alt={product.name}
                         className="w-12 h-12 object-cover rounded-md"
                       />
                       <div>
-                        <p className="font-medium text-gray-900">{product.name}</p>
+                        <p className="font-medium text-gray-900">
+                          {product.name}
+                        </p>
                         <p className="text-sm text-gray-600">
                           Quantity: {product.quantity} × ${product.price}
                         </p>
@@ -143,13 +156,13 @@ const Order = ({ order }) => {
         <div className="mt-8 text-center text-sm text-gray-600">
           <p className="flex items-center justify-center">
             <FaQuestionCircle className="w-4 h-4 mr-2" />
-            Need help? 
-             <button 
-      onClick={() => navigate("/contact-support")}
-      className="text-blue-600 hover:text-blue-800 underline ml-1"
-    >
-      Contact our support team
-    </button>
+            Need help?
+            <button
+              onClick={() => navigate("/contact-support")}
+              className="text-blue-600 hover:text-blue-800 underline ml-1"
+            >
+              Contact our support team
+            </button>
           </p>
         </div>
       </div>

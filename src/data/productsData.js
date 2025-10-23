@@ -3,7 +3,7 @@ export const productsData = [
   // Electronics (6 products)
   {
     id: 1,
-    name: "Wireless Bluetooth Headphones",
+    name: "Wireless Bluetooth Headphone",
     price: 79.99,
     category: "Electronics",
     rating: 4.5,

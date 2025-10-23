@@ -29,7 +29,7 @@ const Navbar = () => {
 
   const products = useSelector((state) => state.cart.products);
   return (
-    <nav className="bg-white shadow-md ">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md ">
       <div className="container mx-auto px-4 md:px-16 lg:px-24 py-4 flex justify-between items-center ">
         <div className="text-lg font-bold">
           <Link to="/">Easyshop</Link>
@@ -82,6 +82,12 @@ const Navbar = () => {
         <Link to="/contact-support" className="hover:underline">
           Contact
         </Link>
+        
+        <Link to="/electronics">Electronics</Link>
+        <Link to="/fashion">Fashion</Link>
+        <Link to="/home-kitchen">Home & Kitchen</Link>
+        <Link to="/beauty">Beauty</Link>
+        <Link to="/sports">Sports</Link>
       </div>
       <Model isModelOpen={isModleOpen} setIsModelOpen={setIsModelOpen}>
         {isLogin ? (

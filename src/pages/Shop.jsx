@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import ProductCard from "../Components/ProductCard";
+import CategoryFilter from "../Components/CategoryFilter"
 
-const Shop = () => {
+const Shop = ({ category = 'All' }) => {
   const products = useSelector((state) => state.product);
   const [showAll, setShowAll] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState(category);
 
   const productList = products.products || [];
   const displayedProducts = showAll ? productList : productList.slice(0, 10);
@@ -12,8 +14,19 @@ const Shop = () => {
   const toggleView = () => {
     setShowAll(!showAll);
   };
-
+    
+    // This function handles category changes
+    const handleCategoryChange = (newCategory) => {
+      setSelectedCategory(newCategory);
+    };
+  
   return (
+    <>
+    {/* Passing props to CategoryFilter */}
+    <CategoryFilter 
+          selectedCategory={selectedCategory}           
+          onCategoryChange={handleCategoryChange}       
+        />
     <div className="mx-auto py-12 px-4 md:px-16 lg:px-24 ">
       <h2 className="text-2xl font-bold mb-6 text-center">Shop</h2>
 
@@ -34,6 +47,8 @@ const Shop = () => {
         </div>
       )}
     </div>
+    
+  </>
   );
 };
 

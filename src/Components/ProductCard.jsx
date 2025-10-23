@@ -25,7 +25,7 @@ const ProductCard = ({ product }) => {
           alt={product.name}
           className="w-full h-48 object-contain mb-4"
         />
-        <h3 className="text-lg font-semibold">{product.name}</h3>
+        <h3 className="text-lg font-semibold whitespace-normal line-clamp-2 min-h-[3.5rem]">{product.name}</h3>
         <p className="text-gray-500">${product.price}</p>
         <div className="flex items-center mt-2 text-yellow-500">
           <FaStar />

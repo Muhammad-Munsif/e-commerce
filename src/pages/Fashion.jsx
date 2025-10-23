@@ -1,14 +1,22 @@
 // pages/Fashion.jsx
-import React from 'react';
-import { FaTshirt, FaShoePrints, FaGem, FaShippingFast, FaRecycle } from 'react-icons/fa';
-import { IoShirtSharp, IoBagHandle } from 'react-icons/io5';
-import { GiNecklace, GiRunningShoe } from 'react-icons/gi';
-import ProductGrid from '../Components/ProductGrid';
-import ProductCard from '../Components/ProductCard';
-import { productsData } from '../data/productsData';
+import React from "react";
+import {
+  FaTshirt,
+  FaShoePrints,
+  FaGem,
+  FaShippingFast,
+  FaRecycle,
+} from "react-icons/fa";
+import { IoShirtSharp, IoBagHandle } from "react-icons/io5";
+import { GiNecklace, GiRunningShoe } from "react-icons/gi";
+import ProductGrid from "../Components/ProductGrid";
+import ProductCard from "../Components/ProductCard";
+import { productsData } from "../data/productsData";
 
 const Fashion = () => {
-  const fashionProducts = productsData.filter(product => product.category === 'Fashion');
+  const fashionProducts = productsData.filter(
+    (product) => product.category === "Fashion"
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50 container mx-auto mt-28 px-4 md:px-16 lg:px-8 py-4 flex flex-col md:flex-row space-x-2">
@@ -22,7 +30,8 @@ const Fashion = () => {
             Fashion Collection
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            Express your style with our curated collection of trendy and timeless fashion pieces
+            Express your style with our curated collection of trendy and
+            timeless fashion pieces
           </p>
         </div>
 
@@ -51,10 +60,13 @@ const Fashion = () => {
           <div className="bg-white rounded-xl p-6 shadow-sm border-l-4 border-pink-500">
             <div className="flex items-center mb-4">
               <FaTshirt className="text-pink-500 text-xl mr-3" />
-              <h3 className="text-xl font-bold text-gray-800">Spring Collection</h3>
+              <h3 className="text-xl font-bold text-gray-800">
+                Spring Collection
+              </h3>
             </div>
             <p className="text-gray-600 mb-4">
-              Discover our latest spring styles featuring light fabrics, vibrant colors, and comfortable fits perfect for the season.
+              Discover our latest spring styles featuring light fabrics, vibrant
+              colors, and comfortable fits perfect for the season.
             </p>
             <button className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg transition-colors flex items-center">
               View Collection
@@ -64,10 +76,13 @@ const Fashion = () => {
           <div className="bg-white rounded-xl p-6 shadow-sm border-l-4 border-green-500">
             <div className="flex items-center mb-4">
               <FaRecycle className="text-green-500 text-xl mr-3" />
-              <h3 className="text-xl font-bold text-gray-800">Sustainable Fashion</h3>
+              <h3 className="text-xl font-bold text-gray-800">
+                Sustainable Fashion
+              </h3>
             </div>
             <p className="text-gray-600 mb-4">
-              Explore our eco-friendly collection made from sustainable materials and ethical manufacturing processes.
+              Explore our eco-friendly collection made from sustainable
+              materials and ethical manufacturing processes.
             </p>
             <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition-colors flex items-center">
               Learn More
@@ -99,7 +114,7 @@ const Fashion = () => {
             </div>
           </div>
           <ProductGrid>
-            {fashionProducts.map(product => (
+            {fashionProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </ProductGrid>

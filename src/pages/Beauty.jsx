@@ -1,15 +1,17 @@
 // pages/Beauty.jsx
-import React from 'react';
-import { FaRegSmile, FaShippingFast, FaStar, FaHeart } from 'react-icons/fa';
-import { GiLipstick, GiPerfumeBottle } from 'react-icons/gi';
-import { IoSkullSharp, IoBrushSharp } from 'react-icons/io5';
-import { MdFace, MdEmail } from 'react-icons/md';
-import ProductGrid from '../Components/ProductGrid';
-import ProductCard from '../Components/ProductCard';
-import { productsData } from '../data/productsData';
+import React from "react";
+import { FaRegSmile, FaShippingFast, FaStar, FaHeart } from "react-icons/fa";
+import { GiLipstick, GiPerfumeBottle } from "react-icons/gi";
+import { IoSkullSharp, IoBrushSharp } from "react-icons/io5";
+import { MdFace, MdEmail } from "react-icons/md";
+import ProductGrid from "../Components/ProductGrid";
+import ProductCard from "../Components/ProductCard";
+import { productsData } from "../data/productsData";
 
 const Beauty = () => {
-  const beautyProducts = productsData.filter(product => product.category === 'Beauty');
+  const beautyProducts = productsData.filter(
+    (product) => product.category === "Beauty"
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-rose-50 to-pink-50 container mx-auto mt-28 px-4 md:px-16 lg:px-8 py-4 flex flex-col md:flex-row space-x-2">
@@ -23,7 +25,8 @@ const Beauty = () => {
             Beauty & Cosmetics
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            Discover your perfect beauty routine with our premium skincare, makeup, and wellness products
+            Discover your perfect beauty routine with our premium skincare,
+            makeup, and wellness products
           </p>
         </div>
 
@@ -34,7 +37,9 @@ const Beauty = () => {
               <MdFace className="text-rose-600 text-2xl" />
             </div>
             <h3 className="font-bold text-gray-800 mb-2">Skincare</h3>
-            <p className="text-gray-600 text-sm">Nourish and protect your skin</p>
+            <p className="text-gray-600 text-sm">
+              Nourish and protect your skin
+            </p>
           </div>
           <div className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow cursor-pointer">
             <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -48,7 +53,9 @@ const Beauty = () => {
               <GiPerfumeBottle className="text-purple-600 text-2xl" />
             </div>
             <h3 className="font-bold text-gray-800 mb-2">Fragrance</h3>
-            <p className="text-gray-600 text-sm">Signature scents for every occasion</p>
+            <p className="text-gray-600 text-sm">
+              Signature scents for every occasion
+            </p>
           </div>
         </div>
 
@@ -60,7 +67,7 @@ const Beauty = () => {
           </h2>
           {/* // Renderring dummy data  */}
           <ProductGrid>
-            {beautyProducts.map(product => (
+            {beautyProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </ProductGrid>
@@ -71,15 +78,18 @@ const Beauty = () => {
           <div className="flex justify-center mb-4">
             <FaHeart className="text-3xl text-rose-600" />
           </div>
-          <h3 className="text-2xl font-bold text-gray-800 mb-4">Beauty Tips & Offers</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-4">
+            Beauty Tips & Offers
+          </h3>
           <p className="text-gray-600 mb-6 max-w-md mx-auto">
-            Subscribe to get expert beauty advice, exclusive offers, and new product launches
+            Subscribe to get expert beauty advice, exclusive offers, and new
+            product launches
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <div className="relative flex-1">
               <MdEmail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-              <input 
-                type="email" 
+              <input
+                type="email"
                 placeholder="Enter your email"
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500"
               />

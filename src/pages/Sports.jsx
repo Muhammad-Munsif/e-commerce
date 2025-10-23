@@ -1,17 +1,26 @@
 // pages/Sports.jsx
-import React from 'react';
-import { FaRunning, FaDumbbell, FaCampground, FaBasketballBall, FaShippingFast, FaHeadset } from 'react-icons/fa';
-import { IoFootsteps, IoBicycle } from 'react-icons/io5';
-import { GiTennisRacket, GiSoccerBall } from 'react-icons/gi';
-import ProductGrid from '../Components/ProductGrid';
-import ProductCard from '../Components/ProductCard';
-import { productsData } from '../data/productsData';
+import React from "react";
+import {
+  FaRunning,
+  FaDumbbell,
+  FaCampground,
+  FaBasketballBall,
+  FaShippingFast,
+  FaHeadset,
+} from "react-icons/fa";
+import { IoFootsteps, IoBicycle } from "react-icons/io5";
+import { GiTennisRacket, GiSoccerBall } from "react-icons/gi";
+import ProductGrid from "../Components/ProductGrid";
+import ProductCard from "../Components/ProductCard";
+import { productsData } from "../data/productsData";
 
 const Sports = () => {
-  const sportsProducts = productsData.filter(product => product.category === 'Sports');
+  const sportsProducts = productsData.filter(
+    (product) => product.category === "Sports"
+  );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 pt-40 pb-8">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 pt-36 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12">
@@ -22,7 +31,8 @@ const Sports = () => {
             Sports & Fitness
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            Elevate your performance with professional-grade sports equipment and fitness gear
+            Elevate your performance with professional-grade sports equipment
+            and fitness gear
           </p>
         </div>
 
@@ -73,7 +83,7 @@ const Sports = () => {
             Sports Equipment
           </h2>
           <ProductGrid>
-            {sportsProducts.map(product => (
+            {sportsProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </ProductGrid>
@@ -84,9 +94,12 @@ const Sports = () => {
           <div className="flex justify-center mb-4">
             <FaRunning className="text-4xl text-white opacity-90" />
           </div>
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready to Level Up Your Game?</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mb-4">
+            Ready to Level Up Your Game?
+          </h3>
           <p className="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
-            Join thousands of athletes who trust our equipment for their training and competitions
+            Join thousands of athletes who trust our equipment for their
+            training and competitions
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center">

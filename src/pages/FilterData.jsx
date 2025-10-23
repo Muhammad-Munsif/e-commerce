@@ -5,7 +5,7 @@ import NoFoundImg from "../assets/no-found.webp";
 const FilterData = () => {
   const filterProducts = useSelector((state) => state.product.filteredData);
   return (
-    <div className="container mx-auto mt-40 px-4 md:px-16 lg:px-8 py-4 flex flex-col md:flex-row space-x-2">
+    <div className="container mx-auto mt-28 px-4 md:px-16 lg:px-8 py-4 flex flex-col md:flex-row space-x-2">
       {filterProducts.length > 0 ? (
         <div>
           <h2 className="text-2xl font-bold mb-6 text-center">Shop</h2>

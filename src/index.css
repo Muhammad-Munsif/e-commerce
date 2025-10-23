@@ -33,3 +33,24 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
 }
+
+/* Add to your main CSS file */
+@media (max-width: 768px) {
+  .dashboard-mobile-menu {
+    transform: translateX(-100%);
+  }
+  
+  .dashboard-mobile-menu.open {
+    transform: translateX(0);
+  }
+}
+
+/* Smooth transitions */
+.sidebar-transition {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Ensure proper scrolling on mobile */
+.dashboard-content {
+  min-height: calc(100vh - 64px);
+}

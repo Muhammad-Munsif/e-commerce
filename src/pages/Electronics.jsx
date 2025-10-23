@@ -11,7 +11,7 @@ const Electronics = () => {
   const electronicsProducts = productsData.filter(product => product.category === 'Electronics');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 container mx-auto mt-40 px-4 md:px-16 lg:px-8 py-4 flex flex-col md:flex-row space-x-2">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 container mx-auto mt-28 px-4 md:px-16 lg:px-8 py-4 flex flex-col md:flex-row space-x-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12">

@@ -1,12 +1,16 @@
-import React from 'react'
-import Order from '../Order'
+// pages/Orders.jsx
+import React from 'react';
 
-const Orders = ({order, orderNumber}) => {
+const Orders = () => {
   return (
-    <div className='container mx-auto mt-40 px-4 md:px-16 lg:px-8 py-4 flex flex-col md:flex-row space-x-2'>
-        <Order />
+    <div className="pt-24">
+      <div className="bg-white rounded-xl shadow-sm p-6">
+        <h1 className="text-2xl font-bold text-gray-900 mb-6">Orders Management</h1>
+        <p>Orders content goes here...</p>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Orders
+export default Orders;
+

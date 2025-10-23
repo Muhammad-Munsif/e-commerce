@@ -24,7 +24,7 @@ const Shop = ({ category = 'All' }) => {
     
     <>
     {/* Passing props to CategoryFilter */}
-    <div className="container mx-auto mt-40 px-4 md:px-16 lg:px-8 py-4 flex flex-col md:flex-row space-x-2">
+    <div className="mx-auto pt-28 py-12 px-4 md:px-16 lg:px-24 ">
     <CategoryFilter 
           selectedCategory={selectedCategory}           
           onCategoryChange={handleCategoryChange}       

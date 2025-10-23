@@ -1,11 +1,12 @@
-import React from 'react'
-
 const Customers = () => {
-  return (
-    <div className='container mx-auto mt-40 px-4 md:px-16 lg:px-8 py-4 flex flex-col md:flex-row space-x-2'>
-      customer designed
-    </div>
-  )
-}
-
-export default Customers
+    return (
+      <div className="pt-24">
+        <div className="bg-white rounded-xl shadow-sm p-6">
+          <h1 className="text-2xl font-bold text-gray-900 mb-6">Customers Management</h1>
+          <p>Customers content goes here...</p>
+        </div>
+      </div>
+    );
+  };
+  
+  export default Customers;

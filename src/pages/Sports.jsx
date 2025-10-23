@@ -11,7 +11,7 @@ const Sports = () => {
   const sportsProducts = productsData.filter(product => product.category === 'Sports');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 pt-20 pb-8">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 pt-40 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12">
@@ -80,7 +80,7 @@ const Sports = () => {
         </div>
 
         {/* Motivation Section */}
-        <div className="container mx-auto mt-48 px-4 md:px-16 lg:px-8  flex flex-col md:flex-row space-x-2 bg-gradient-to-r pt-40 from-green-600 to-blue-600 rounded-xl p-8 text-white text-center">
+        <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-xl p-8 text-white text-center">
           <div className="flex justify-center mb-4">
             <FaRunning className="text-4xl text-white opacity-90" />
           </div>

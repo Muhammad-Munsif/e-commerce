@@ -223,14 +223,13 @@ const Navbar = () => {
                 >
                   Sports
                 </Link>
-                // And in the mobile menu
-<Link 
-  to="/dashboard" 
-  className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
-  onClick={closeMobileMenu}
->
-  Dashboard
-</Link>
+                <Link 
+                  to="/dashboard" 
+                  className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
+                  onClick={closeMobileMenu}
+                >
+                  Dashboard
+                </Link>
               </div>
             </div>
 

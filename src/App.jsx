@@ -30,6 +30,7 @@ import Customers from './pages/dashboard/Customers';
 import Categories from './pages/dashboard/Categories';
 import Analytics from './pages/dashboard/Analytics';
 import Settings from './pages/dashboard/Settings';
+import ProductForm from "./pages/dashboard/ProductForm";
 
 function App() {
   const [order, setOrder] = useState(null);
@@ -69,6 +70,7 @@ function App() {
               <Route path="categories" element={<Categories />} />
               <Route path="analytics" element={<Analytics />} />
               <Route path="settings" element={<Settings />} />
+              <Route path="products/new" element={<ProductForm />} />
             </Route>
 
             {/* 404 Page - Add this if you want */}

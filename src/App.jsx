@@ -22,15 +22,15 @@ import Sports from "./pages/Sports";
 import { ToastContainer } from "react-toastify";
 
 // Dashboard Components
-import DashboardLayout from './Components/DashboardLayout';
-import Dashboard from './pages/Dashboard';
-import Orders from './pages/dashboard/Orders';
-import Products from './pages/dashboard/Products';
-import Customers from './pages/dashboard/Customers';
-import Categories from './pages/dashboard/Categories';
-import Analytics from './pages/dashboard/Analytics';
-import Settings from './pages/dashboard/Settings';
-import ProductForm from "./pages/dashboard/ProductForm";
+// import DashboardLayout from './Components/DashboardLayout';
+// import Dashboard from './pages/Dashboard';
+// import Orders from './pages/dashboard/Orders';
+// import Products from './pages/dashboard/Products';
+// import Customers from './pages/dashboard/Customers';
+// import Categories from './pages/dashboard/Categories';
+// import Analytics from './pages/dashboard/Analytics';
+// import Settings from './pages/dashboard/Settings';
+// import ProductForm from "./pages/dashboard/ProductForm";
 
 function App() {
   const [order, setOrder] = useState(null);
@@ -62,7 +62,7 @@ function App() {
             <Route path="/sports" element={<Sports />} />
 
             {/* Dashboard Routes */}
-            <Route path="/dashboard" element={<DashboardLayout />}>
+            {/* <Route path="/dashboard" element={<DashboardLayout />}>
               <Route index element={<Dashboard />} />
               <Route path="orders" element={<Orders />} />
               <Route path="products" element={<Products />} />
@@ -71,7 +71,7 @@ function App() {
               <Route path="analytics" element={<Analytics />} />
               <Route path="settings" element={<Settings />} />
               <Route path="products/new" element={<ProductForm />} />
-            </Route>
+            </Route> */}
 
             {/* 404 Page - Add this if you want */}
             <Route path="*" element={

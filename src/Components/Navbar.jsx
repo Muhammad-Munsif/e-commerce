@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { FaSearch, FaShoppingCart, FaUser, FaBars, FaTimes } from "react-icons/fa";
+import {
+  FaSearch,
+  FaShoppingCart,
+  FaUser,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Model from "./Model";
@@ -48,7 +54,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="text-xl font-bold text-red-600">
-            <Link to="/" onClick={closeMobileMenu}>Easyshop</Link>
+            <Link to="/" onClick={closeMobileMenu}>
+              Easyshop
+            </Link>
           </div>
 
           {/* Search Bar - Hidden on mobile, visible on medium screens and up */}
@@ -60,7 +68,10 @@ const Navbar = () => {
                 placeholder="Search products..."
                 className="w-full border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
-              <button type="submit" className="absolute right-3 top-1/2 transform -translate-y-1/2">
+              <button
+                type="submit"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2"
+              >
                 <FaSearch className="text-gray-500 hover:text-blue-600 transition-colors" />
               </button>
             </form>
@@ -69,7 +80,10 @@ const Navbar = () => {
           {/* Right Side Icons */}
           <div className="flex items-center space-x-4">
             {/* Cart Icon */}
-            <Link to="/cart" className="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
+            <Link
+              to="/cart"
+              className="relative p-2 hover:bg-gray-100 rounded-full transition-colors"
+            >
               <FaShoppingCart className="text-lg text-gray-700" />
               {products.length > 0 && (
                 <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-600 rounded-full flex items-center justify-center text-xs text-white font-semibold">
@@ -87,11 +101,15 @@ const Navbar = () => {
             </button>
 
             {/* Mobile Menu Toggle */}
-            <button 
+            <button
               className="md:hidden p-2 hover:bg-gray-100 rounded-full transition-colors"
               onClick={toggleMobileMenu}
             >
-              {isMobileMenuOpen ? <FaTimes className="text-lg" /> : <FaBars className="text-lg" />}
+              {isMobileMenuOpen ? (
+                <FaTimes className="text-lg" />
+              ) : (
+                <FaBars className="text-lg" />
+              )}
             </button>
           </div>
         </div>
@@ -105,7 +123,10 @@ const Navbar = () => {
               placeholder="Search products..."
               className="w-full border border-gray-300 rounded-lg py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
-            <button type="submit" className="absolute right-3 top-1/2 transform -translate-y-1/2">
+            <button
+              type="submit"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2"
+            >
               <FaSearch className="text-gray-500 hover:text-blue-600 transition-colors" />
             </button>
           </form>
@@ -114,38 +135,66 @@ const Navbar = () => {
 
       {/* Desktop Navigation Links */}
       <div className="hidden lg:flex justify-center items-center space-x-8 py-3 bg-gray-50 border-t">
-        <Link to="/" className="active text-gray-700 hover:text-blue-600 font-medium transition-colors">
+        <Link
+          to="/"
+          className="active text-gray-700 hover:text-blue-600 font-medium transition-colors"
+        >
           Home
         </Link>
-        <Link to="/about" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+        <Link
+          to="/about"
+          className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+        >
           About
         </Link>
-        <Link to="/shop" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+        <Link
+          to="/shop"
+          className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+        >
           Shop
         </Link>
-        <Link to="/electronics" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+        <Link
+          to="/electronics"
+          className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+        >
           Electronics
         </Link>
-        <Link to="/fashion" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+        <Link
+          to="/fashion"
+          className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+        >
           Fashion
         </Link>
-        <Link to="/home-kitchen" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+        <Link
+          to="/home-kitchen"
+          className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+        >
           Home & Kitchen
         </Link>
-        <Link to="/beauty" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+        <Link
+          to="/beauty"
+          className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+        >
           Beauty
         </Link>
-        <Link to="/sports" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+        <Link
+          to="/sports"
+          className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+        >
           Sports
         </Link>
-        <Link to="/contact-support" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+        <Link
+          to="/contact-support"
+          className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+        >
           Contact
         </Link>
-        <Link to="/dashboard" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+        <Link
+          to="/dashboard"
+          className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+        >
           Dashboard
         </Link>
-
-
       </div>
 
       {/* Mobile Navigation Menu */}
@@ -154,29 +203,29 @@ const Navbar = () => {
           <div className="container mx-auto px-4 py-4">
             {/* Main Links */}
             <div className="grid grid-cols-2 gap-4 mb-6">
-              <Link 
-                to="/" 
+              <Link
+                to="/"
                 className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
                 onClick={closeMobileMenu}
               >
                 Home
               </Link>
-              <Link 
-                to="/about" 
+              <Link
+                to="/about"
                 className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
                 onClick={closeMobileMenu}
               >
                 About
               </Link>
-              <Link 
-                to="/shop" 
+              <Link
+                to="/shop"
                 className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
                 onClick={closeMobileMenu}
               >
                 Shop
               </Link>
-              <Link 
-                to="/contact-support" 
+              <Link
+                to="/contact-support"
                 className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
                 onClick={closeMobileMenu}
               >
@@ -186,45 +235,47 @@ const Navbar = () => {
 
             {/* Category Links */}
             <div className="mb-6">
-              <h3 className="text-sm font-semibold text-gray-500 uppercase mb-3">Categories</h3>
+              <h3 className="text-sm font-semibold text-gray-500 uppercase mb-3">
+                Categories
+              </h3>
               <div className="grid grid-cols-2 gap-2">
-                <Link 
-                  to="/electronics" 
+                <Link
+                  to="/electronics"
                   className="p-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors text-sm"
                   onClick={closeMobileMenu}
                 >
                   Electronics
                 </Link>
-                <Link 
-                  to="/fashion" 
+                <Link
+                  to="/fashion"
                   className="p-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors text-sm"
                   onClick={closeMobileMenu}
                 >
                   Fashion
                 </Link>
-                <Link 
-                  to="/home-kitchen" 
+                <Link
+                  to="/home-kitchen"
                   className="p-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors text-sm"
                   onClick={closeMobileMenu}
                 >
                   Home & Kitchen
                 </Link>
-                <Link 
-                  to="/beauty" 
+                <Link
+                  to="/beauty"
                   className="p-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors text-sm"
                   onClick={closeMobileMenu}
                 >
                   Beauty
                 </Link>
-                <Link 
-                  to="/sports" 
+                <Link
+                  to="/sports"
                   className="p-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors text-sm"
                   onClick={closeMobileMenu}
                 >
                   Sports
                 </Link>
-                <Link 
-                  to="/dashboard" 
+                <Link
+                  to="/dashboard"
                   className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
                   onClick={closeMobileMenu}
                 >

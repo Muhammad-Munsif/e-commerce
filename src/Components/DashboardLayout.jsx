@@ -1,33 +1,33 @@
 // components/DashboardLayout.jsx
-import React, { useState } from 'react';
-import { Link, useLocation, Outlet } from 'react-router-dom';
-import { 
-  FaTachometerAlt, 
-  FaShoppingCart, 
-  FaUsers, 
-  FaBox, 
-  FaChartBar, 
+import React, { useState } from "react";
+import { Link, useLocation, Outlet } from "react-router-dom";
+import {
+  FaTachometerAlt,
+  FaShoppingCart,
+  FaUsers,
+  FaBox,
+  FaChartBar,
   FaCog,
   FaBars,
   FaTimes,
   FaSignOutAlt,
   FaStore,
   FaMoneyBillWave,
-  FaTags
-} from 'react-icons/fa';
+  FaTags,
+} from "react-icons/fa";
 
 const DashboardLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
 
   const menuItems = [
-    { path: '/dashboard', icon: FaTachometerAlt, label: 'Dashboard' },
-    { path: '/dashboard/orders', icon: FaShoppingCart, label: 'Orders' },
-    { path: '/dashboard/products', icon: FaBox, label: 'Products' },
-    { path: '/dashboard/customers', icon: FaUsers, label: 'Customers' },
-    { path: '/dashboard/categories', icon: FaTags, label: 'Categories' },
-    { path: '/dashboard/analytics', icon: FaChartBar, label: 'Analytics' },
-    { path: '/dashboard/settings', icon: FaCog, label: 'Settings' },
+    { path: "/dashboard", icon: FaTachometerAlt, label: "Dashboard" },
+    { path: "/dashboard/orders", icon: FaShoppingCart, label: "Orders" },
+    { path: "/dashboard/products", icon: FaBox, label: "Products" },
+    { path: "/dashboard/customers", icon: FaUsers, label: "Customers" },
+    { path: "/dashboard/categories", icon: FaTags, label: "Categories" },
+    { path: "/dashboard/analytics", icon: FaChartBar, label: "Analytics" },
+    { path: "/dashboard/settings", icon: FaCog, label: "Settings" },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -36,22 +36,26 @@ const DashboardLayout = () => {
     <div className="flex h-screen bg-gray-100 pt-16">
       {/* Mobile Sidebar Backdrop */}
       {sidebarOpen && (
-        <div 
+        <div
           className="fixed inset-0 z-40 bg-black bg-opacity-50 lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
 
       {/* Sidebar */}
-      <div className={`
+      <div
+        className={`
         fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out
-        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 lg:static lg:inset-0
-      `}>
+        ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        } lg:translate-x-0 lg:static lg:inset-0
+      `}
+      >
         <div className="flex flex-col h-full">
           {/* Sidebar Header */}
           <div className="flex items-center justify-between p-4 border-b">
             <h1 className="text-xl font-bold text-gray-800">Admin Dashboard</h1>
-            <button 
+            <button
               className="lg:hidden p-2 rounded-md hover:bg-gray-100"
               onClick={() => setSidebarOpen(false)}
             >
@@ -69,8 +73,8 @@ const DashboardLayout = () => {
                   to={item.path}
                   className={`flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
                     isActive(item.path)
-                      ? 'bg-blue-100 text-blue-700 border-r-2 border-blue-600'
-                      : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                      ? "bg-blue-100 text-blue-700 border-r-2 border-blue-600"
+                      : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                   }`}
                   onClick={() => setSidebarOpen(false)}
                 >
@@ -97,14 +101,14 @@ const DashboardLayout = () => {
         <header className="bg-white shadow-sm z-10">
           <div className="flex items-center justify-between p-4">
             <div className="flex items-center">
-              <button 
+              <button
                 className="p-2 mr-4 rounded-md hover:bg-gray-100 lg:hidden"
                 onClick={() => setSidebarOpen(true)}
               >
                 <FaBars className="text-gray-600" />
               </button>
               <h2 className="text-lg font-semibold text-gray-800 capitalize">
-                {location.pathname.split('/').pop() || 'Dashboard'}
+                {location.pathname.split("/").pop() || "Dashboard"}
               </h2>
             </div>
             <div className="flex items-center space-x-4">

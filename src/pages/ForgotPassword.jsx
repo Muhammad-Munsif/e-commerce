@@ -14,7 +14,7 @@ const ForgotPassword = ({ openLogin, openSignUp }) => {
 
   if (isSubmitted) {
     return (
-      <div>
+      <div className="min-h-screen max-w-7xl container mx-auto mt-40 px-4 md:px-16 lg:px-8 py-4 flex flex-col md:flex-row space-x-2">
         <h2 className="text-2xl font-bold mb-4">Check Your Email</h2>
         <div className="text-center py-4">
           <div className="mb-4 flex justify-center">

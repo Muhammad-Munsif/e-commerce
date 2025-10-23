@@ -14,58 +14,72 @@ import ContactSupport from "./Components/ContactSupport";
 import Faq from "./Components/Faq";
 import About from "./Components/About";
 import ForgotPassword from "./pages/ForgotPassword";
-import Electronics from "./pages/Electornics";
-import Fashions from "./pages/Fashions";
+import Electronics from "./pages/Electronics";
+import Fashion from "./pages/Fashion";
 import HomeKitchen from "./pages/HomeKitchen";
 import Beauty from "./pages/Beauty";
 import Sports from "./pages/Sports";
 import { ToastContainer } from "react-toastify";
 
+// Dashboard Components
+import DashboardLayout from './Components/DashboardLayout';
+import Dashboard from './pages/Dashboard';
+import Orders from './pages/dashboard/Orders';
+import Products from './pages/dashboard/Products';
+import Customers from './pages/dashboard/Customers';
+import Categories from './pages/dashboard/Categories';
+import Analytics from './pages/dashboard/Analytics';
+import Settings from './pages/dashboard/Settings';
+
 function App() {
   const [order, setOrder] = useState(null);
+  
   return (
     <Router>
       <div className="">
         <Navbar />
         <main className="">
           <Routes>
+            {/* Public Routes */}
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
-
-            {/* Category Pages */}
-            {/* <Route
-              path="/electronics"
-              element={<Shop category="Electronics" />}
-            />
-            <Route path="/fashion" element={<Shop category="Fashion" />} />
-            <Route
-              path="/home-kitchen"
-              element={<Shop category="Home & Kitchen" />}
-            />
-            <Route path="/beauty" element={<Shop category="Beauty" />} />
-            <Route path="/sports" element={<Shop category="Sports" />} /> */}
-
             <Route path="/cart" element={<Cart />} />
-            <Route
-              path="/checkout"
-              element={<Checkout setOrder={setOrder} />}
-            />
-            <Route
-              path="/order-confirmation"
-              element={<Order order={order} />}
-            />
+            <Route path="/checkout" element={<Checkout setOrder={setOrder} />} />
+            <Route path="/order-confirmation" element={<Order order={order} />} />
             <Route path="/filter-data" element={<FilterData />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/contact-support" element={<ContactSupport />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/about" element={<About />} />
             <Route path="/forget-password" element={<ForgotPassword />} />
-            // Add these routes to your existing App.jsx
+            
+            {/* Category Pages */}
             <Route path="/electronics" element={<Electronics />} />
-            <Route path="/fashion" element={<Fashions />} />
+            <Route path="/fashion" element={<Fashion />} />
             <Route path="/home-kitchen" element={<HomeKitchen />} />
             <Route path="/beauty" element={<Beauty />} />
             <Route path="/sports" element={<Sports />} />
+
+            {/* Dashboard Routes */}
+            <Route path="/dashboard" element={<DashboardLayout />}>
+              <Route index element={<Dashboard />} />
+              <Route path="orders" element={<Orders />} />
+              <Route path="products" element={<Products />} />
+              <Route path="customers" element={<Customers />} />
+              <Route path="categories" element={<Categories />} />
+              <Route path="analytics" element={<Analytics />} />
+              <Route path="settings" element={<Settings />} />
+            </Route>
+
+            {/* 404 Page - Add this if you want */}
+            <Route path="*" element={
+              <div className="min-h-screen flex items-center justify-center">
+                <div className="text-center">
+                  <h1 className="text-4xl font-bold text-gray-900 mb-4">404</h1>
+                  <p className="text-xl text-gray-600">Page not found</p>
+                </div>
+              </div>
+            } />
           </Routes>
         </main>
         <Footer />

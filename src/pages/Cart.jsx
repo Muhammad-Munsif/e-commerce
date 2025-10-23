@@ -20,7 +20,7 @@ const Cart = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="container mx-auto py-8 min-h-96 px-4 md:px-16 lg:px-24">
+    <div className="container mx-auto mt-40 px-4 md:px-16 lg:px-8 py-4 flex flex-col md:flex-row space-x-2">
       {cart.products.length > 0 ? (
         <div className="max-w-7xl mx-auto">
           {/* Header */}

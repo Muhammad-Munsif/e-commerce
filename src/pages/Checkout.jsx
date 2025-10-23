@@ -28,7 +28,7 @@ const Checkout = ({ setOrder }) => {
   const cart = useSelector((state) => state.cart);
   const navigate = useNavigate();
   return (
-    <div className="container mx-auto py-8 min-h-96 px-4 md:px-16 lg:px-24">
+    <div className="container mx-auto mt-40 px-4 md:px-16 lg:px-8 py-4 flex flex-col md:flex-row space-x-2">
       <h1 className="text-3xl font-bold text-gray-800 mb-2">Shopping Cart</h1>
       <div className="flex flex-col justify-between md:flex-row space-x-10 mt-8">
         <div className="md:w-2/3">

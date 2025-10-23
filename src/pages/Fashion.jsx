@@ -7,11 +7,11 @@ import ProductGrid from '../Components/ProductGrid';
 import ProductCard from '../Components/ProductCard';
 import { productsData } from '../data/productsData';
 
-const Fashions = () => {
+const Fashion = () => {
   const fashionProducts = productsData.filter(product => product.category === 'Fashion');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50 pt-20 pb-8">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50 container mx-auto mt-40 px-4 md:px-16 lg:px-8 py-4 flex flex-col md:flex-row space-x-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12">
@@ -109,4 +109,4 @@ const Fashions = () => {
   );
 };
 
-export default Fashions;
+export default Fashion;

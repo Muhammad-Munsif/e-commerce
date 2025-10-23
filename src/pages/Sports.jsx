@@ -80,7 +80,7 @@ const Sports = () => {
         </div>
 
         {/* Motivation Section */}
-        <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-xl p-8 text-white text-center">
+        <div className="container mx-auto mt-48 px-4 md:px-16 lg:px-8  flex flex-col md:flex-row space-x-2 bg-gradient-to-r pt-40 from-green-600 to-blue-600 rounded-xl p-8 text-white text-center">
           <div className="flex justify-center mb-4">
             <FaRunning className="text-4xl text-white opacity-90" />
           </div>

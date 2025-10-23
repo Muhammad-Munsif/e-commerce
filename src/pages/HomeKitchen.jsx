@@ -1,14 +1,23 @@
 // pages/HomeKitchen.jsx
-import React from 'react';
-import { FaUtensils, FaBed, FaBroom, FaLightbulb, FaTruck, FaStar } from 'react-icons/fa';
-import { IoHome, IoRestaurant } from 'react-icons/io5';
-import { GiKitchenKnives, GiVacuumCleaner } from 'react-icons/gi';
-import ProductGrid from '../Components/ProductGrid';
-import ProductCard from '../Components/ProductCard';
-import { productsData } from '../data/productsData';
+import React from "react";
+import {
+  FaUtensils,
+  FaBed,
+  FaBroom,
+  FaLightbulb,
+  FaTruck,
+  FaStar,
+} from "react-icons/fa";
+import { IoHome, IoRestaurant } from "react-icons/io5";
+import { GiKitchenKnives, GiVacuumCleaner } from "react-icons/gi";
+import ProductGrid from "../Components/ProductGrid";
+import ProductCard from "../Components/ProductCard";
+import { productsData } from "../data/productsData";
 
 const HomeKitchen = () => {
-  const homeKitchenProducts = productsData.filter(product => product.category === 'Home & Kitchen');
+  const homeKitchenProducts = productsData.filter(
+    (product) => product.category === "Home & Kitchen"
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50 pt-40 pb-8">
@@ -22,7 +31,8 @@ const HomeKitchen = () => {
             Home & Kitchen
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            Transform your living spaces with our premium home essentials and kitchen innovations
+            Transform your living spaces with our premium home essentials and
+            kitchen innovations
           </p>
         </div>
 
@@ -53,7 +63,7 @@ const HomeKitchen = () => {
             Home Essentials
           </h2>
           <ProductGrid>
-            {homeKitchenProducts.map(product => (
+            {homeKitchenProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </ProductGrid>

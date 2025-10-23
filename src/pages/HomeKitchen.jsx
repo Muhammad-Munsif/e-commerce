@@ -11,7 +11,7 @@ const HomeKitchen = () => {
   const homeKitchenProducts = productsData.filter(product => product.category === 'Home & Kitchen');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50 pt-48 pb-8">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50 pt-40 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12">

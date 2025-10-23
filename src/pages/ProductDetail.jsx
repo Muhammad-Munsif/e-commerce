@@ -28,7 +28,7 @@ const ProductDetail = () => {
 
   if (!product) return <div>Loading...</div>;
   return (
-    <div className="container mx-auto mt-40 px-4 md:px-16 lg:px-8 py-4 flex flex-col md:flex-row space-x-2">
+    <div className="container mx-auto mt-40 px-4 md:px-16 lg:px-8 py-4 space-x-2">
       <div className="flex flex-col md:flex-row gap-x-16">
         {/* Product Image detail  */}
         <div className="flex justify-center md:w-1/2 shadow-md md:px-8 h-96">

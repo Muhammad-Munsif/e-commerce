@@ -18,7 +18,7 @@ const Beauty = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <div className="flex justify-center mb-4">
+          <div className="flex justify-center my-4">
             <GiLipstick className="text-4xl text-rose-600" />
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">

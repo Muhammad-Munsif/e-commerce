@@ -17,7 +17,7 @@ const Home = () => {
     dispatch(setProducts(mockData));
   }, []);
   return (
-    <div >
+    <div>
       <div className="bg-white">
         <div className="container mx-auto mt-40 px-4 md:px-16 lg:px-8 py-4 flex flex-col md:flex-row space-x-2">
           <div className="w-full h-full md:w-3/12 ">

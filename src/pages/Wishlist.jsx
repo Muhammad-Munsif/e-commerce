@@ -1,15 +1,15 @@
 // pages/Wishlist.jsx
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { FaHeart, FaTrash, FaShoppingCart, FaRegSadTear } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import { removeFromWishlist, clearWishlist } from '../redux/wishlistSlice';
-import { addToCart } from '../redux/cartSlice';
-import { toast } from 'react-toastify';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { FaHeart, FaTrash, FaShoppingCart, FaRegSadTear } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { removeFromWishlist, clearWishlist } from "../redux/wishlistSlice";
+import { addToCart } from "../redux/cartSlice";
+import { toast } from "react-toastify";
 
 const Wishlist = () => {
   const dispatch = useDispatch();
-  const wishlistItems = useSelector(state => state.wishlist.items);
+  const wishlistItems = useSelector((state) => state.wishlist.items);
 
   const handleRemoveFromWishlist = (productId) => {
     dispatch(removeFromWishlist(productId));
@@ -43,7 +43,9 @@ const Wishlist = () => {
       <div className="min-h-screen bg-gradient-to-br from-pink-50 to-red-50 pt-28">
         <div className="max-w-4xl mx-auto px-4 py-16 text-center">
           <FaRegSadTear className="text-6xl text-gray-400 mx-auto mb-6" />
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Your Wishlist is Empty</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            Your Wishlist is Empty
+          </h2>
           <p className="text-gray-600 mb-8 text-lg">
             Start adding items you love to your wishlist!
           </p>
@@ -71,7 +73,7 @@ const Wishlist = () => {
               <p className="text-gray-600">{wishlistItems.length} items</p>
             </div>
           </div>
-          
+
           {wishlistItems.length > 0 && (
             <button
               onClick={handleClearWishlist}
@@ -106,12 +108,16 @@ const Wishlist = () => {
                     {product.name}
                   </h3>
                 </Link>
-                
+
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-2xl font-bold text-gray-900">${product.price}</span>
+                  <span className="text-2xl font-bold text-gray-900">
+                    ${product.price}
+                  </span>
                   <div className="flex items-center text-yellow-500">
                     <FaHeart className="text-red-500 mr-1" />
-                    <span className="text-gray-600 text-sm">({product.rating})</span>
+                    <span className="text-gray-600 text-sm">
+                      ({product.rating})
+                    </span>
                   </div>
                 </div>
 
@@ -123,7 +129,7 @@ const Wishlist = () => {
                     <FaShoppingCart />
                     Add to Cart
                   </button>
-                  
+
                   <button
                     onClick={() => handleRemoveFromWishlist(product.id)}
                     className="w-12 h-12 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-lg transition-colors flex items-center justify-center"

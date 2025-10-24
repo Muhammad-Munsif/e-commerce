@@ -8,7 +8,7 @@ const store = configureStore({
   reducer: {
     cart: cartSlice,
     product: productSlice,
-    wishlist: wishlistSlice, 
+    wishlist: wishlistSlice,
   },
 });
 

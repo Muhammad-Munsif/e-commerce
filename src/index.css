@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-body{
+body {
   overflow-x: hidden;
 }
 
@@ -39,7 +39,7 @@ html {
   .dashboard-mobile-menu {
     transform: translateX(-100%);
   }
-  
+
   .dashboard-mobile-menu.open {
     transform: translateX(0);
   }

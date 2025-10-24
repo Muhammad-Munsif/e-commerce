@@ -20,6 +20,7 @@ import HomeKitchen from "./pages/HomeKitchen";
 import Beauty from "./pages/Beauty";
 import Sports from "./pages/Sports";
 import { ToastContainer } from "react-toastify";
+import Wishlist from "./pages/Wishlist";
 
 // Dashboard Components
 // import DashboardLayout from './Components/DashboardLayout';
@@ -60,6 +61,7 @@ function App() {
             <Route path="/home-kitchen" element={<HomeKitchen />} />
             <Route path="/beauty" element={<Beauty />} />
             <Route path="/sports" element={<Sports />} />
+            <Route path="/wishlist" element={<Wishlist />} />
 
             {/* Dashboard Routes */}
             {/* <Route path="/dashboard" element={<DashboardLayout />}>

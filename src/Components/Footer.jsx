@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white pt-10 pb-4 px-4 sm:px-8 md:px-16">
+    <footer className=" bg-gray-800 text-white  pb-4 px-4 sm:px-8 md:px-16">
       <div className="max-w-7xl mx-auto">
         {/* Main Content Sections */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-20 border-b border-gray-700 pb-10">

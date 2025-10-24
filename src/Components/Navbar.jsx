@@ -12,6 +12,7 @@ import Model from "./Model";
 import Login from "./Login";
 import Register from "./Register";
 import { setSearchTerm } from "../redux/productSlice";
+import CartIcon from "./CartIcon";
 
 const Navbar = () => {
   const [isModleOpen, setIsModelOpen] = useState(false);
@@ -306,6 +307,7 @@ const Navbar = () => {
           <Register openLogin={openLogin} />
         )}
       </Model>
+      <CartIcon/>
     </nav>
   );
 };

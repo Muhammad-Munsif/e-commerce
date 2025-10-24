@@ -23,7 +23,7 @@ export const mockData = [
     price: 23.54,
     category: "Sports",
     rating: 4.1,
-    description: "You must buy is shoes"
+    description: "You must buy is shoes",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ export const mockData = [
     price: 40.54,
     category: "Fashion",
     rating: 4.4,
-    description: "You must buy is shoes"
+    description: "You must buy is shoes",
   },
   {
     id: 3,
@@ -41,7 +41,7 @@ export const mockData = [
     price: 35.12,
     category: "Fashion",
     rating: 4.2,
-    description: "Comfortable cotton shirt"
+    description: "Comfortable cotton shirt",
   },
   {
     id: 4,
@@ -50,7 +50,7 @@ export const mockData = [
     price: 54.2,
     category: "Fashion",
     rating: 4.5,
-    description: "Elegant jewelry set"
+    description: "Elegant jewelry set",
   },
   {
     id: 5,
@@ -59,7 +59,7 @@ export const mockData = [
     price: 40.54,
     category: "Fashion",
     rating: 4.3,
-    description: "Premium gold accessory"
+    description: "Premium gold accessory",
   },
   {
     id: 6,
@@ -68,7 +68,7 @@ export const mockData = [
     price: 22.35,
     category: "Sports",
     rating: 4.1,
-    description: "You must buy is shoes"
+    description: "You must buy is shoes",
   },
   {
     id: 7,
@@ -77,7 +77,7 @@ export const mockData = [
     price: 20.25,
     category: "Electronics",
     rating: 4.0,
-    description: "Wireless bluetooth device"
+    description: "Wireless bluetooth device",
   },
   {
     id: 8,
@@ -86,7 +86,7 @@ export const mockData = [
     price: 75.45,
     category: "Fashion",
     rating: 4.6,
-    description: "Luxury gold item"
+    description: "Luxury gold item",
   },
   {
     id: 9,
@@ -95,7 +95,7 @@ export const mockData = [
     price: 23.54,
     category: "Fashion",
     rating: 4.2,
-    description: "Casual everyday shirt"
+    description: "Casual everyday shirt",
   },
   {
     id: 10,
@@ -104,7 +104,7 @@ export const mockData = [
     price: 50.54,
     category: "Sports",
     rating: 4.3,
-    description: "You must buy is shoes"
+    description: "You must buy is shoes",
   },
   {
     id: 11,
@@ -113,7 +113,7 @@ export const mockData = [
     price: 23.54,
     category: "Sports",
     rating: 4.1,
-    description: "You must buy is shoes"
+    description: "You must buy is shoes",
   },
   {
     id: 12,
@@ -122,7 +122,7 @@ export const mockData = [
     price: 40.54,
     category: "Fashion",
     rating: 4.4,
-    description: "You must buy is shoes"
+    description: "You must buy is shoes",
   },
   {
     id: 13,
@@ -131,7 +131,7 @@ export const mockData = [
     price: 35.12,
     category: "Fashion",
     rating: 4.2,
-    description: "Premium quality shirt"
+    description: "Premium quality shirt",
   },
   {
     id: 14,
@@ -140,7 +140,7 @@ export const mockData = [
     price: 54.2,
     category: "Fashion",
     rating: 4.5,
-    description: "Beautiful jewelry piece"
+    description: "Beautiful jewelry piece",
   },
   {
     id: 15,
@@ -149,7 +149,7 @@ export const mockData = [
     price: 40.54,
     category: "Fashion",
     rating: 4.3,
-    description: "Elegant gold accessory"
+    description: "Elegant gold accessory",
   },
   {
     id: 16,
@@ -158,7 +158,7 @@ export const mockData = [
     price: 22.43,
     category: "Sports",
     rating: 4.1,
-    description: "You must buy is shoes"
+    description: "You must buy is shoes",
   },
   {
     id: 17,
@@ -167,7 +167,7 @@ export const mockData = [
     price: 20.25,
     category: "Electronics",
     rating: 4.0,
-    description: "Advanced bluetooth technology"
+    description: "Advanced bluetooth technology",
   },
   {
     id: 18,
@@ -176,7 +176,7 @@ export const mockData = [
     price: 75.45,
     category: "Fashion",
     rating: 4.6,
-    description: "Premium gold product"
+    description: "Premium gold product",
   },
   {
     id: 19,
@@ -185,7 +185,7 @@ export const mockData = [
     price: 23.54,
     category: "Fashion",
     rating: 4.2,
-    description: "Comfortable fit shirt"
+    description: "Comfortable fit shirt",
   },
   {
     id: 20,
@@ -194,7 +194,7 @@ export const mockData = [
     price: 50.54,
     category: "Sports",
     rating: 4.1,
-    description: "You must buy is shoes"
+    description: "You must buy is shoes",
   },
 
   // Electronics (20 products) - IDs 21-40
@@ -204,7 +204,8 @@ export const mockData = [
     price: 79.99,
     category: "Electronics",
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop&crop=center",
     description: "High-quality wireless headphones with noise cancellation",
   },
   {
@@ -213,7 +214,8 @@ export const mockData = [
     price: 299.99,
     category: "Electronics",
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=300&fit=crop&crop=center",
     description: "Advanced smartwatch with health monitoring",
   },
   {
@@ -222,7 +224,8 @@ export const mockData = [
     price: 29.99,
     category: "Electronics",
     rating: 4.0,
-    image: "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=300&h=300&fit=crop&crop=center",
     description: "Fast wireless charging for all compatible devices",
   },
   {
@@ -231,7 +234,8 @@ export const mockData = [
     price: 599.99,
     category: "Electronics",
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=300&h=300&fit=crop&crop=center",
     description: "55-inch 4K Smart TV with HDR",
   },
   {
@@ -240,7 +244,8 @@ export const mockData = [
     price: 1299.99,
     category: "Electronics",
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=300&h=300&fit=crop&crop=center",
     description: "High-performance gaming laptop with RTX graphics",
   },
   {
@@ -249,7 +254,8 @@ export const mockData = [
     price: 999.99,
     category: "Electronics",
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&h=300&fit=crop&crop=center",
     description: "Latest smartphone with advanced camera system",
   },
   {
@@ -258,7 +264,8 @@ export const mockData = [
     price: 149.99,
     category: "Electronics",
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1590658165737-15a047b8b5e0?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1590658165737-15a047b8b5e0?w=300&h=300&fit=crop&crop=center",
     description: "True wireless earbuds with superior sound quality",
   },
   {
@@ -267,7 +274,8 @@ export const mockData = [
     price: 899.99,
     category: "Electronics",
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=300&h=300&fit=crop&crop=center",
     description: "Professional tablet with stunning display and performance",
   },
   {
@@ -276,7 +284,8 @@ export const mockData = [
     price: 1199.99,
     category: "Electronics",
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=300&h=300&fit=crop&crop=center",
     description: "Professional mirrorless camera with 4K video",
   },
   {
@@ -285,7 +294,8 @@ export const mockData = [
     price: 349.99,
     category: "Electronics",
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=300&h=300&fit=crop&crop=center",
     description: "Premium over-ear headphones with active noise cancellation",
   },
   {
@@ -294,7 +304,8 @@ export const mockData = [
     price: 89.99,
     category: "Electronics",
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=300&fit=crop&crop=center",
     description: "Waterproof portable speaker with 360° sound",
   },
   {
@@ -303,7 +314,8 @@ export const mockData = [
     price: 499.99,
     category: "Electronics",
     rating: 4.9,
-    image: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=300&h=300&fit=crop&crop=center",
     description: "Next-gen gaming console with 4K gaming",
   },
   {
@@ -312,7 +324,8 @@ export const mockData = [
     price: 129.99,
     category: "Electronics",
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300&h=300&fit=crop&crop=center",
     description: "High-speed portable SSD for fast data transfer",
   },
   {
@@ -321,7 +334,8 @@ export const mockData = [
     price: 79.99,
     category: "Electronics",
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=300&h=300&fit=crop&crop=center",
     description: "RGB mechanical keyboard with customizable keys",
   },
   {
@@ -330,7 +344,8 @@ export const mockData = [
     price: 59.99,
     category: "Electronics",
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300&h=300&fit=crop&crop=center",
     description: "Precision wireless mouse for gaming and productivity",
   },
   {
@@ -339,7 +354,8 @@ export const mockData = [
     price: 99.99,
     category: "Electronics",
     rating: 4.2,
-    image: "https://images.unsplash.com/photo-1558089687-f282ffcbc0d4?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1558089687-f282ffcbc0d4?w=300&h=300&fit=crop&crop=center",
     description: "Central hub for controlling smart home devices",
   },
   {
@@ -348,7 +364,8 @@ export const mockData = [
     price: 299.99,
     category: "Electronics",
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300&h=300&fit=crop&crop=center",
     description: "Waterproof action camera for adventure recording",
   },
   {
@@ -357,7 +374,8 @@ export const mockData = [
     price: 399.99,
     category: "Electronics",
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=300&h=300&fit=crop&crop=center",
     description: "Ultra HD monitor with HDR and slim bezels",
   },
   {
@@ -366,7 +384,8 @@ export const mockData = [
     price: 399.99,
     category: "Electronics",
     rating: 4.1,
-    image: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=300&h=300&fit=crop&crop=center",
     description: "Virtual reality headset for immersive gaming",
   },
   {
@@ -375,7 +394,8 @@ export const mockData = [
     price: 799.99,
     category: "Electronics",
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=300&h=300&fit=crop&crop=center",
     description: "Professional drone with stabilized camera and GPS",
   },
 
@@ -386,7 +406,8 @@ export const mockData = [
     price: 59.99,
     category: "Fashion",
     rating: 4.2,
-    image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=300&h=300&fit=crop&crop=center",
     description: "Vintage style denim jacket for everyday wear",
   },
   {
@@ -395,7 +416,8 @@ export const mockData = [
     price: 89.99,
     category: "Fashion",
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=300&fit=crop&crop=center",
     description: "Comfortable leather sneakers in multiple colors",
   },
   {
@@ -404,7 +426,8 @@ export const mockData = [
     price: 45.99,
     category: "Fashion",
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=300&h=300&fit=crop&crop=center",
     description: "Elegant silk dress perfect for summer occasions",
   },
   {
@@ -413,7 +436,8 @@ export const mockData = [
     price: 199.99,
     category: "Fashion",
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=300&h=300&fit=crop&crop=center",
     description: "Luxury designer handbag with multiple compartments",
   },
   {
@@ -422,7 +446,8 @@ export const mockData = [
     price: 34.99,
     category: "Fashion",
     rating: 4.1,
-    image: "https://images.unsplash.com/photo-1601924994980-3f5a5f590e62?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1601924994980-3f5a5f590e62?w=300&h=300&fit=crop&crop=center",
     description: "Warm wool scarf for cold weather",
   },
   {
@@ -431,7 +456,8 @@ export const mockData = [
     price: 75.99,
     category: "Fashion",
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop&crop=center",
     description: "Lightweight running shoes with cushion technology",
   },
   {
@@ -440,7 +466,8 @@ export const mockData = [
     price: 129.99,
     category: "Fashion",
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=300&h=300&fit=crop&crop=center",
     description: "Luxurious cashmere sweater for ultimate comfort",
   },
   {
@@ -449,7 +476,8 @@ export const mockData = [
     price: 49.99,
     category: "Fashion",
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=300&h=300&fit=crop&crop=center",
     description: "Versatile chino pants perfect for casual wear",
   },
   {
@@ -458,7 +486,8 @@ export const mockData = [
     price: 39.99,
     category: "Fashion",
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=300&h=300&fit=crop&crop=center",
     description: "Classic aviator sunglasses with UV protection",
   },
   {
@@ -467,7 +496,8 @@ export const mockData = [
     price: 79.99,
     category: "Fashion",
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop&crop=center",
     description: "Compact leather crossbody bag for daily essentials",
   },
   {
@@ -476,7 +506,8 @@ export const mockData = [
     price: 189.99,
     category: "Fashion",
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=300&h=300&fit=crop&crop=center",
     description: "Elegant wool blend coat for formal occasions",
   },
   {
@@ -485,7 +516,8 @@ export const mockData = [
     price: 45.99,
     category: "Fashion",
     rating: 4.2,
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop&crop=center",
     description: "Durable canvas backpack with laptop compartment",
   },
   {
@@ -494,7 +526,8 @@ export const mockData = [
     price: 55.99,
     category: "Fashion",
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=300&fit=crop&crop=center",
     description: "Breathable linen shirt for warm weather",
   },
   {
@@ -503,7 +536,8 @@ export const mockData = [
     price: 69.99,
     category: "Fashion",
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=300&h=300&fit=crop&crop=center",
     description: "Elegant high heel sandals for evening wear",
   },
   {
@@ -512,7 +546,8 @@ export const mockData = [
     price: 24.99,
     category: "Fashion",
     rating: 4.0,
-    image: "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=300&h=300&fit=crop&crop=center",
     description: "Warm knit beanie in various colors",
   },
   {
@@ -521,7 +556,8 @@ export const mockData = [
     price: 149.99,
     category: "Fashion",
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=300&h=300&fit=crop&crop=center",
     description: "Tailored formal blazer for business occasions",
   },
   {
@@ -530,7 +566,8 @@ export const mockData = [
     price: 39.99,
     category: "Fashion",
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1587563871167-1ee9f7319b43?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1587563871167-1ee9f7319b43?w=300&h=300&fit=crop&crop=center",
     description: "High-waisted yoga leggings with moisture-wicking fabric",
   },
   {
@@ -539,7 +576,8 @@ export const mockData = [
     price: 29.99,
     category: "Fashion",
     rating: 4.2,
-    image: "https://images.unsplash.com/photo-1601924994980-3e4c985e2322?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1601924994980-3e4c985e2322?w=300&h=300&fit=crop&crop=center",
     description: "Genuine leather belt with classic buckle",
   },
   {
@@ -548,7 +586,8 @@ export const mockData = [
     price: 129.99,
     category: "Fashion",
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1566479179818-96c62d438d0e?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1566479179818-96c62d438d0e?w=300&h=300&fit=crop&crop=center",
     description: "Stunning maxi gown for special events",
   },
   {
@@ -557,7 +596,8 @@ export const mockData = [
     price: 54.99,
     category: "Fashion",
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=300&h=300&fit=crop&crop=center",
     description: "Lightweight windbreaker for outdoor activities",
   },
 
@@ -568,7 +608,8 @@ export const mockData = [
     price: 149.99,
     category: "Home & Kitchen",
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=300&fit=crop&crop=center",
     description: "10-piece non-stick cookware set for modern kitchens",
   },
   {
@@ -577,7 +618,8 @@ export const mockData = [
     price: 89.99,
     category: "Home & Kitchen",
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300&h=300&fit=crop&crop=center",
     description: "Programmable coffee maker with app control",
   },
   {
@@ -586,7 +628,8 @@ export const mockData = [
     price: 499.99,
     category: "Home & Kitchen",
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=300&h=300&fit=crop&crop=center",
     description: "Queen size memory foam mattress for better sleep",
   },
   {
@@ -595,7 +638,8 @@ export const mockData = [
     price: 299.99,
     category: "Home & Kitchen",
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=300&h=300&fit=crop&crop=center",
     description: "Smart robot vacuum with mapping technology",
   },
   {
@@ -604,7 +648,8 @@ export const mockData = [
     price: 199.99,
     category: "Home & Kitchen",
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1587334984005-5eb1adc0b67a?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1587334984005-5eb1adc0b67a?w=300&h=300&fit=crop&crop=center",
     description: "HEPA air purifier for large rooms",
   },
   {
@@ -613,7 +658,8 @@ export const mockData = [
     price: 129.99,
     category: "Home & Kitchen",
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1594736797933-d0ea3ff8db41?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1594736797933-d0ea3ff8db41?w=300&h=300&fit=crop&crop=center",
     description: "Professional 8-piece knife set with block",
   },
   {
@@ -622,7 +668,8 @@ export const mockData = [
     price: 249.99,
     category: "Home & Kitchen",
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1597848212624-e6d4bd66d447?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1597848212624-e6d4bd66d447?w=300&h=300&fit=crop&crop=center",
     description: "Powerful stand mixer with multiple attachments",
   },
   {
@@ -631,7 +678,8 @@ export const mockData = [
     price: 1299.99,
     category: "Home & Kitchen",
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=300&h=300&fit=crop&crop=center",
     description: "French door smart fridge with touch screen",
   },
   {
@@ -640,7 +688,8 @@ export const mockData = [
     price: 79.99,
     category: "Home & Kitchen",
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=300&h=300&fit=crop&crop=center",
     description: "Multi-functional food processor for kitchen tasks",
   },
   {
@@ -649,7 +698,8 @@ export const mockData = [
     price: 39.99,
     category: "Home & Kitchen",
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1593369196680-02190a4edcc4?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1593369196680-02190a4edcc4?w=300&h=300&fit=crop&crop=center",
     description: "Stainless steel electric kettle with temperature control",
   },
   {
@@ -658,7 +708,8 @@ export const mockData = [
     price: 69.99,
     category: "Home & Kitchen",
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=300&h=300&fit=crop&crop=center",
     description: "Versatile toaster oven with convection baking",
   },
   {
@@ -667,7 +718,8 @@ export const mockData = [
     price: 99.99,
     category: "Home & Kitchen",
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1573521193926-752b3e381d39?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1573521193926-752b3e381d39?w=300&h=300&fit=crop&crop=center",
     description: "High-speed blender for smoothies and soups",
   },
   {
@@ -676,7 +728,8 @@ export const mockData = [
     price: 89.99,
     category: "Home & Kitchen",
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1594489573857-44d31bac4f85?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1594489573857-44d31bac4f85?w=300&h=300&fit=crop&crop=center",
     description: "Digital air fryer for healthy cooking",
   },
   {
@@ -685,7 +738,8 @@ export const mockData = [
     price: 49.99,
     category: "Home & Kitchen",
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&h=300&fit=crop&crop=center",
     description: "Automatic rice cooker with multiple functions",
   },
   {
@@ -694,7 +748,8 @@ export const mockData = [
     price: 34.99,
     category: "Home & Kitchen",
     rating: 4.2,
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=300&fit=crop&crop=center",
     description: "Kitchen cabinet organizer for pots and pans",
   },
   {
@@ -703,7 +758,8 @@ export const mockData = [
     price: 29.99,
     category: "Home & Kitchen",
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1556909114-ff6d6ff8eab5?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1556909114-ff6d6ff8eab5?w=300&h=300&fit=crop&crop=center",
     description: "Bamboo cutting board set in various sizes",
   },
   {
@@ -712,7 +768,8 @@ export const mockData = [
     price: 24.99,
     category: "Home & Kitchen",
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1594736797933-d0ea3ff8db41?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1594736797933-d0ea3ff8db41?w=300&h=300&fit=crop&crop=center",
     description: "Digital kitchen scale for precise measurements",
   },
   {
@@ -721,7 +778,8 @@ export const mockData = [
     price: 19.99,
     category: "Home & Kitchen",
     rating: 4.1,
-    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&h=300&fit=crop&crop=center",
     description: "Adjustable cookbook stand for easy reading",
   },
   {
@@ -730,7 +788,8 @@ export const mockData = [
     price: 39.99,
     category: "Home & Kitchen",
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=300&h=300&fit=crop&crop=center",
     description: "Rotating spice rack with 20 jars included",
   },
   {
@@ -739,7 +798,8 @@ export const mockData = [
     price: 119.99,
     category: "Home & Kitchen",
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1556909114-ff6d6ff8eab5?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1556909114-ff6d6ff8eab5?w=300&h=300&fit=crop&crop=center",
     description: "Electric pressure cooker with multiple safety features",
   },
 
@@ -750,7 +810,8 @@ export const mockData = [
     price: 49.99,
     category: "Beauty",
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=300&fit=crop&crop=center",
     description: "Vitamin C serum for youthful glowing skin",
   },
   {
@@ -759,7 +820,8 @@ export const mockData = [
     price: 79.99,
     category: "Beauty",
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1522338140264-35f7b40e1ef4?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1522338140264-35f7b40e1ef4?w=300&h=300&fit=crop&crop=center",
     description: "Ionic hair dryer for fast drying and shine",
   },
   {
@@ -768,7 +830,8 @@ export const mockData = [
     price: 129.99,
     category: "Beauty",
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?w=300&h=300&fit=crop&crop=center",
     description: "Eau de parfum gift set with three fragrances",
   },
   {
@@ -777,7 +840,8 @@ export const mockData = [
     price: 39.99,
     category: "Beauty",
     rating: 4.2,
-    image: "https://images.unsplash.com/photo-1587017539507-77d1a284e8b3?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1587017539507-77d1a284e8b3?w=300&h=300&fit=crop&crop=center",
     description: "12-piece professional makeup brush set",
   },
   {
@@ -786,7 +850,8 @@ export const mockData = [
     price: 24.99,
     category: "Beauty",
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=300&h=300&fit=crop&crop=center",
     description: "Natural clay mask for deep cleansing",
   },
   {
@@ -795,7 +860,8 @@ export const mockData = [
     price: 59.99,
     category: "Beauty",
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=300&fit=crop&crop=center",
     description: "Lighted makeup mirror with adjustable brightness",
   },
   {
@@ -804,7 +870,8 @@ export const mockData = [
     price: 34.99,
     category: "Beauty",
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1556228578-6d6c76b86d72?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1556228578-6d6c76b86d72?w=300&h=300&fit=crop&crop=center",
     description: "Intense hydration cream for all skin types",
   },
   {
@@ -813,7 +880,8 @@ export const mockData = [
     price: 45.99,
     category: "Beauty",
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1522338140264-35f7b40e1ef4?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1522338140264-35f7b40e1ef4?w=300&h=300&fit=crop&crop=center",
     description: "Professional curling wand with adjustable temperature",
   },
   {
@@ -822,7 +890,8 @@ export const mockData = [
     price: 42.99,
     category: "Beauty",
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=300&h=300&fit=crop&crop=center",
     description: "Long-lasting foundation with buildable coverage",
   },
   {
@@ -831,7 +900,8 @@ export const mockData = [
     price: 69.99,
     category: "Beauty",
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=300&h=300&fit=crop&crop=center",
     description: "Sonic facial brush for deep pore cleansing",
   },
   {
@@ -840,7 +910,8 @@ export const mockData = [
     price: 29.99,
     category: "Beauty",
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=300&h=300&fit=crop&crop=center",
     description: "Set of 6 matte lipsticks in various shades",
   },
   {
@@ -849,7 +920,8 @@ export const mockData = [
     price: 89.99,
     category: "Beauty",
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1522338140264-35f7b40e1ef4?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1522338140264-35f7b40e1ef4?w=300&h=300&fit=crop&crop=center",
     description: "Ceramic flat iron with adjustable heat settings",
   },
   {
@@ -858,7 +930,8 @@ export const mockData = [
     price: 39.99,
     category: "Beauty",
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=300&fit=crop&crop=center",
     description: "Anti-puffiness eye cream with caffeine",
   },
   {
@@ -867,7 +940,8 @@ export const mockData = [
     price: 54.99,
     category: "Beauty",
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=300&h=300&fit=crop&crop=center",
     description: "Eyeshadow palette with 18 vibrant colors",
   },
   {
@@ -876,7 +950,8 @@ export const mockData = [
     price: 79.99,
     category: "Beauty",
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1522338140264-35f7b40e1ef4?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1522338140264-35f7b40e1ef4?w=300&h=300&fit=crop&crop=center",
     description: "Complete hair care set for damaged hair",
   },
   {
@@ -885,7 +960,8 @@ export const mockData = [
     price: 22.99,
     category: "Beauty",
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=300&fit=crop&crop=center",
     description: "Broad spectrum sunscreen for face and body",
   },
   {
@@ -894,7 +970,8 @@ export const mockData = [
     price: 19.99,
     category: "Beauty",
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1608248549220-ff5abf2b1f3e?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1608248549220-ff5abf2b1f3e?w=300&h=300&fit=crop&crop=center",
     description: "12-piece nail polish collection with top coat",
   },
   {
@@ -903,7 +980,8 @@ export const mockData = [
     price: 49.99,
     category: "Beauty",
     rating: 4.2,
-    image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=300&h=300&fit=crop&crop=center",
     description: "Professional facial steamer for spa treatment",
   },
   {
@@ -912,7 +990,8 @@ export const mockData = [
     price: 16.99,
     category: "Beauty",
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=300&h=300&fit=crop&crop=center",
     description: "Gentle makeup remover for sensitive skin",
   },
   {
@@ -921,7 +1000,8 @@ export const mockData = [
     price: 27.99,
     category: "Beauty",
     rating: 4.1,
-    image: "https://images.unsplash.com/photo-1522338140264-35f7b40e1ef4?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1522338140264-35f7b40e1ef4?w=300&h=300&fit=crop&crop=center",
     description: "Root lifting spray for added volume and texture",
   },
 
@@ -932,7 +1012,8 @@ export const mockData = [
     price: 34.99,
     category: "Sports",
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&h=300&fit=crop&crop=center",
     description: "Non-slip yoga mat with carrying strap",
   },
   {
@@ -941,7 +1022,8 @@ export const mockData = [
     price: 89.99,
     category: "Sports",
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1576243345690-4e4b79b63288?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1576243345690-4e4b79b63288?w=300&h=300&fit=crop&crop=center",
     description: "Advanced fitness tracker with heart rate monitor",
   },
   {
@@ -950,7 +1032,8 @@ export const mockData = [
     price: 199.99,
     category: "Sports",
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop&crop=center",
     description: "Space-saving adjustable dumbbells 5-50 lbs",
   },
   {
@@ -959,7 +1042,8 @@ export const mockData = [
     price: 899.99,
     category: "Sports",
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=300&h=300&fit=crop&crop=center",
     description: "Folding treadmill with incline and programs",
   },
   {
@@ -968,7 +1052,8 @@ export const mockData = [
     price: 49.99,
     category: "Sports",
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=300&h=300&fit=crop&crop=center",
     description: "Official size basketball for indoor/outdoor",
   },
   {
@@ -977,7 +1062,8 @@ export const mockData = [
     price: 129.99,
     category: "Sports",
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=300&h=300&fit=crop&crop=center",
     description: "Waterproof camping tent with rainfly",
   },
   {
@@ -986,7 +1072,8 @@ export const mockData = [
     price: 499.99,
     category: "Sports",
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=300&h=300&fit=crop&crop=center",
     description: "21-speed mountain bike with suspension fork",
   },
   {
@@ -995,7 +1082,8 @@ export const mockData = [
     price: 299.99,
     category: "Sports",
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop&crop=center",
     description: "Indoor cycling bike with digital monitor",
   },
   {
@@ -1004,7 +1092,8 @@ export const mockData = [
     price: 19.99,
     category: "Sports",
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&h=300&fit=crop&crop=center",
     description: "2-pack foam yoga blocks for alignment support",
   },
   {
@@ -1013,7 +1102,8 @@ export const mockData = [
     price: 24.99,
     category: "Sports",
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop&crop=center",
     description: "5-piece resistance band set for strength training",
   },
   {
@@ -1022,7 +1112,8 @@ export const mockData = [
     price: 119.99,
     category: "Sports",
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop&crop=center",
     description: "Cushioned running shoes for long distance",
   },
   {
@@ -1031,7 +1122,8 @@ export const mockData = [
     price: 29.99,
     category: "Sports",
     rating: 4.2,
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop&crop=center",
     description: "Anti-fog swimming goggles with UV protection",
   },
   {
@@ -1040,7 +1132,8 @@ export const mockData = [
     price: 89.99,
     category: "Sports",
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1622279457486-62fcc342b39f?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1622279457486-62fcc342b39f?w=300&h=300&fit=crop&crop=center",
     description: "Professional tennis racket with carbon fiber",
   },
   {
@@ -1049,7 +1142,8 @@ export const mockData = [
     price: 39.99,
     category: "Sports",
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=300&h=300&fit=crop&crop=center",
     description: "FIFA approved soccer ball for training",
   },
   {
@@ -1058,7 +1152,8 @@ export const mockData = [
     price: 14.99,
     category: "Sports",
     rating: 4.1,
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop&crop=center",
     description: "Adjustable speed jump rope for cardio",
   },
   {
@@ -1067,7 +1162,8 @@ export const mockData = [
     price: 79.99,
     category: "Sports",
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop&crop=center",
     description: "35L hiking backpack with hydration compatible",
   },
   {
@@ -1076,7 +1172,8 @@ export const mockData = [
     price: 149.99,
     category: "Sports",
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop&crop=center",
     description: "3-piece kettlebell set for full body workout",
   },
   {
@@ -1085,7 +1182,8 @@ export const mockData = [
     price: 299.99,
     category: "Sports",
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1622279457486-62fcc342b39f?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1622279457486-62fcc342b39f?w=300&h=300&fit=crop&crop=center",
     description: "Foldable ping pong table for indoor games",
   },
   {
@@ -1094,7 +1192,8 @@ export const mockData = [
     price: 399.99,
     category: "Sports",
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop&crop=center",
     description: "Complete golf club set with bag",
   },
   {
@@ -1103,7 +1202,8 @@ export const mockData = [
     price: 49.99,
     category: "Sports",
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop&crop=center",
+    image:
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop&crop=center",
     description: "Professional boxing gloves for training",
   },
 ];

@@ -13,8 +13,10 @@ import { GiKitchenKnives, GiVacuumCleaner } from "react-icons/gi";
 import ProductGrid from "../Components/ProductGrid";
 import ProductCard from "../Components/ProductCard";
 import { productsData } from "../data/productsData";
+import { useNavigate } from "react-router-dom";
 
 const HomeKitchen = () => {
+  const navigate = useNavigate()
   const homeKitchenProducts = productsData.filter(
     (product) => product.category === "Home & Kitchen"
   );
@@ -82,7 +84,9 @@ const HomeKitchen = () => {
                 Get 20% off on all home decor items this season
               </p>
             </div>
-            <button className="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap flex items-center">
+            <button className="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap flex items-center"
+            onClick={() => navigate('/shop')}
+            >
               <FaUtensils className="mr-2" />
               Shop the Sale
             </button>

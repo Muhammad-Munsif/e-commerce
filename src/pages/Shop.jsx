@@ -36,7 +36,7 @@ const Shop = ({ category = "All" }) => {
           ))}
         </div>
 
-        {productList.length > 10 && (
+        {productList.length > 12 && (
           <div className="flex justify-center">
             <button
               onClick={toggleView}

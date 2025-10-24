@@ -20,7 +20,7 @@ const Cart = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="container mx-auto mt-40 px-4 md:px-16 lg:px-8 py-4 flex flex-col md:flex-row space-x-2">
+    <div className="container mx-auto mt-20 px-4 md:px-16 lg:px-8 py-4 space-x-2">
       {cart.products.length > 0 ? (
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -226,11 +226,11 @@ const Cart = () => {
         </div>
       ) : (
         /* Empty Cart State */
-        <div className="flex flex-col items-center justify-center py-16">
+        <div className="flex flex-col items-center justify-center py-8">
           <img
             src={emptyCart}
             alt="Empty cart"
-            className="h-64 w-64 object-contain mb-8"
+            className="h-64 w-64 object-contain "
           />
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
             Your cart is empty
@@ -239,7 +239,7 @@ const Cart = () => {
             Looks like you haven't added any items to your cart yet.
           </p>
           <button
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
+            className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
             onClick={() => navigate("/shop")}
           >
             Continue Shopping

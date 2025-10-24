@@ -35,7 +35,7 @@ import Wishlist from "./pages/Wishlist";
 
 function App() {
   const [order, setOrder] = useState(null);
-  
+
   return (
     <Router>
       <div className="">
@@ -46,15 +46,21 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/checkout" element={<Checkout setOrder={setOrder} />} />
-            <Route path="/order-confirmation" element={<Order order={order} />} />
+            <Route
+              path="/checkout"
+              element={<Checkout setOrder={setOrder} />}
+            />
+            <Route
+              path="/order-confirmation"
+              element={<Order order={order} />}
+            />
             <Route path="/filter-data" element={<FilterData />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/contact-support" element={<ContactSupport />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/about" element={<About />} />
             <Route path="/forget-password" element={<ForgotPassword />} />
-            
+
             {/* Category Pages */}
             <Route path="/electronics" element={<Electronics />} />
             <Route path="/fashion" element={<Fashion />} />
@@ -76,14 +82,19 @@ function App() {
             </Route> */}
 
             {/* 404 Page - Add this if you want */}
-            <Route path="*" element={
-              <div className="min-h-screen flex items-center justify-center">
-                <div className="text-center">
-                  <h1 className="text-4xl font-bold text-gray-900 mb-4">404</h1>
-                  <p className="text-xl text-gray-600">Page not found</p>
+            <Route
+              path="*"
+              element={
+                <div className="min-h-screen flex items-center justify-center">
+                  <div className="text-center">
+                    <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                      404
+                    </h1>
+                    <p className="text-xl text-gray-600">Page not found</p>
+                  </div>
                 </div>
-              </div>
-            } />
+              }
+            />
           </Routes>
         </main>
         <Footer />

@@ -1,27 +1,34 @@
 // pages/ProductDetail.jsx
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { productsData } from '../data/productsData';
-import { FaStar, FaShoppingCart, FaHeart, FaTruck, FaShieldAlt, FaUndo } from 'react-icons/fa';
-import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../redux/cartSlice';
-import { addToWishlist, removeFromWishlist } from '../redux/wishlistSlice';
-import { toast } from 'react-toastify';
+import React from "react";
+import { useParams } from "react-router-dom";
+import { productsData } from "../data/productsData";
+import {
+  FaStar,
+  FaShoppingCart,
+  FaHeart,
+  FaTruck,
+  FaShieldAlt,
+  FaUndo,
+} from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../redux/cartSlice";
+import { addToWishlist, removeFromWishlist } from "../redux/wishlistSlice";
+import { toast } from "react-toastify";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const wishlistItems = useSelector(state => state.wishlist.items);
-  
+  const wishlistItems = useSelector((state) => state.wishlist.items);
+
   const productId = parseInt(id);
-  const product = productsData.find(p => p.id === productId);
+  const product = productsData.find((p) => p.id === productId);
 
   // Check if product is in wishlist
-  const isInWishlist = wishlistItems.some(item => item.id === productId);
+  const isInWishlist = wishlistItems.some((item) => item.id === productId);
 
   const handleAddToCart = () => {
     if (!product) return;
-    
+
     dispatch(addToCart(product));
     toast.success("Product Added to Cart!", {
       position: "top-right",
@@ -54,8 +61,12 @@ const ProductDetail = () => {
     return (
       <div className="min-h-screen bg-gray-50 pt-28 flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Product Not Found</h2>
-          <p className="text-gray-600">The product you're looking for doesn't exist.</p>
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            Product Not Found
+          </h2>
+          <p className="text-gray-600">
+            The product you're looking for doesn't exist.
+          </p>
         </div>
       </div>
     );
@@ -65,12 +76,12 @@ const ProductDetail = () => {
   const renderStars = () => {
     const stars = [];
     const rating = Math.floor(product.rating);
-    
+
     for (let i = 0; i < 5; i++) {
       stars.push(
-        <FaStar 
-          key={i} 
-          className={i < rating ? "text-yellow-500" : "text-gray-300"} 
+        <FaStar
+          key={i}
+          className={i < rating ? "text-yellow-500" : "text-gray-300"}
         />
       );
     }
@@ -99,11 +110,13 @@ const ProductDetail = () => {
                 <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                   {product.name}
                 </h1>
-                
+
                 <div className="flex items-center gap-4 mb-6">
                   <div className="flex items-center">
                     {renderStars()}
-                    <span className="text-gray-600 ml-2">({product.rating})</span>
+                    <span className="text-gray-600 ml-2">
+                      ({product.rating})
+                    </span>
                   </div>
                   <span className="text-green-600 font-semibold">In Stock</span>
                 </div>
@@ -113,8 +126,12 @@ const ProductDetail = () => {
                 </p>
 
                 <div className="mb-6">
-                  <span className="text-3xl font-bold text-gray-900">${product.price}</span>
-                  <span className="text-green-600 ml-2 text-sm">Free Shipping</span>
+                  <span className="text-3xl font-bold text-gray-900">
+                    ${product.price}
+                  </span>
+                  <span className="text-green-600 ml-2 text-sm">
+                    Free Shipping
+                  </span>
                 </div>
               </div>
 
@@ -122,22 +139,24 @@ const ProductDetail = () => {
               <div className="space-y-4">
                 <button
                   onClick={handleAddToCart}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 px-6 rounded-lg font-semibold text-lg transition-colors duration-300 flex items-center justify-center gap-3"
+                  className="w-full bg-red-600 hover:bg-red-700 text-white py-4 px-6 rounded-lg font-semibold text-lg transition-colors duration-300 flex items-center justify-center gap-3"
                 >
                   <FaShoppingCart />
                   Add to Cart
                 </button>
-                
+
                 <button
                   onClick={handleWishlistToggle}
                   className={`w-full py-4 px-6 rounded-lg font-semibold text-lg transition-colors duration-300 flex items-center justify-center gap-3 ${
-                    isInWishlist 
-                      ? 'bg-red-600 hover:bg-red-700 text-white' 
-                      : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
+                    isInWishlist
+                      ? "bg-red-600 hover:bg-red-700 text-white"
+                      : "bg-gray-100 hover:bg-gray-200 text-gray-800"
                   }`}
                 >
-                  <FaHeart className={isInWishlist ? 'text-white' : 'text-red-500'} />
-                  {isInWishlist ? 'Remove from Wishlist' : 'Add to Wishlist'}
+                  <FaHeart
+                    className={isInWishlist ? "text-white" : "text-red-500"}
+                  />
+                  {isInWishlist ? "Remove from Wishlist" : "Add to Wishlist"}
                 </button>
               </div>
 

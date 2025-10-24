@@ -1,11 +1,11 @@
 // Components/CartIcon.jsx
-import React from 'react';
-import { FaShoppingCart } from 'react-icons/fa';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { FaShoppingCart } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const CartIcon = () => {
-  const totalQuantity = useSelector(state => state.cart.totalQuantity);
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
   return (
     <Link to="/cart" className="relative">

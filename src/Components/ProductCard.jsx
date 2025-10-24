@@ -23,12 +23,12 @@ const ProductCard = ({ product }) => {
   const renderStars = () => {
     const stars = [];
     const rating = Math.floor(product.rating);
-    
+
     for (let i = 0; i < 5; i++) {
       stars.push(
-        <FaStar 
-          key={i} 
-          className={i < rating ? "text-yellow-500" : "text-gray-300"} 
+        <FaStar
+          key={i}
+          className={i < rating ? "text-yellow-500" : "text-gray-300"}
         />
       );
     }
@@ -52,14 +52,16 @@ const ProductCard = ({ product }) => {
           <h3 className="text-lg font-semibold whitespace-normal line-clamp-2 min-h-[3.5rem] group-hover:text-blue-600 transition-colors">
             {product.name}
           </h3>
-          
+
           <div className="mt-auto">
             <p className="text-2xl font-bold text-gray-900">${product.price}</p>
-            
+
             {/* Rating */}
             <div className="flex items-center mt-2 gap-1">
               {renderStars()}
-              <span className="text-gray-500 text-sm ml-1">({product.rating})</span>
+              <span className="text-gray-500 text-sm ml-1">
+                ({product.rating})
+              </span>
             </div>
           </div>
         </div>

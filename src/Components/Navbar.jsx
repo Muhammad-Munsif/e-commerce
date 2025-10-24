@@ -307,7 +307,7 @@ const Navbar = () => {
           <Register openLogin={openLogin} />
         )}
       </Model>
-      <CartIcon/>
+      <CartIcon />
     </nav>
   );
 };

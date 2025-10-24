@@ -1,11 +1,11 @@
 // Components/WishlistIcon.jsx (for your navigation header)
-import React from 'react';
-import { FaHeart } from 'react-icons/fa';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { FaHeart } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const WishlistIcon = () => {
-  const wishlistItems = useSelector(state => state.wishlist.items);
+  const wishlistItems = useSelector((state) => state.wishlist.items);
 
   return (
     <Link to="/wishlist" className="relative">

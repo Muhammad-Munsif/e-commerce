@@ -138,7 +138,7 @@ export const mockData = [
 
   //The hundred products dummy data
 
-   {
+  {
     id: 1,
     name: "Wireless Bluetooth Headphone",
     price: 79.99,

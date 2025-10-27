@@ -49,7 +49,7 @@ const Navbar = () => {
   const products = useSelector((state) => state.cart.products);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-lg">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-lg ">
       {/* Main Navbar */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <div className="flex items-center justify-between">

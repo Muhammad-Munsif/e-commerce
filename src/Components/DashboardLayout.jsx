@@ -15,16 +15,16 @@ import {
   FaBell,
   FaUserCircle,
   FaCog,
-  FaSignOutAlt,
   FaShoppingCart,
   FaStar,
-  FaEye,
   FaBars,
   FaTimes,
+  FaHome,
+  FaList,
 } from "react-icons/fa";
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
-const DashboardLayout = () => {
+const Dashboard = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("overview");
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -224,7 +224,7 @@ const DashboardLayout = () => {
   };
 
   const StatCard = ({ title, value, change, icon, color }) => (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 sm:p-6 pt-28">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 sm:p-6">
       <div className="flex items-center justify-between">
         <div className="flex-1 min-w-0">
           <p className="text-xs sm:text-sm font-medium text-gray-600 truncate">{title}</p>
@@ -442,10 +442,10 @@ const DashboardLayout = () => {
                 </td>
                 <td className="py-2 sm:py-3 px-2 sm:px-4">
                   <button 
-                    onClick={() => navigate(`/orders/${order.id}`)}
+                    onClick={() => navigate(`/track-order/${order.id}`)}
                     className="text-blue-600 hover:text-blue-700 text-xs sm:text-sm font-medium"
                   >
-                    View
+                    Track
                   </button>
                 </td>
               </tr>
@@ -487,7 +487,7 @@ const DashboardLayout = () => {
   );
 
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex min-h-screen bg-gray-50 pt-16"> {/* Added pt-16 for navbar spacing */}
       {/* Mobile Overlay */}
       {sidebarOpen && isMobile && (
         <div 
@@ -497,11 +497,11 @@ const DashboardLayout = () => {
       )}
 
       {/* Sidebar */}
-      <div className={`fixed sm:relative z-30 bg-white shadow-lg transition-all duration-300 ${
+      <div className={`fixed sm:relative z-30 bg-white shadow-lg transition-all duration-300 h-[calc(100vh-4rem)] ${
         sidebarOpen ? 'w-64 translate-x-0' : '-translate-x-full sm:translate-x-0 sm:w-20'
       }`}>
         <div className="p-4 sm:p-6 border-b border-gray-200 flex items-center justify-between sm:justify-center">
-          <h1 className={`text-xl font-bold text-gray-800 ${!sidebarOpen && 'sm:hidden'}`}>ShopDashboard</h1>
+          <h1 className={`text-xl font-bold text-gray-800 ${!sidebarOpen && 'sm:hidden'}`}>Dashboard</h1>
           <button 
             onClick={() => setSidebarOpen(!sidebarOpen)}
             className="p-2 rounded-lg hover:bg-gray-100 sm:hidden"
@@ -512,11 +512,11 @@ const DashboardLayout = () => {
             onClick={() => setSidebarOpen(!sidebarOpen)}
             className="p-2 rounded-lg hover:bg-gray-100 hidden sm:block"
           >
-            <FaCog className="w-5 h-5 text-gray-600" />
+            <FaList className="w-5 h-5 text-gray-600" />
           </button>
         </div>
         
-        <nav className="mt-4 sm:mt-6 ">
+        <nav className="mt-4 sm:mt-6">
           {[
             { id: "overview", name: "Overview", icon: FaChartLine },
             { id: "orders", name: "Orders", icon: FaShoppingBag },
@@ -541,12 +541,21 @@ const DashboardLayout = () => {
               <span className={`ml-3 font-medium ${!sidebarOpen && 'sm:hidden'}`}>{item.name}</span>
             </button>
           ))}
+          
+          {/* Back to Home Link */}
+          <button
+            onClick={() => navigate("/")}
+            className="w-full flex items-center px-4 sm:px-6 py-3 text-left text-gray-600 hover:bg-gray-50 transition-colors mt-4 border-t border-gray-200"
+          >
+            <FaHome className="w-5 h-5 flex-shrink-0" />
+            <span className={`ml-3 font-medium ${!sidebarOpen && 'sm:hidden'}`}>Back to Shop</span>
+          </button>
         </nav>
       </div>
 
       {/* Main Content */}
       <div className="flex-1 overflow-auto min-w-0">
-        {/* Header */}
+        {/* Dashboard Header */}
         <header className="bg-white shadow-sm border-b border-gray-200">
           <div className="flex items-center justify-between px-4 sm:px-6 py-4">
             <div className="flex items-center space-x-4">
@@ -556,13 +565,16 @@ const DashboardLayout = () => {
               >
                 <FaBars className="w-5 h-5 text-gray-600" />
               </button>
-              <div className="relative">
-                <FaSearch className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-40 sm:w-64"
-                />
+              <div>
+                <h1 className="text-xl sm:text-2xl font-bold text-gray-900 capitalize">{activeTab}</h1>
+                <p className="text-sm text-gray-600 hidden sm:block">
+                  {activeTab === "overview" && "Your store performance overview"}
+                  {activeTab === "orders" && "Manage and track customer orders"}
+                  {activeTab === "products" && "Manage your product catalog"}
+                  {activeTab === "customers" && "View and manage customer data"}
+                  {activeTab === "analytics" && "Detailed analytics and reports"}
+                  {activeTab === "settings" && "Store configuration and settings"}
+                </p>
               </div>
             </div>
 
@@ -578,8 +590,8 @@ const DashboardLayout = () => {
               
               <div className="flex items-center space-x-2 sm:space-x-3">
                 <div className="text-right hidden sm:block">
-                  <p className="text-sm font-medium text-gray-900">John Doe</p>
-                  <p className="text-xs text-gray-600">Admin</p>
+                  <p className="text-sm font-medium text-gray-900">Admin User</p>
+                  <p className="text-xs text-gray-600">Store Owner</p>
                 </div>
                 <FaUserCircle className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400" />
               </div>
@@ -645,11 +657,44 @@ const DashboardLayout = () => {
             </div>
           )}
 
-          {/* Other tabs content remains the same but with responsive padding */}
-          {activeTab !== "overview" && (
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 sm:p-6">
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 capitalize">{activeTab}</h2>
-              <p className="text-gray-600">This section is under development...</p>
+          {/* Other tabs */}
+          {activeTab === "orders" && (
+            <div className="space-y-6">
+              <RecentOrdersTable />
+            </div>
+          )}
+
+          {activeTab === "products" && (
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Products Management</h2>
+              <TopProducts />
+              <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+                <p className="text-blue-700">Full products management interface coming soon...</p>
+              </div>
+            </div>
+          )}
+
+          {activeTab === "customers" && (
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Customers</h2>
+              <p className="text-gray-600">Customer management interface coming soon...</p>
+            </div>
+          )}
+
+          {activeTab === "analytics" && (
+            <div className="space-y-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <SalesChart />
+                <CategoryChart />
+              </div>
+              <DailySalesChart />
+            </div>
+          )}
+
+          {activeTab === "settings" && (
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Settings</h2>
+              <p className="text-gray-600">Settings interface coming soon...</p>
             </div>
           )}
         </main>
@@ -658,4 +703,4 @@ const DashboardLayout = () => {
   );
 };
 
-export default DashboardLayout;
+export default Dashboard;

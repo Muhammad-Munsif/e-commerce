@@ -22,6 +22,7 @@ import Sports from "./pages/Sports";
 import { ToastContainer } from "react-toastify";
 import Wishlist from "./pages/Wishlist";
 import TrackYourOrder from './Components/TrackYourOrder'
+import DashboardLayout from "./Components/DashboardLayout";
 
 // Dashboard Components
 // import DashboardLayout from './Components/DashboardLayout';
@@ -72,6 +73,8 @@ function App() {
             {/* // In your App.js or routing file */}
             <Route path="/track-order" element={<TrackYourOrder />} />
             <Route path="/track-order/:orderId" element={<TrackYourOrder />} />
+            <Route path="/dashboard" element={<DashboardLayout />} />
+            <Route path="/admin" element={<DashboardLayout />} />     
             {/* Dashboard Routes */}
             {/* <Route path="/dashboard" element={<DashboardLayout />}>
               <Route index element={<Dashboard />} />

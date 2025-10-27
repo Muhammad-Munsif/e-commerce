@@ -155,6 +155,12 @@ const Navbar = () => {
           Shop
         </Link>
         <Link
+          to="/dashboard"
+          className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+        >
+          Dashboard
+        </Link>
+        <Link
           to="/electronics"
           className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
         >
@@ -190,12 +196,6 @@ const Navbar = () => {
         >
           Contact
         </Link>
-        <Link
-          to="/dashboard"
-          className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
-        >
-          Dashboard
-        </Link>
       </div>
 
       {/* Mobile Navigation Menu */}
@@ -203,7 +203,7 @@ const Navbar = () => {
         <div className="lg:hidden bg-white bg-opacity-50 border-t shadow-lg">
           <div className="container mx-auto px-4 py-4">
             {/* Main Links */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
+            <div className="grid grid-cols-2 gap-4 mb-2">
               <Link
                 to="/"
                 className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
@@ -232,6 +232,13 @@ const Navbar = () => {
               >
                 Contact
               </Link>
+                <Link
+                  to="/dashboard"
+                  className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
+                  onClick={closeMobileMenu}
+                >
+                  Dashboard
+                </Link>
             </div>
 
             {/* Category Links */}
@@ -274,13 +281,6 @@ const Navbar = () => {
                   onClick={closeMobileMenu}
                 >
                   Sports
-                </Link>
-                <Link
-                  to="/dashboard"
-                  className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
-                  onClick={closeMobileMenu}
-                >
-                  Dashboard
                 </Link>
               </div>
             </div>

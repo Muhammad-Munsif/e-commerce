@@ -137,8 +137,7 @@ const Order = ({ order }) => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              
-              <button 
+              <button
                 onClick={() => navigate(`/track-order/${order.orderNumber}`)}
                 className="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center"
               >

@@ -38,7 +38,7 @@ const TrackYourOrder = () => {
       city: "New York",
       state: "NY",
       zipcode: "10001",
-      country: "USA"
+      country: "USA",
     },
     products: [
       {
@@ -46,15 +46,17 @@ const TrackYourOrder = () => {
         name: "Wireless Bluetooth Headphones",
         price: 99.99,
         quantity: 1,
-        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=150"
+        image:
+          "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=150",
       },
       {
         id: 2,
         name: "Phone Case",
         price: 19.99,
         quantity: 2,
-        image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=150"
-      }
+        image:
+          "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=150",
+      },
     ],
     totalPrice: 139.97,
     trackingHistory: [
@@ -62,27 +64,27 @@ const TrackYourOrder = () => {
         status: "confirmed",
         description: "Order confirmed",
         timestamp: "2024-01-15T10:30:00Z",
-        location: "Online Store"
+        location: "Online Store",
       },
       {
         status: "processing",
         description: "Order is being processed",
         timestamp: "2024-01-15T14:20:00Z",
-        location: "Warehouse"
+        location: "Warehouse",
       },
       {
         status: "shipped",
         description: "Package shipped",
         timestamp: "2024-01-16T09:15:00Z",
-        location: "Distribution Center"
+        location: "Distribution Center",
       },
       {
         status: "out_for_delivery",
         description: "Out for delivery",
         timestamp: "2024-01-20T08:30:00Z",
-        location: "Local Facility"
-      }
-    ]
+        location: "Local Facility",
+      },
+    ],
   };
 
   useEffect(() => {
@@ -91,7 +93,7 @@ const TrackYourOrder = () => {
       setLoading(true);
       try {
         // In real app: const response = await api.getOrder(orderId || searchOrderId);
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise((resolve) => setTimeout(resolve, 1000));
         setOrder(mockOrderData);
       } catch (error) {
         console.error("Error fetching order:", error);
@@ -171,13 +173,13 @@ const TrackYourOrder = () => {
   };
 
   const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
+    return new Date(dateString).toLocaleDateString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
     });
   };
 
@@ -205,7 +207,8 @@ const TrackYourOrder = () => {
               Track Your Order
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Enter your order number or tracking number to check the status of your delivery
+              Enter your order number or tracking number to check the status of
+              your delivery
             </p>
           </div>
 
@@ -213,7 +216,10 @@ const TrackYourOrder = () => {
           <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8">
             <form onSubmit={handleTrackOrder} className="space-y-6">
               <div>
-                <label htmlFor="orderId" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="orderId"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Order Number
                 </label>
                 <input
@@ -226,11 +232,14 @@ const TrackYourOrder = () => {
                   required
                 />
               </div>
-              
+
               <div className="text-center text-gray-500">OR</div>
-              
+
               <div>
-                <label htmlFor="trackingNumber" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="trackingNumber"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Tracking Number
                 </label>
                 <input
@@ -285,7 +294,8 @@ const TrackYourOrder = () => {
                 </h3>
               </div>
               <div className="text-blue-100">
-                Order Number: <span className="font-mono">{order.orderNumber}</span>
+                Order Number:{" "}
+                <span className="font-mono">{order.orderNumber}</span>
               </div>
             </div>
           </div>
@@ -300,12 +310,13 @@ const TrackYourOrder = () => {
                 {getStatusText(order.status)}
               </h3>
               <p className="text-gray-600">
-                {order.status === "delivered" 
+                {order.status === "delivered"
                   ? "Your order has been delivered"
                   : order.status === "cancelled"
                   ? "Your order has been cancelled"
-                  : `Estimated delivery: ${formatDate(order.estimatedDelivery)}`
-                }
+                  : `Estimated delivery: ${formatDate(
+                      order.estimatedDelivery
+                    )}`}
               </p>
             </div>
 
@@ -313,18 +324,22 @@ const TrackYourOrder = () => {
             <div className="border-l-2 border-gray-200 ml-4 pl-8 space-y-8">
               {order.trackingHistory.map((event, index) => (
                 <div key={index} className="relative">
-                  <div className={`absolute -left-11 w-8 h-8 rounded-full flex items-center justify-center border-2 ${
-                    index === order.trackingHistory.length - 1 
-                      ? 'bg-blue-600 border-blue-600' 
-                      : 'bg-white border-gray-300'
-                  }`}>
+                  <div
+                    className={`absolute -left-11 w-8 h-8 rounded-full flex items-center justify-center border-2 ${
+                      index === order.trackingHistory.length - 1
+                        ? "bg-blue-600 border-blue-600"
+                        : "bg-white border-gray-300"
+                    }`}
+                  >
                     {getStatusIcon(event.status)}
                   </div>
-                  <div className={`p-4 rounded-lg ${
-                    index === order.trackingHistory.length - 1 
-                      ? 'bg-blue-50 border border-blue-200' 
-                      : 'bg-gray-50'
-                  }`}>
+                  <div
+                    className={`p-4 rounded-lg ${
+                      index === order.trackingHistory.length - 1
+                        ? "bg-blue-50 border border-blue-200"
+                        : "bg-gray-50"
+                    }`}
+                  >
                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start">
                       <div>
                         <h4 className="font-semibold text-gray-900">
@@ -354,10 +369,14 @@ const TrackYourOrder = () => {
                   Shipping Information
                 </h4>
                 <div className="space-y-2 text-gray-700">
-                  <p className="font-medium">{order.shippingInformation.name}</p>
+                  <p className="font-medium">
+                    {order.shippingInformation.name}
+                  </p>
                   <p>{order.shippingInformation.address}</p>
                   <p>
-                    {order.shippingInformation.city}, {order.shippingInformation.state} {order.shippingInformation.zipcode}
+                    {order.shippingInformation.city},{" "}
+                    {order.shippingInformation.state}{" "}
+                    {order.shippingInformation.zipcode}
                   </p>
                 </div>
               </div>
@@ -374,7 +393,8 @@ const TrackYourOrder = () => {
                     {order.trackingNumber}
                   </p>
                   <p>
-                    <span className="font-medium">Carrier:</span> {order.carrier}
+                    <span className="font-medium">Carrier:</span>{" "}
+                    {order.carrier}
                   </p>
                   <p>
                     <span className="font-medium">Order Date:</span>{" "}
@@ -403,7 +423,9 @@ const TrackYourOrder = () => {
                         className="w-12 h-12 object-cover rounded-md"
                       />
                       <div>
-                        <p className="font-medium text-gray-900">{product.name}</p>
+                        <p className="font-medium text-gray-900">
+                          {product.name}
+                        </p>
                         <p className="text-sm text-gray-600">
                           Quantity: {product.quantity} × ${product.price}
                         </p>

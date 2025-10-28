@@ -1,6 +1,16 @@
 // src/components/admin/UserManagement.js
 import React, { useState } from "react";
-import { FaSearch, FaEdit, FaTrash, FaUserPlus, FaUser, FaEnvelope, FaCalendar, FaShoppingCart, FaStar } from "react-icons/fa";
+import {
+  FaSearch,
+  FaEdit,
+  FaTrash,
+  FaUserPlus,
+  FaUser,
+  FaEnvelope,
+  FaCalendar,
+  FaShoppingCart,
+  FaStar,
+} from "react-icons/fa";
 
 const UserManagement = () => {
   const [users, setUsers] = useState([
@@ -13,7 +23,7 @@ const UserManagement = () => {
       orders: 12,
       totalSpent: 1250.75,
       status: "active",
-      avatar: null
+      avatar: null,
     },
     {
       id: 2,
@@ -22,9 +32,9 @@ const UserManagement = () => {
       role: "customer",
       joinDate: "2024-01-10",
       orders: 8,
-      totalSpent: 890.50,
+      totalSpent: 890.5,
       status: "active",
-      avatar: null
+      avatar: null,
     },
     {
       id: 3,
@@ -35,7 +45,7 @@ const UserManagement = () => {
       orders: 3,
       totalSpent: 345.25,
       status: "inactive",
-      avatar: null
+      avatar: null,
     },
     {
       id: 4,
@@ -46,7 +56,7 @@ const UserManagement = () => {
       orders: 0,
       totalSpent: 0,
       status: "active",
-      avatar: null
+      avatar: null,
     },
     {
       id: 5,
@@ -57,59 +67,74 @@ const UserManagement = () => {
       orders: 0,
       totalSpent: 0,
       status: "active",
-      avatar: null
-    }
+      avatar: null,
+    },
   ]);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedRole, setSelectedRole] = useState("all");
   const [selectedStatus, setSelectedStatus] = useState("all");
 
-  const filteredUsers = users.filter(user => 
-    user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    user.email.toLowerCase().includes(searchTerm.toLowerCase())
-  ).filter(user => 
-    selectedRole === "all" || user.role === selectedRole
-  ).filter(user =>
-    selectedStatus === "all" || user.status === selectedStatus
-  );
+  const filteredUsers = users
+    .filter(
+      (user) =>
+        user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        user.email.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .filter((user) => selectedRole === "all" || user.role === selectedRole)
+    .filter(
+      (user) => selectedStatus === "all" || user.status === selectedStatus
+    );
 
   const getRoleColor = (role) => {
     switch (role) {
-      case "super_admin": return "bg-purple-100 text-purple-800";
-      case "admin": return "bg-blue-100 text-blue-800";
-      case "customer": return "bg-green-100 text-green-800";
-      default: return "bg-gray-100 text-gray-800";
+      case "super_admin":
+        return "bg-purple-100 text-purple-800";
+      case "admin":
+        return "bg-blue-100 text-blue-800";
+      case "customer":
+        return "bg-green-100 text-green-800";
+      default:
+        return "bg-gray-100 text-gray-800";
     }
   };
 
   const getStatusColor = (status) => {
-    return status === "active" 
-      ? "bg-green-100 text-green-800" 
+    return status === "active"
+      ? "bg-green-100 text-green-800"
       : "bg-red-100 text-red-800";
   };
 
   const getRoleText = (role) => {
     switch (role) {
-      case "super_admin": return "Super Admin";
-      case "admin": return "Admin";
-      case "customer": return "Customer";
-      default: return role;
+      case "super_admin":
+        return "Super Admin";
+      case "admin":
+        return "Admin";
+      case "customer":
+        return "Customer";
+      default:
+        return role;
     }
   };
 
   const handleDeleteUser = (userId) => {
     if (window.confirm("Are you sure you want to delete this user?")) {
-      setUsers(users.filter(user => user.id !== userId));
+      setUsers(users.filter((user) => user.id !== userId));
     }
   };
 
   const handleStatusToggle = (userId) => {
-    setUsers(users.map(user => 
-      user.id === userId 
-        ? { ...user, status: user.status === "active" ? "inactive" : "active" }
-        : user
-    ));
+    setUsers(
+      users.map((user) =>
+        user.id === userId
+          ? {
+              ...user,
+              status: user.status === "active" ? "inactive" : "active",
+            }
+          : user
+      )
+    );
   };
 
   return (
@@ -148,7 +173,7 @@ const UserManagement = () => {
             <div className="ml-4">
               <p className="text-sm font-medium text-gray-600">Active Users</p>
               <p className="text-2xl font-bold text-gray-900">
-                {users.filter(u => u.status === "active").length}
+                {users.filter((u) => u.status === "active").length}
               </p>
             </div>
           </div>
@@ -176,7 +201,7 @@ const UserManagement = () => {
             <div className="ml-4">
               <p className="text-sm font-medium text-gray-600">Customers</p>
               <p className="text-2xl font-bold text-gray-900">
-                {users.filter(u => u.role === "customer").length}
+                {users.filter((u) => u.role === "customer").length}
               </p>
             </div>
           </div>
@@ -187,7 +212,9 @@ const UserManagement = () => {
       <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="md:col-span-2">
-            <label className="block text-sm font-medium text-gray-700 mb-2">Search Users</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Search Users
+            </label>
             <div className="relative">
               <FaSearch className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
               <input
@@ -199,9 +226,11 @@ const UserManagement = () => {
               />
             </div>
           </div>
-          
+
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Role</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Role
+            </label>
             <select
               value={selectedRole}
               onChange={(e) => setSelectedRole(e.target.value)}
@@ -215,7 +244,9 @@ const UserManagement = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Status
+            </label>
             <select
               value={selectedStatus}
               onChange={(e) => setSelectedStatus(e.target.value)}
@@ -265,13 +296,19 @@ const UserManagement = () => {
                     <div className="flex items-center">
                       <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
                         {user.avatar ? (
-                          <img src={user.avatar} alt={user.name} className="w-10 h-10 rounded-full" />
+                          <img
+                            src={user.avatar}
+                            alt={user.name}
+                            className="w-10 h-10 rounded-full"
+                          />
                         ) : (
                           <FaUser className="w-5 h-5 text-gray-600" />
                         )}
                       </div>
                       <div className="ml-4">
-                        <div className="text-sm font-medium text-gray-900">{user.name}</div>
+                        <div className="text-sm font-medium text-gray-900">
+                          {user.name}
+                        </div>
                         <div className="text-sm text-gray-500 flex items-center">
                           <FaEnvelope className="w-3 h-3 mr-1" />
                           {user.email}
@@ -280,7 +317,11 @@ const UserManagement = () => {
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getRoleColor(user.role)}`}>
+                    <span
+                      className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getRoleColor(
+                        user.role
+                      )}`}
+                    >
                       {getRoleText(user.role)}
                     </span>
                   </td>
@@ -303,8 +344,8 @@ const UserManagement = () => {
                     <button
                       onClick={() => handleStatusToggle(user.id)}
                       className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full cursor-pointer ${
-                        user.status === "active" 
-                          ? "bg-green-100 text-green-800 hover:bg-green-200" 
+                        user.status === "active"
+                          ? "bg-green-100 text-green-800 hover:bg-green-200"
                           : "bg-red-100 text-red-800 hover:bg-red-200"
                       }`}
                     >
@@ -313,13 +354,13 @@ const UserManagement = () => {
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                     <div className="flex space-x-2">
-                      <button 
+                      <button
                         className="text-blue-600 hover:text-blue-900 p-1 rounded"
                         title="Edit User"
                       >
                         <FaEdit className="w-4 h-4" />
                       </button>
-                      <button 
+                      <button
                         onClick={() => handleDeleteUser(user.id)}
                         className="text-red-600 hover:text-red-900 p-1 rounded"
                         title="Delete User"

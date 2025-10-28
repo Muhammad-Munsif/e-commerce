@@ -14,7 +14,12 @@ import {
   FaStore,
 } from "react-icons/fa";
 
-const AdminSidebar = ({ sidebarOpen, setSidebarOpen, isMobile, currentPath }) => {
+const AdminSidebar = ({
+  sidebarOpen,
+  setSidebarOpen,
+  isMobile,
+  currentPath,
+}) => {
   const navigate = useNavigate();
 
   const menuItems = [
@@ -38,22 +43,26 @@ const AdminSidebar = ({ sidebarOpen, setSidebarOpen, isMobile, currentPath }) =>
     <>
       {/* Mobile Overlay */}
       {sidebarOpen && isMobile && (
-        <div 
+        <div
           className="fixed inset-0 bg-gray-50 bg-opacity-75 z-40 lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
 
       {/* Sidebar */}
-      <div className={`
+      <div
+        className={`
         fixed inset-y-0 left-0 z-50 w-64 bg-gray-800 transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0 flex flex-col
-        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
-      `}>
+        ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
+      `}
+      >
         {/* Sidebar Header - Fixed */}
         <div className="flex items-center justify-between h-16 px-4 bg-gray-900 flex-shrink-0">
           <div className="flex items-center">
             <FaStore className="w-8 h-8 text-white" />
-            <span className="ml-2 text-xl font-bold text-white">Admin Panel</span>
+            <span className="ml-2 text-xl font-bold text-white">
+              Admin Panel
+            </span>
           </div>
           {isMobile && (
             <button
@@ -72,21 +81,24 @@ const AdminSidebar = ({ sidebarOpen, setSidebarOpen, isMobile, currentPath }) =>
               {menuItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = currentPath === item.path;
-                
+
                 return (
                   <button
                     key={item.path}
                     onClick={() => handleNavigation(item.path)}
                     className={`
                       w-full flex items-center px-4 py-3 text-left rounded-lg transition-colors
-                      ${isActive 
-                        ? 'bg-blue-600 text-white' 
-                        : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                      ${
+                        isActive
+                          ? "bg-blue-600 text-white"
+                          : "text-gray-300 hover:bg-gray-700 hover:text-white"
                       }
                     `}
                   >
                     <Icon className="w-5 h-5 flex-shrink-0" />
-                    <span className="ml-3 font-medium truncate">{item.label}</span>
+                    <span className="ml-3 font-medium truncate">
+                      {item.label}
+                    </span>
                   </button>
                 );
               })}

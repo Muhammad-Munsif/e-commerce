@@ -22,7 +22,8 @@
     "react-router-dom": "^7.9.4",
     "react-to-print": "^3.2.0",
     "react-toastify": "^11.0.5",
-    "recharts": "^3.3.0"
+    "recharts": "^3.3.0",
+    "tailwind-scrollbar": "^4.0.2"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.15",

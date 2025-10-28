@@ -11,6 +11,7 @@ import {
   FaGlobe,
   FaPalette
 } from "react-icons/fa";
+import Footer from "../Footer";
 
 const Settings = () => {
   const [activeTab, setActiveTab] = useState("general");
@@ -322,7 +323,8 @@ const Settings = () => {
   };
 
   return (
-    <div className="space-y-6 mt-15">
+    <>
+    <div className="space-y-6  w-full ">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
         <div>
@@ -366,6 +368,8 @@ const Settings = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

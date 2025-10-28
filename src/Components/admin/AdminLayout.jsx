@@ -41,7 +41,7 @@ const AdminLayout = () => {
   }
 
   return (
-    <div className="flex fixed top-0 left-0 w-full z-50 h-screen bg-gray-50">
+    <div className="flex fixed top-28 left-0 w-full z-50 h-screen bg-gray-50">
       {/* Sidebar */}
       <AdminSidebar 
         sidebarOpen={sidebarOpen} 

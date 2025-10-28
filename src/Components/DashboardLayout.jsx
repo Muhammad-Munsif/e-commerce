@@ -38,7 +38,7 @@ import {
   Cell,
 } from "recharts";
 
-const Dashboard = () => {
+const DashboardLayout = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("overview");
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -471,7 +471,7 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="flex min-h-screen bg-gray-50 pt-16">
+    <div className="flex min-h-screen bg-gray-50 ">
       {" "}
       {/* Added pt-16 for navbar spacing */}
       {/* Mobile Overlay */}
@@ -482,129 +482,10 @@ const Dashboard = () => {
         />
       )}
       {/* Sidebar */}
-      <div
-        className={`fixed sm:relative z-30 bg-white shadow-lg transition-all duration-300 h-[calc(100vh-4rem)] ${
-          sidebarOpen
-            ? "w-64 translate-x-0"
-            : "-translate-x-full sm:translate-x-0 sm:w-20"
-        }`}
-      >
-        <div className="p-4 sm:p-6 border-b border-gray-200 flex items-center justify-between sm:justify-center">
-          <h1
-            className={`text-xl font-bold text-gray-800 ${
-              !sidebarOpen && "sm:hidden"
-            }`}
-          >
-            Dashboard
-          </h1>
-          <button
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="p-2 rounded-lg hover:bg-gray-100 sm:hidden"
-          >
-            <FaTimes className="w-5 h-5 text-gray-600" />
-          </button>
-          <button
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="p-2 rounded-lg hover:bg-gray-100 hidden sm:block"
-          >
-            <FaList className="w-5 h-5 text-gray-600" />
-          </button>
-        </div>
-
-        <nav className="mt-4 sm:mt-6">
-          {[
-            { id: "overview", name: "Overview", icon: FaChartLine },
-            { id: "orders", name: "Orders", icon: FaShoppingBag },
-            { id: "products", name: "Products", icon: FaBoxOpen },
-            { id: "customers", name: "Customers", icon: FaUsers },
-            { id: "analytics", name: "Analytics", icon: FaDollarSign },
-            { id: "settings", name: "Settings", icon: FaCog },
-          ].map((item) => (
-            <button
-              key={item.id}
-              onClick={() => {
-                setActiveTab(item.id);
-                if (isMobile) setSidebarOpen(false);
-              }}
-              className={`w-full flex items-center px-4 sm:px-6 py-3 text-left transition-colors ${
-                activeTab === item.id
-                  ? "bg-blue-50 text-blue-600 border-r-2 border-blue-600"
-                  : "text-gray-600 hover:bg-gray-50"
-              }`}
-            >
-              <item.icon className="w-5 h-5 flex-shrink-0" />
-              <span
-                className={`ml-3 font-medium ${!sidebarOpen && "sm:hidden"}`}
-              >
-                {item.name}
-              </span>
-            </button>
-          ))}
-
-          {/* Back to Home Link */}
-          <button
-            onClick={() => navigate("/")}
-            className="w-full flex items-center px-4 sm:px-6 py-3 text-left text-gray-600 hover:bg-gray-50 transition-colors mt-4 border-t border-gray-200"
-          >
-            <FaHome className="w-5 h-5 flex-shrink-0" />
-            <span className={`ml-3 font-medium ${!sidebarOpen && "sm:hidden"}`}>
-              Back to Shop
-            </span>
-          </button>
-        </nav>
-      </div>
+      
       {/* Main Content */}
       <div className="flex-1 overflow-auto min-w-0">
-        {/* Dashboard Header */}
-        <header className="bg-white shadow-sm border-b border-gray-200">
-          <div className="flex items-center justify-between px-4 sm:px-6 py-4">
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={() => setSidebarOpen(true)}
-                className="p-2 rounded-lg hover:bg-gray-100 sm:hidden"
-              >
-                <FaBars className="w-5 h-5 text-gray-600" />
-              </button>
-              <div>
-                <h1 className="text-xl sm:text-2xl font-bold text-gray-900 capitalize">
-                  {activeTab}
-                </h1>
-                <p className="text-sm text-gray-600 hidden sm:block">
-                  {activeTab === "overview" &&
-                    "Your store performance overview"}
-                  {activeTab === "orders" && "Manage and track customer orders"}
-                  {activeTab === "products" && "Manage your product catalog"}
-                  {activeTab === "customers" && "View and manage customer data"}
-                  {activeTab === "analytics" &&
-                    "Detailed analytics and reports"}
-                  {activeTab === "settings" &&
-                    "Store configuration and settings"}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-2 sm:space-x-4">
-              <div className="relative">
-                <button className="p-2 text-gray-600 hover:text-gray-900 relative">
-                  <FaBell className="w-4 h-4 sm:w-5 sm:h-5" />
-                  {notifications.filter((n) => !n.read).length > 0 && (
-                    <span className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
-                  )}
-                </button>
-              </div>
-
-              <div className="flex items-center space-x-2 sm:space-x-3">
-                <div className="text-right hidden sm:block">
-                  <p className="text-sm font-medium text-gray-900">
-                    Admin User
-                  </p>
-                  <p className="text-xs text-gray-600">Store Owner</p>
-                </div>
-                <FaUserCircle className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400" />
-              </div>
-            </div>
-          </div>
-        </header>
+        
 
         {/* Dashboard Content */}
         <main className="p-3 sm:p-4 md:p-6">
@@ -720,4 +601,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardLayout;

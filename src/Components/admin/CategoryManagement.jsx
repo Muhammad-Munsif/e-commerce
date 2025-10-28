@@ -1,6 +1,13 @@
 // src/components/admin/CategoryManagement.js
 import React, { useState } from "react";
-import { FaPlus, FaEdit, FaTrash, FaSearch, FaTags, FaBox } from "react-icons/fa";
+import {
+  FaPlus,
+  FaEdit,
+  FaTrash,
+  FaSearch,
+  FaTags,
+  FaBox,
+} from "react-icons/fa";
 
 const CategoryManagement = () => {
   const [categories, setCategories] = useState([
@@ -11,7 +18,7 @@ const CategoryManagement = () => {
       description: "Electronic devices and accessories",
       products: 156,
       status: "active",
-      image: null
+      image: null,
     },
     {
       id: 2,
@@ -20,7 +27,7 @@ const CategoryManagement = () => {
       description: "Fashion and apparel",
       products: 89,
       status: "active",
-      image: null
+      image: null,
     },
     {
       id: 3,
@@ -29,7 +36,7 @@ const CategoryManagement = () => {
       description: "Home appliances and kitchenware",
       products: 67,
       status: "active",
-      image: null
+      image: null,
     },
     {
       id: 4,
@@ -38,7 +45,7 @@ const CategoryManagement = () => {
       description: "Cosmetics and personal care",
       products: 45,
       status: "inactive",
-      image: null
+      image: null,
     },
     {
       id: 5,
@@ -47,32 +54,43 @@ const CategoryManagement = () => {
       description: "Sports equipment and accessories",
       products: 34,
       status: "active",
-      image: null
-    }
+      image: null,
+    },
   ]);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedStatus, setSelectedStatus] = useState("all");
 
-  const filteredCategories = categories.filter(category => 
-    category.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    category.description.toLowerCase().includes(searchTerm.toLowerCase())
-  ).filter(category =>
-    selectedStatus === "all" || category.status === selectedStatus
-  );
+  const filteredCategories = categories
+    .filter(
+      (category) =>
+        category.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        category.description.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .filter(
+      (category) =>
+        selectedStatus === "all" || category.status === selectedStatus
+    );
 
   const handleDeleteCategory = (categoryId) => {
     if (window.confirm("Are you sure you want to delete this category?")) {
-      setCategories(categories.filter(category => category.id !== categoryId));
+      setCategories(
+        categories.filter((category) => category.id !== categoryId)
+      );
     }
   };
 
   const handleStatusToggle = (categoryId) => {
-    setCategories(categories.map(category => 
-      category.id === categoryId 
-        ? { ...category, status: category.status === "active" ? "inactive" : "active" }
-        : category
-    ));
+    setCategories(
+      categories.map((category) =>
+        category.id === categoryId
+          ? {
+              ...category,
+              status: category.status === "active" ? "inactive" : "active",
+            }
+          : category
+      )
+    );
   };
 
   return (
@@ -80,8 +98,12 @@ const CategoryManagement = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Category Management</h1>
-          <p className="text-gray-600">Organize your products with categories</p>
+          <h1 className="text-2xl font-bold text-gray-900">
+            Category Management
+          </h1>
+          <p className="text-gray-600">
+            Organize your products with categories
+          </p>
         </div>
         <button className="mt-4 sm:mt-0 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center">
           <FaPlus className="w-4 h-4 mr-2" />
@@ -97,8 +119,12 @@ const CategoryManagement = () => {
               <FaTags className="w-6 h-6 text-blue-600" />
             </div>
             <div className="ml-4">
-              <p className="text-sm font-medium text-gray-600">Total Categories</p>
-              <p className="text-2xl font-bold text-gray-900">{categories.length}</p>
+              <p className="text-sm font-medium text-gray-600">
+                Total Categories
+              </p>
+              <p className="text-2xl font-bold text-gray-900">
+                {categories.length}
+              </p>
             </div>
           </div>
         </div>
@@ -109,9 +135,11 @@ const CategoryManagement = () => {
               <FaBox className="w-6 h-6 text-green-600" />
             </div>
             <div className="ml-4">
-              <p className="text-sm font-medium text-gray-600">Active Categories</p>
+              <p className="text-sm font-medium text-gray-600">
+                Active Categories
+              </p>
               <p className="text-2xl font-bold text-gray-900">
-                {categories.filter(c => c.status === "active").length}
+                {categories.filter((c) => c.status === "active").length}
               </p>
             </div>
           </div>
@@ -123,7 +151,9 @@ const CategoryManagement = () => {
               <FaBox className="w-6 h-6 text-purple-600" />
             </div>
             <div className="ml-4">
-              <p className="text-sm font-medium text-gray-600">Total Products</p>
+              <p className="text-sm font-medium text-gray-600">
+                Total Products
+              </p>
               <p className="text-2xl font-bold text-gray-900">
                 {categories.reduce((total, cat) => total + cat.products, 0)}
               </p>
@@ -136,7 +166,9 @@ const CategoryManagement = () => {
       <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="md:col-span-2">
-            <label className="block text-sm font-medium text-gray-700 mb-2">Search Categories</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Search Categories
+            </label>
             <div className="relative">
               <FaSearch className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
               <input
@@ -150,7 +182,9 @@ const CategoryManagement = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Status
+            </label>
             <select
               value={selectedStatus}
               onChange={(e) => setSelectedStatus(e.target.value)}
@@ -167,7 +201,10 @@ const CategoryManagement = () => {
       {/* Categories Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredCategories.map((category) => (
-          <div key={category.id} className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+          <div
+            key={category.id}
+            className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden"
+          >
             <div className="p-6">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center">
@@ -175,15 +212,17 @@ const CategoryManagement = () => {
                     <FaTags className="w-6 h-6 text-gray-600" />
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-semibold text-gray-900">{category.name}</h3>
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {category.name}
+                    </h3>
                     <p className="text-sm text-gray-500">{category.slug}</p>
                   </div>
                 </div>
                 <button
                   onClick={() => handleStatusToggle(category.id)}
                   className={`px-3 py-1 text-xs font-semibold rounded-full ${
-                    category.status === "active" 
-                      ? "bg-green-100 text-green-800 hover:bg-green-200" 
+                    category.status === "active"
+                      ? "bg-green-100 text-green-800 hover:bg-green-200"
                       : "bg-red-100 text-red-800 hover:bg-red-200"
                   }`}
                 >
@@ -191,7 +230,9 @@ const CategoryManagement = () => {
                 </button>
               </div>
 
-              <p className="text-gray-600 text-sm mb-4">{category.description}</p>
+              <p className="text-gray-600 text-sm mb-4">
+                {category.description}
+              </p>
 
               <div className="flex justify-between items-center text-sm text-gray-500 mb-4">
                 <span>{category.products} products</span>
@@ -203,7 +244,7 @@ const CategoryManagement = () => {
                   <FaEdit className="w-3 h-3 mr-1" />
                   Edit
                 </button>
-                <button 
+                <button
                   onClick={() => handleDeleteCategory(category.id)}
                   className="flex-1 bg-red-600 hover:bg-red-700 text-white py-2 px-3 rounded text-sm font-medium flex items-center justify-center"
                 >

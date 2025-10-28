@@ -30,8 +30,12 @@ const OrderTracking = ({ order, isOpen, onClose }) => {
         {/* Content */}
         <div className="p-6 space-y-4">
           <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-            <h3 className="font-semibold text-green-800 mb-2">Tracking Information</h3>
-            <p className="text-green-700">Tracking Number: TRK-{order.id.replace('ORD-', '')}</p>
+            <h3 className="font-semibold text-green-800 mb-2">
+              Tracking Information
+            </h3>
+            <p className="text-green-700">
+              Tracking Number: TRK-{order.id.replace("ORD-", "")}
+            </p>
             <p className="text-green-700">Status: In Transit</p>
             <p className="text-green-700">Estimated Delivery: 2024-01-25</p>
           </div>
@@ -65,8 +69,9 @@ const OrderTracking = ({ order, isOpen, onClose }) => {
             <button className="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded transition-colors">
               Update Tracking
             </button>
-            <button className="flex-1 bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded transition-colors"
-            onClick={()=> onClose()}
+            <button
+              className="flex-1 bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded transition-colors"
+              onClick={() => onClose()}
             >
               Close
             </button>

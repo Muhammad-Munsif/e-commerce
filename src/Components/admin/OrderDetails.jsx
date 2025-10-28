@@ -54,8 +54,9 @@ const OrderDetails = ({ order, isOpen, onClose }) => {
             <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors">
               Update Status
             </button>
-            <button className="flex-1 bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded transition-colors"
-            onClick={() =>onClose()}
+            <button
+              className="flex-1 bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded transition-colors"
+              onClick={() => onClose()}
             >
               Close
             </button>

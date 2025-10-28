@@ -32,7 +32,11 @@ const TrackYourOrder = () => {
   const order = useMemo(() => {
     if (orderId || searchOrderId) {
       const foundOrder = orders.find(
-        (o) => o.id === orderId || o.orderNumber === orderId || o.id === searchOrderId || o.orderNumber === searchOrderId
+        (o) =>
+          o.id === orderId ||
+          o.orderNumber === orderId ||
+          o.id === searchOrderId ||
+          o.orderNumber === searchOrderId
       );
       if (foundOrder) {
         // Transform order data for tracking view
@@ -40,8 +44,12 @@ const TrackYourOrder = () => {
           orderNumber: foundOrder.id || foundOrder.orderNumber,
           status: foundOrder.status || "processing",
           orderDate: foundOrder.createdAt || new Date().toISOString(),
-          estimatedDelivery: foundOrder.estimatedDelivery || new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString(),
-          trackingNumber: foundOrder.trackingNumber || `TRK-${foundOrder.id?.replace("ORD-", "") || "000000"}`,
+          estimatedDelivery:
+            foundOrder.estimatedDelivery ||
+            new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString(),
+          trackingNumber:
+            foundOrder.trackingNumber ||
+            `TRK-${foundOrder.id?.replace("ORD-", "") || "000000"}`,
           carrier: foundOrder.carrier || "Standard Shipping",
           shippingInformation: foundOrder.shippingInformation || {
             name: foundOrder.customer || "Guest",
@@ -57,18 +65,24 @@ const TrackYourOrder = () => {
         };
       }
     }
-    return currentOrder ? {
-      orderNumber: currentOrder.id || currentOrder.orderNumber,
-      status: currentOrder.status || "processing",
-      orderDate: currentOrder.createdAt || new Date().toISOString(),
-      estimatedDelivery: currentOrder.estimatedDelivery || new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString(),
-      trackingNumber: currentOrder.trackingNumber || `TRK-${currentOrder.id?.replace("ORD-", "") || "000000"}`,
-      carrier: currentOrder.carrier || "Standard Shipping",
-      shippingInformation: currentOrder.shippingInformation || {},
-      products: currentOrder.products || [],
-      totalPrice: currentOrder.totalPrice || 0,
-      trackingHistory: currentOrder.trackingHistory || [],
-    } : null;
+    return currentOrder
+      ? {
+          orderNumber: currentOrder.id || currentOrder.orderNumber,
+          status: currentOrder.status || "processing",
+          orderDate: currentOrder.createdAt || new Date().toISOString(),
+          estimatedDelivery:
+            currentOrder.estimatedDelivery ||
+            new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString(),
+          trackingNumber:
+            currentOrder.trackingNumber ||
+            `TRK-${currentOrder.id?.replace("ORD-", "") || "000000"}`,
+          carrier: currentOrder.carrier || "Standard Shipping",
+          shippingInformation: currentOrder.shippingInformation || {},
+          products: currentOrder.products || [],
+          totalPrice: currentOrder.totalPrice || 0,
+          trackingHistory: currentOrder.trackingHistory || [],
+        }
+      : null;
   }, [orders, currentOrder, orderId, searchOrderId]);
 
   const handleTrackOrder = (e) => {

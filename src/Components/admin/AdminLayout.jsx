@@ -28,8 +28,8 @@ const AdminLayout = () => {
       }
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Check if user is admin (you can implement proper auth check)
@@ -43,8 +43,8 @@ const AdminLayout = () => {
   return (
     <div className="flex fixed top-28 left-0 w-full z-50 h-screen bg-gray-50">
       {/* Sidebar */}
-      <AdminSidebar 
-        sidebarOpen={sidebarOpen} 
+      <AdminSidebar
+        sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}
         isMobile={isMobile}
         currentPath={location.pathname}
@@ -53,7 +53,7 @@ const AdminLayout = () => {
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
-        <AdminHeader 
+        <AdminHeader
           sidebarOpen={sidebarOpen}
           setSidebarOpen={setSidebarOpen}
           isMobile={isMobile}

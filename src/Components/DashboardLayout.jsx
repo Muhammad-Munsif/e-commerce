@@ -597,6 +597,7 @@ const DashboardLayout = () => {
           )}
         </main>
       </div>
+  
     </div>
   );
 };

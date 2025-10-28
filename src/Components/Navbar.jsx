@@ -265,6 +265,13 @@ const Navbar = () => {
               >
                 Dashboard
               </Link>
+              <Link
+                to="/admin/*"
+                className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
+                onClick={closeMobileMenu}
+              >
+                AdminLayout
+              </Link>
             </div>
 
             {/* Category Links */}

@@ -6,7 +6,7 @@ import Navbar from "../Navbar";
 const AdminHeader = ({ sidebarOpen, setSidebarOpen, isMobile }) => {
   return (
     <>
-    <header className="bg-white shadow-sm border-b border-gray-200">
+    <header className="lg:hidden sm:block bg-white shadow-sm border-b border-gray-200">
       <div className="flex items-center justify-between px-4 lg:px-6 py-3"> {/* Reduced padding */}
         {/* Left Section - Only sidebar toggle */}
         <div className="flex items-center">

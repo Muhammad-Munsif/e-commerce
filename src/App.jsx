@@ -21,20 +21,9 @@ import Beauty from "./pages/Beauty";
 import Sports from "./pages/Sports";
 import { ToastContainer } from "react-toastify";
 import Wishlist from "./pages/Wishlist";
-import TrackYourOrder from './Components/TrackYourOrder'
+import TrackYourOrder from "./Components/TrackYourOrder";
 import DashboardLayout from "./Components/DashboardLayout";
 import AdminLayout from "./Components/admin/AdminLayout";
-
-// Dashboard Components
-// import DashboardLayout from './Components/DashboardLayout';
-// import Dashboard from './pages/Dashboard';
-// import Orders from './pages/dashboard/Orders';
-// import Products from './pages/dashboard/Products';
-// import Customers from './pages/dashboard/Customers';
-// import Categories from './pages/dashboard/Categories';
-// import Analytics from './pages/dashboard/Analytics';
-// import Settings from './pages/dashboard/Settings';
-// import ProductForm from "./pages/dashboard/ProductForm";
 
 function App() {
   const [order, setOrder] = useState(null);
@@ -75,19 +64,8 @@ function App() {
             <Route path="/track-order" element={<TrackYourOrder />} />
             <Route path="/track-order/:orderId" element={<TrackYourOrder />} />
             <Route path="/dashboard" element={<DashboardLayout />} />
-            <Route path="/admins" element={<DashboardLayout />} />     
-            <Route path="/admin/*" element={<AdminLayout />} />    
-            {/* Dashboard Routes */}
-            {/* <Route path="/dashboard" element={<DashboardLayout />}>
-              <Route index element={<Dashboard />} />
-              <Route path="orders" element={<Orders />} />
-              <Route path="products" element={<Products />} />
-              <Route path="customers" element={<Customers />} />
-              <Route path="categories" element={<Categories />} />
-              <Route path="analytics" element={<Analytics />} />
-              <Route path="settings" element={<Settings />} />
-              <Route path="products/new" element={<ProductForm />} />
-            </Route> */}
+            <Route path="/admins" element={<DashboardLayout />} />
+            <Route path="/admin/*" element={<AdminLayout />} />
 
             {/* 404 Page - Add this if you want */}
             <Route

@@ -15,10 +15,10 @@ import { MdOutlineLocalShipping } from "react-icons/md";
 
 const Order = ({ order: orderProp }) => {
   const navigate = useNavigate();
-  
+
   // Get order from Redux store if not provided as prop
   const currentOrder = useSelector((state) => state.orders.currentOrder);
-  
+
   const order = useMemo(() => {
     if (orderProp) return orderProp;
     if (currentOrder) {

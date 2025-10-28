@@ -62,4 +62,3 @@ export const {
   setTopProducts,
 } = adminSlice.actions;
 export default adminSlice.reducer;
-

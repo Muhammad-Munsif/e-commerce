@@ -23,6 +23,7 @@ import { ToastContainer } from "react-toastify";
 import Wishlist from "./pages/Wishlist";
 import TrackYourOrder from './Components/TrackYourOrder'
 import DashboardLayout from "./Components/DashboardLayout";
+import AdminLayout from "./Components/admin/AdminLayout";
 
 // Dashboard Components
 // import DashboardLayout from './Components/DashboardLayout';
@@ -40,7 +41,7 @@ function App() {
 
   return (
     <Router>
-      <div className="">
+      <div className="min-h-screen ">
         <Navbar />
         <main className="">
           <Routes>
@@ -74,7 +75,8 @@ function App() {
             <Route path="/track-order" element={<TrackYourOrder />} />
             <Route path="/track-order/:orderId" element={<TrackYourOrder />} />
             <Route path="/dashboard" element={<DashboardLayout />} />
-            <Route path="/admin" element={<DashboardLayout />} />     
+            <Route path="/admins" element={<DashboardLayout />} />     
+            <Route path="/admin/*" element={<AdminLayout />} />    
             {/* Dashboard Routes */}
             {/* <Route path="/dashboard" element={<DashboardLayout />}>
               <Route index element={<Dashboard />} />

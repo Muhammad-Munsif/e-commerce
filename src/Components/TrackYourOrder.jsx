@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 import {
   FaCheckCircle,
   FaHome,
@@ -19,93 +20,56 @@ import { HiCheckBadge } from "react-icons/hi2";
 const TrackYourOrder = () => {
   const navigate = useNavigate();
   const { orderId } = useParams();
-  const [order, setOrder] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [trackingNumber, setTrackingNumber] = useState("");
   const [searchOrderId, setSearchOrderId] = useState(orderId || "");
 
-  // Mock order data - in real app, this would come from an API
-  const mockOrderData = {
-    orderNumber: orderId || "ORD-123456",
-    status: "shipped", // confirmed, processing, shipped, delivered, cancelled
-    orderDate: "2024-01-15T10:30:00Z",
-    estimatedDelivery: "2024-01-20T18:00:00Z",
-    trackingNumber: "TRK-7890123456",
-    carrier: "UPS Ground",
-    shippingInformation: {
-      name: "John Doe",
-      address: "123 Main Street",
-      city: "New York",
-      state: "NY",
-      zipcode: "10001",
-      country: "USA",
-    },
-    products: [
-      {
-        id: 1,
-        name: "Wireless Bluetooth Headphones",
-        price: 99.99,
-        quantity: 1,
-        image:
-          "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=150",
-      },
-      {
-        id: 2,
-        name: "Phone Case",
-        price: 19.99,
-        quantity: 2,
-        image:
-          "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=150",
-      },
-    ],
-    totalPrice: 139.97,
-    trackingHistory: [
-      {
-        status: "confirmed",
-        description: "Order confirmed",
-        timestamp: "2024-01-15T10:30:00Z",
-        location: "Online Store",
-      },
-      {
-        status: "processing",
-        description: "Order is being processed",
-        timestamp: "2024-01-15T14:20:00Z",
-        location: "Warehouse",
-      },
-      {
-        status: "shipped",
-        description: "Package shipped",
-        timestamp: "2024-01-16T09:15:00Z",
-        location: "Distribution Center",
-      },
-      {
-        status: "out_for_delivery",
-        description: "Out for delivery",
-        timestamp: "2024-01-20T08:30:00Z",
-        location: "Local Facility",
-      },
-    ],
-  };
+  // Get orders from Redux store
+  const orders = useSelector((state) => state.orders.orders);
+  const currentOrder = useSelector((state) => state.orders.currentOrder);
 
-  useEffect(() => {
-    // Simulate API call
-    const fetchOrder = async () => {
-      setLoading(true);
-      try {
-        // In real app: const response = await api.getOrder(orderId || searchOrderId);
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        setOrder(mockOrderData);
-      } catch (error) {
-        console.error("Error fetching order:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
+  // Find order from Redux store
+  const order = useMemo(() => {
     if (orderId || searchOrderId) {
-      fetchOrder();
+      const foundOrder = orders.find(
+        (o) => o.id === orderId || o.orderNumber === orderId || o.id === searchOrderId || o.orderNumber === searchOrderId
+      );
+      if (foundOrder) {
+        // Transform order data for tracking view
+        return {
+          orderNumber: foundOrder.id || foundOrder.orderNumber,
+          status: foundOrder.status || "processing",
+          orderDate: foundOrder.createdAt || new Date().toISOString(),
+          estimatedDelivery: foundOrder.estimatedDelivery || new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString(),
+          trackingNumber: foundOrder.trackingNumber || `TRK-${foundOrder.id?.replace("ORD-", "") || "000000"}`,
+          carrier: foundOrder.carrier || "Standard Shipping",
+          shippingInformation: foundOrder.shippingInformation || {
+            name: foundOrder.customer || "Guest",
+            address: "",
+            city: "",
+            state: "",
+            zipcode: "",
+            country: "USA",
+          },
+          products: foundOrder.products || [],
+          totalPrice: foundOrder.totalPrice || 0,
+          trackingHistory: foundOrder.trackingHistory || [],
+        };
+      }
     }
-  }, [orderId, searchOrderId]);
+    return currentOrder ? {
+      orderNumber: currentOrder.id || currentOrder.orderNumber,
+      status: currentOrder.status || "processing",
+      orderDate: currentOrder.createdAt || new Date().toISOString(),
+      estimatedDelivery: currentOrder.estimatedDelivery || new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString(),
+      trackingNumber: currentOrder.trackingNumber || `TRK-${currentOrder.id?.replace("ORD-", "") || "000000"}`,
+      carrier: currentOrder.carrier || "Standard Shipping",
+      shippingInformation: currentOrder.shippingInformation || {},
+      products: currentOrder.products || [],
+      totalPrice: currentOrder.totalPrice || 0,
+      trackingHistory: currentOrder.trackingHistory || [],
+    } : null;
+  }, [orders, currentOrder, orderId, searchOrderId]);
 
   const handleTrackOrder = (e) => {
     e.preventDefault();

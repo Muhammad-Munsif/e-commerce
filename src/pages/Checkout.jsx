@@ -1,32 +1,53 @@
 import React, { useState } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import store from "../redux/store";
+import { addOrder } from "../redux/orderSlice";
 
 const Checkout = ({ setOrder }) => {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
+  const navigate = useNavigate();
+
   const [billingToggle, setBillingToggle] = useState(false);
   const [shippingToggle, setShippingToggle] = useState(false);
   const [paymentToggle, setPaymentToggle] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState("cod");
   const [shippingInfo, setShippingInfo] = useState({
+    name: "",
     address: "",
     city: "",
+    state: "",
     zipcode: "",
+    country: "USA",
+    email: "",
   });
 
   const handleOrder = () => {
     const newOrder = {
       products: cart.products,
-      orderNumber: "12345",
       shippingInformation: shippingInfo,
       totalPrice: cart.totalPrice,
+      paymentMethod: paymentMethod,
     };
-    setOrder(newOrder);
+    
+    // Add order to Redux store
+    dispatch(addOrder(newOrder));
+    
+    // Get the created order from store (includes auto-generated ID)
+    const createdOrder = store.getState().orders.currentOrder;
+    
+    // Also set it for the order confirmation page (backward compatibility)
+    if (setOrder && createdOrder) {
+      setOrder({
+        ...newOrder,
+        orderNumber: createdOrder.id || createdOrder.orderNumber,
+      });
+    }
+    
     navigate("/order-confirmation");
   };
-
-  const cart = useSelector((state) => state.cart);
-  const navigate = useNavigate();
   return (
     <div className="container mx-auto mt-40 px-4 md:px-16 lg:px-8 py-4  space-x-2">
       <h1 className="text-3xl font-bold text-gray-800 mb-2">Shopping Cart</h1>

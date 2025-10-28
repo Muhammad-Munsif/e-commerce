@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import {
   FaShoppingBag,
   FaUsers,
@@ -41,9 +42,34 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("overview");
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [notifications, setNotifications] = useState([]);
-  const [recentOrders, setRecentOrders] = useState([]);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  // Get data from Redux store
+  const adminState = useSelector((state) => state.admin);
+  const orders = useSelector((state) => state.orders.orders);
+  const products = useSelector((state) => state.product.products);
+  const cart = useSelector((state) => state.cart);
+
+  const notifications = adminState.notifications;
+  const dashboardStats = adminState.dashboardStats;
+  const salesData = adminState.salesData;
+  const topProducts = adminState.topProducts;
+
+  // Transform orders for recent orders table
+  const recentOrders = useMemo(() => {
+    return orders
+      .slice()
+      .sort((a, b) => new Date(b.createdAt || b.date) - new Date(a.createdAt || a.date))
+      .slice(0, 5)
+      .map((order) => ({
+        id: order.id || order.orderNumber,
+        customer: order.shippingInformation?.name || order.customer || "Guest",
+        date: order.date || order.createdAt?.split("T")[0] || new Date().toISOString().split("T")[0],
+        amount: order.totalPrice || 0,
+        status: order.status || "processing",
+        items: order.products?.length || 0,
+      }));
+  }, [orders]);
 
   // Handle window resize
   useEffect(() => {
@@ -61,150 +87,25 @@ const Dashboard = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Mock data - replace with actual API calls
-  const dashboardData = {
+  // Use data from Redux store
+  const dashboardData = useMemo(() => ({
     overview: {
-      totalRevenue: 45236.89,
-      totalOrders: 1247,
-      totalCustomers: 892,
-      totalProducts: 156,
-      revenueChange: 12.5,
-      ordersChange: 8.3,
-      customersChange: 15.7,
-      productsChange: 5.2,
+      totalRevenue: dashboardStats.totalRevenue || orders.reduce((sum, order) => sum + (order.totalPrice || 0), 0),
+      totalOrders: dashboardStats.totalOrders || orders.length,
+      totalCustomers: dashboardStats.totalCustomers || new Set(orders.map(o => o.shippingInformation?.email || o.customer)).size,
+      totalProducts: dashboardStats.totalProducts || products.length,
+      revenueChange: dashboardStats.revenueChange,
+      ordersChange: dashboardStats.ordersChange,
+      customersChange: dashboardStats.customersChange,
+      productsChange: dashboardStats.productsChange,
     },
     sales: {
-      monthlyData: [
-        { month: "Jan", sales: 12000, revenue: 11000 },
-        { month: "Feb", sales: 19000, revenue: 18000 },
-        { month: "Mar", sales: 15000, revenue: 14000 },
-        { month: "Apr", sales: 22000, revenue: 21000 },
-        { month: "May", sales: 28000, revenue: 26500 },
-        { month: "Jun", sales: 32000, revenue: 30000 },
-        { month: "Jul", sales: 45236, revenue: 42000 },
-      ],
-      categories: [
-        { name: "Electronics", value: 45, color: "#3b82f6" },
-        { name: "Clothing", value: 25, color: "#ef4444" },
-        { name: "Home & Garden", value: 15, color: "#10b981" },
-        { name: "Books", value: 10, color: "#f59e0b" },
-        { name: "Other", value: 5, color: "#8b5cf6" },
-      ],
-      dailySales: [
-        { day: "Mon", sales: 4200, orders: 45 },
-        { day: "Tue", sales: 5800, orders: 62 },
-        { day: "Wed", sales: 5100, orders: 54 },
-        { day: "Thu", sales: 7200, orders: 78 },
-        { day: "Fri", sales: 8900, orders: 91 },
-        { day: "Sat", sales: 11500, orders: 104 },
-        { day: "Sun", sales: 9800, orders: 87 },
-      ],
+      monthlyData: salesData.monthlyData || [],
+      categories: salesData.categories || [],
+      dailySales: salesData.dailySales || [],
     },
-    recentOrders: [
-      {
-        id: "ORD-123456",
-        customer: "John Doe",
-        date: "2024-01-20",
-        amount: 139.97,
-        status: "delivered",
-        items: 3,
-      },
-      {
-        id: "ORD-123457",
-        customer: "Jane Smith",
-        date: "2024-01-19",
-        amount: 89.99,
-        status: "shipped",
-        items: 2,
-      },
-      {
-        id: "ORD-123458",
-        customer: "Mike Johnson",
-        date: "2024-01-19",
-        amount: 234.5,
-        status: "processing",
-        items: 5,
-      },
-      {
-        id: "ORD-123459",
-        customer: "Sarah Wilson",
-        date: "2024-01-18",
-        amount: 67.99,
-        status: "delivered",
-        items: 1,
-      },
-      {
-        id: "ORD-123460",
-        customer: "Tom Brown",
-        date: "2024-01-18",
-        amount: 156.75,
-        status: "cancelled",
-        items: 2,
-      },
-    ],
-    topProducts: [
-      {
-        id: 1,
-        name: "Wireless Headphones",
-        price: 99.99,
-        sales: 142,
-        revenue: 14198.58,
-        rating: 4.5,
-      },
-      {
-        id: 2,
-        name: "Smart Watch",
-        price: 199.99,
-        sales: 89,
-        revenue: 17799.11,
-        rating: 4.3,
-      },
-      {
-        id: 3,
-        name: "Phone Case",
-        price: 19.99,
-        sales: 234,
-        revenue: 4677.66,
-        rating: 4.7,
-      },
-      {
-        id: 4,
-        name: "Laptop Stand",
-        price: 49.99,
-        sales: 78,
-        revenue: 3899.22,
-        rating: 4.4,
-      },
-    ],
-  };
-
-  useEffect(() => {
-    // Simulate API calls
-    setRecentOrders(dashboardData.recentOrders);
-    setNotifications([
-      {
-        id: 1,
-        type: "order",
-        message: "New order #ORD-123461 received",
-        time: "5 min ago",
-        read: false,
-      },
-      {
-        id: 2,
-        type: "stock",
-        message: "Low stock alert for Wireless Headphones",
-        time: "1 hour ago",
-        read: false,
-      },
-      {
-        id: 3,
-        type: "payment",
-        message: "Payment failed for order #ORD-123455",
-        time: "2 hours ago",
-        read: true,
-      },
-    ]);
-  }, []);
+    topProducts: topProducts || [],
+  }), [dashboardStats, salesData, topProducts, orders, products]);
 
   const getStatusColor = (status) => {
     switch (status) {

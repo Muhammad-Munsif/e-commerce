@@ -65,7 +65,6 @@ const Beauty = () => {
             <FaRegSmile className="mr-3 text-rose-600" />
             Beauty Essentials
           </h2>
-          {/* // Renderring dummy data  */}
           <ProductGrid>
             {beautyProducts.map((product) => (
               <ProductCard key={product.id} product={product} />

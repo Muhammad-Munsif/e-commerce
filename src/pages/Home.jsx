@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import { Categories, mockData } from "../assets/mockData";
+import { Categories } from "../assets/mockData";
+import { productsData } from "../data/productsData";
 import Person from "../assets/person2.jpg";
 import InfoSection from "../Components/InfoSection";
 import CategorySection from "../Components/CategorySection";
@@ -14,7 +15,7 @@ const Home = () => {
   const navigate = useNavigate();
   const products = useSelector((state) => state.product);
   useEffect(() => {
-    dispatch(setProducts(mockData));
+    dispatch(setProducts(productsData));
   }, []);
   return (
     <div>

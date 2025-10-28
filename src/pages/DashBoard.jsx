@@ -1,5 +1,6 @@
 // pages/Dashboard.jsx
-import React from "react";
+import React, { useMemo } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   FaShoppingCart,
@@ -12,79 +13,66 @@ import {
 } from "react-icons/fa";
 
 const Dashboard = () => {
-  // Mock data - replace with actual data from your API
-  const stats = [
-    {
-      title: "Total Revenue",
-      value: "$45,231",
-      change: "+12%",
-      isPositive: true,
-      icon: FaMoneyBillWave,
-      color: "bg-green-500",
-    },
-    {
-      title: "Orders",
-      value: "2,845",
-      change: "+8%",
-      isPositive: true,
-      icon: FaShoppingCart,
-      color: "bg-blue-500",
-    },
-    {
-      title: "Customers",
-      value: "12,254",
-      change: "-2%",
-      isPositive: false,
-      icon: FaUsers,
-      color: "bg-purple-500",
-    },
-    {
-      title: "Products",
-      value: "1,432",
-      change: "+5%",
-      isPositive: true,
-      icon: FaBox,
-      color: "bg-orange-500",
-    },
-  ];
+  // Get data from Redux store
+  const orders = useSelector((state) => state.orders.orders);
+  const products = useSelector((state) => state.product.products);
+  const cart = useSelector((state) => state.cart);
 
-  const recentOrders = [
-    {
-      id: "#ORD-001",
-      customer: "John Doe",
-      date: "2024-01-15",
-      amount: "$234.00",
-      status: "Delivered",
-    },
-    {
-      id: "#ORD-002",
-      customer: "Jane Smith",
-      date: "2024-01-15",
-      amount: "$156.00",
-      status: "Processing",
-    },
-    {
-      id: "#ORD-003",
-      customer: "Mike Johnson",
-      date: "2024-01-14",
-      amount: "$89.00",
-      status: "Shipped",
-    },
-    {
-      id: "#ORD-004",
-      customer: "Sarah Wilson",
-      date: "2024-01-14",
-      amount: "$345.00",
-      status: "Delivered",
-    },
-    {
-      id: "#ORD-005",
-      customer: "Tom Brown",
-      date: "2024-01-13",
-      amount: "$67.00",
-      status: "Cancelled",
-    },
-  ];
+  // Calculate stats from Redux data
+  const stats = useMemo(() => {
+    const totalRevenue = orders.reduce((sum, order) => sum + (order.totalPrice || 0), 0);
+    const uniqueCustomers = new Set(orders.map(o => o.shippingInformation?.email || o.customer)).size;
+
+    return [
+      {
+        title: "Total Revenue",
+        value: `$${totalRevenue.toLocaleString()}`,
+        change: "0%",
+        isPositive: true,
+        icon: FaMoneyBillWave,
+        color: "bg-green-500",
+      },
+      {
+        title: "Orders",
+        value: orders.length.toString(),
+        change: "0%",
+        isPositive: true,
+        icon: FaShoppingCart,
+        color: "bg-blue-500",
+      },
+      {
+        title: "Customers",
+        value: uniqueCustomers.toString(),
+        change: "0%",
+        isPositive: true,
+        icon: FaUsers,
+        color: "bg-purple-500",
+      },
+      {
+        title: "Products",
+        value: products.length.toString(),
+        change: "0%",
+        isPositive: true,
+        icon: FaBox,
+        color: "bg-orange-500",
+      },
+    ];
+  }, [orders, products]);
+
+  // Transform recent orders from Redux
+  const recentOrders = useMemo(() => {
+    return orders
+      .slice()
+      .sort((a, b) => new Date(b.createdAt || b.date) - new Date(a.createdAt || a.date))
+      .slice(0, 5)
+      .map((order) => ({
+        id: `#${order.id || order.orderNumber}`,
+        customer: order.shippingInformation?.name || order.customer || "Guest",
+        date: order.date || order.createdAt?.split("T")[0] || new Date().toISOString().split("T")[0],
+        amount: `$${order.totalPrice?.toFixed(2) || "0.00"}`,
+        status: order.status ? order.status.charAt(0).toUpperCase() + order.status.slice(1) : "Processing",
+      }));
+  }, [orders]);
 
   const getStatusColor = (status) => {
     switch (status) {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaSearch,
   FaShoppingCart,
@@ -6,7 +6,7 @@ import {
   FaBars,
   FaTimes,
 } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Model from "./Model";
 import Login from "./Login";
@@ -21,6 +21,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const openSignUp = () => {
     setIsLogin(false);
@@ -47,6 +48,19 @@ const Navbar = () => {
   };
 
   const products = useSelector((state) => state.cart.products);
+
+  // Close mobile menu on route change and ESC key for better UX
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setIsMobileMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-lg ">
@@ -161,6 +175,12 @@ const Navbar = () => {
           Dashboard
         </Link>
         <Link
+          to="/admin"
+          className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+        >
+          AdminLayout
+        </Link>
+        <Link
           to="/electronics"
           className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
         >
@@ -198,10 +218,16 @@ const Navbar = () => {
         </Link>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Navigation Menu with overlay */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white bg-opacity-50 border-t shadow-lg">
-          <div className="container mx-auto px-4 py-4">
+        <>
+          <div
+            className="fixed inset-0 lg:hidden"
+            onClick={closeMobileMenu}
+            aria-hidden="true"
+          />
+          <div className="fixed top-[64px] md:top-[72px] left-0 right-0 lg:hidden bg-white border-t shadow-lg max-h-[calc(100vh-64px)] md:max-h-[calc(100vh-72px)] overflow-y-auto z-50">
+            <div className="container mx-auto px-4 py-4">
             {/* Main Links */}
             <div className="grid grid-cols-2 gap-4 mb-2">
               <Link
@@ -285,18 +311,19 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* Mobile Login Button */}
-            <button
-              className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg transition-colors font-semibold"
-              onClick={() => {
-                setIsModelOpen(true);
-                closeMobileMenu();
-              }}
-            >
-              Login | Register
-            </button>
+              {/* Mobile Login Button */}
+              <button
+                className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg transition-colors font-semibold"
+                onClick={() => {
+                  setIsModelOpen(true);
+                  closeMobileMenu();
+                }}
+              >
+                Login | Register
+              </button>
+            </div>
           </div>
-        </div>
+        </>
       )}
 
       {/* Auth Modal */}

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import {
   FaCheckCircle,
   FaHome,
@@ -12,8 +13,40 @@ import {
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { MdOutlineLocalShipping } from "react-icons/md";
 
-const Order = ({ order }) => {
+const Order = ({ order: orderProp }) => {
   const navigate = useNavigate();
+  
+  // Get order from Redux store if not provided as prop
+  const currentOrder = useSelector((state) => state.orders.currentOrder);
+  
+  const order = useMemo(() => {
+    if (orderProp) return orderProp;
+    if (currentOrder) {
+      return {
+        orderNumber: currentOrder.id || currentOrder.orderNumber,
+        shippingInformation: currentOrder.shippingInformation || {},
+        products: currentOrder.products || [],
+        totalPrice: currentOrder.totalPrice || 0,
+      };
+    }
+    return null;
+  }, [orderProp, currentOrder]);
+
+  if (!order) {
+    return (
+      <div className="container mx-auto mt-40 px-4 md:px-16 lg:px-8 py-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-lg text-gray-600">No order found.</p>
+          <button
+            onClick={() => navigate("/")}
+            className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg"
+          >
+            Go to Home
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto mt-40 px-4 md:px-16 lg:px-8 py-4 flex flex-col md:flex-row space-x-2">

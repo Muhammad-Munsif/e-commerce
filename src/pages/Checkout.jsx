@@ -31,13 +31,13 @@ const Checkout = ({ setOrder }) => {
       totalPrice: cart.totalPrice,
       paymentMethod: paymentMethod,
     };
-    
+
     // Add order to Redux store
     dispatch(addOrder(newOrder));
-    
+
     // Get the created order from store (includes auto-generated ID)
     const createdOrder = store.getState().orders.currentOrder;
-    
+
     // Also set it for the order confirmation page (backward compatibility)
     if (setOrder && createdOrder) {
       setOrder({
@@ -45,7 +45,7 @@ const Checkout = ({ setOrder }) => {
         orderNumber: createdOrder.id || createdOrder.orderNumber,
       });
     }
-    
+
     navigate("/order-confirmation");
   };
   return (

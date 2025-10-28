@@ -20,8 +20,13 @@ const Dashboard = () => {
 
   // Calculate stats from Redux data
   const stats = useMemo(() => {
-    const totalRevenue = orders.reduce((sum, order) => sum + (order.totalPrice || 0), 0);
-    const uniqueCustomers = new Set(orders.map(o => o.shippingInformation?.email || o.customer)).size;
+    const totalRevenue = orders.reduce(
+      (sum, order) => sum + (order.totalPrice || 0),
+      0
+    );
+    const uniqueCustomers = new Set(
+      orders.map((o) => o.shippingInformation?.email || o.customer)
+    ).size;
 
     return [
       {
@@ -63,14 +68,22 @@ const Dashboard = () => {
   const recentOrders = useMemo(() => {
     return orders
       .slice()
-      .sort((a, b) => new Date(b.createdAt || b.date) - new Date(a.createdAt || a.date))
+      .sort(
+        (a, b) =>
+          new Date(b.createdAt || b.date) - new Date(a.createdAt || a.date)
+      )
       .slice(0, 5)
       .map((order) => ({
         id: `#${order.id || order.orderNumber}`,
         customer: order.shippingInformation?.name || order.customer || "Guest",
-        date: order.date || order.createdAt?.split("T")[0] || new Date().toISOString().split("T")[0],
+        date:
+          order.date ||
+          order.createdAt?.split("T")[0] ||
+          new Date().toISOString().split("T")[0],
         amount: `$${order.totalPrice?.toFixed(2) || "0.00"}`,
-        status: order.status ? order.status.charAt(0).toUpperCase() + order.status.slice(1) : "Processing",
+        status: order.status
+          ? order.status.charAt(0).toUpperCase() + order.status.slice(1)
+          : "Processing",
       }));
   }, [orders]);
 

@@ -352,8 +352,8 @@ const TrackYourOrder = () => {
                   </p>
                   <p>{order.shippingInformation.address}</p>
                   <p>
-                    {order.shippingInformation.city},{" "}
-                    {order.shippingInformation.state}{" "}
+                    {order.shippingInformation.city},
+                    {order.shippingInformation.state}
                     {order.shippingInformation.zipcode}
                   </p>
                 </div>
@@ -367,15 +367,15 @@ const TrackYourOrder = () => {
                 </h4>
                 <div className="space-y-2 text-gray-700">
                   <p>
-                    <span className="font-medium">Tracking Number:</span>{" "}
+                    <span className="font-medium">Tracking Number:</span>
                     {order.trackingNumber}
                   </p>
                   <p>
-                    <span className="font-medium">Carrier:</span>{" "}
+                    <span className="font-medium">Carrier:</span>
                     {order.carrier}
                   </p>
                   <p>
-                    <span className="font-medium">Order Date:</span>{" "}
+                    <span className="font-medium">Order Date:</span>
                     {formatDate(order.orderDate)}
                   </p>
                 </div>

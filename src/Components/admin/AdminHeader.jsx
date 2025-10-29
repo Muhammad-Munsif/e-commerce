@@ -8,9 +8,7 @@ const AdminHeader = ({ sidebarOpen, setSidebarOpen, isMobile }) => {
     <>
       <header className="lg:hidden bg-white shadow-sm border-b border-gray-200">
         <div className="flex items-center justify-between px-4 lg:px-6 py-3">
-          {" "}
-          {/* Reduced padding */}
-          {/* Left Section - Only sidebar toggle */}
+      
           <div className="flex items-center">
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -26,15 +24,15 @@ const AdminHeader = ({ sidebarOpen, setSidebarOpen, isMobile }) => {
               </h1>
             </div>
           </div>
-          {/* Right Section - Minimal items */}
+         
           <div className="flex items-center space-x-3">
-            {/* Notifications */}
+            
             <button className="p-2 text-gray-600 hover:text-gray-900 relative">
               <FaBell className="w-5 h-5" />
               <span className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
             </button>
 
-            {/* User Profile */}
+           
             <div className="flex items-center space-x-2">
               <FaUserCircle className="w-6 h-6 text-gray-400" />
             </div>

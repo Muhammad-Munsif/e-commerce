@@ -32,8 +32,8 @@ const AdminLayout = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Check if user is admin (you can implement proper auth check)
-  const isAdmin = true; // Replace with actual auth check
+
+  const isAdmin = true; 
 
   if (!isAdmin) {
     navigate("/");

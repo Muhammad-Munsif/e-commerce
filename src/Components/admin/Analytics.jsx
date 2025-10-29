@@ -26,6 +26,7 @@ import {
   AreaChart,
   Area,
 } from "recharts";
+import Footer from "../Footer";
 
 const Analytics = () => {
   const [dateRange, setDateRange] = useState("30days");
@@ -103,7 +104,8 @@ const Analytics = () => {
   );
 
   return (
-    <div className="space-y-6">
+    <>
+    <div className="space-y-6 min-h-screen bg-red-500 ">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
         <div>
@@ -372,6 +374,10 @@ const Analytics = () => {
         </div>
       </div>
     </div>
+      <div className=" w-screen px-0 mx-0 max-w-full bg-red-500 mt-3">    
+        <Footer/>
+      </div>
+    </>
   );
 };
 

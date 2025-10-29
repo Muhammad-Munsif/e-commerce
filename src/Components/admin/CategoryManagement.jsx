@@ -1,5 +1,6 @@
 // src/components/admin/CategoryManagement.js
 import React, { useState } from "react";
+import Footer from '../Footer'
 import {
   FaPlus,
   FaEdit,
@@ -264,6 +265,7 @@ const CategoryManagement = () => {
           <p className="text-gray-400">Try adjusting your search filters</p>
         </div>
       )}
+      <Footer />
     </div>
   );
 };

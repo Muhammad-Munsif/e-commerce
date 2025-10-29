@@ -168,12 +168,12 @@ const Navbar = () => {
         >
           Shop
         </Link>
-        <Link
+        {/* <Link
           to="/dashboard"
           className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
         >
           Dashboard
-        </Link>
+        </Link> */}
         <Link
           to="/admin"
           className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
@@ -258,13 +258,13 @@ const Navbar = () => {
               >
                 Contact
               </Link>
-              <Link
+              {/* <Link
                 to="/dashboard"
                 className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
                 onClick={closeMobileMenu}
               >
                 Dashboard
-              </Link>
+              </Link> */}
               <Link
                 to="/admin/*"
                 className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"

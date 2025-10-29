@@ -15,13 +15,8 @@ import {
   FaSearch,
   FaBell,
   FaUserCircle,
-  FaCog,
   FaShoppingCart,
   FaStar,
-  FaBars,
-  FaTimes,
-  FaHome,
-  FaList,
 } from "react-icons/fa";
 import {
   LineChart,
@@ -38,22 +33,15 @@ import {
   Cell,
 } from "recharts";
 
+
 const DashboardLayout = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("overview");
-  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   // Get data from Redux store
-  const adminState = useSelector((state) => state.admin);
-  const orders = useSelector((state) => state.orders.orders);
-  const products = useSelector((state) => state.product.products);
-  const cart = useSelector((state) => state.cart);
-
-  const notifications = adminState.notifications;
-  const dashboardStats = adminState.dashboardStats;
-  const salesData = adminState.salesData;
-  const topProducts = adminState.topProducts;
+  const orders = useSelector((state) => state.orders?.orders || []);
+  const products = useSelector((state) => state.product?.products || []);
+  const dashboardStats = useSelector((state) => state.admin?.dashboardStats || {});
 
   // Transform orders for recent orders table
   const recentOrders = useMemo(() => {
@@ -74,38 +62,87 @@ const DashboardLayout = () => {
   // Handle window resize
   useEffect(() => {
     const handleResize = () => {
-      const mobile = window.innerWidth < 768;
-      setIsMobile(mobile);
-      if (!mobile) {
-        setSidebarOpen(true);
-      } else {
-        setSidebarOpen(false);
-      }
+      setIsMobile(window.innerWidth < 768);
     };
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Use data from Redux store
+  // Dashboard data
   const dashboardData = useMemo(() => ({
     overview: {
       totalRevenue: dashboardStats.totalRevenue || orders.reduce((sum, order) => sum + (order.totalPrice || 0), 0),
       totalOrders: dashboardStats.totalOrders || orders.length,
       totalCustomers: dashboardStats.totalCustomers || new Set(orders.map(o => o.shippingInformation?.email || o.customer)).size,
       totalProducts: dashboardStats.totalProducts || products.length,
-      revenueChange: dashboardStats.revenueChange,
-      ordersChange: dashboardStats.ordersChange,
-      customersChange: dashboardStats.customersChange,
-      productsChange: dashboardStats.productsChange,
+      revenueChange: dashboardStats.revenueChange || 12.5,
+      ordersChange: dashboardStats.ordersChange || 8.3,
+      customersChange: dashboardStats.customersChange || 15.7,
+      productsChange: dashboardStats.productsChange || 5.2,
     },
     sales: {
-      monthlyData: salesData.monthlyData || [],
-      categories: salesData.categories || [],
-      dailySales: salesData.dailySales || [],
+      monthlyData: [
+        { month: "Jan", sales: 12000, revenue: 11000 },
+        { month: "Feb", sales: 19000, revenue: 18000 },
+        { month: "Mar", sales: 15000, revenue: 14000 },
+        { month: "Apr", sales: 22000, revenue: 21000 },
+        { month: "May", sales: 28000, revenue: 26500 },
+        { month: "Jun", sales: 32000, revenue: 30000 },
+        { month: "Jul", sales: 45236, revenue: 42000 },
+      ],
+      categories: [
+        { name: "Electronics", value: 45, color: "#3b82f6" },
+        { name: "Clothing", value: 25, color: "#ef4444" },
+        { name: "Home & Garden", value: 15, color: "#10b981" },
+        { name: "Books", value: 10, color: "#f59e0b" },
+        { name: "Other", value: 5, color: "#8b5cf6" },
+      ],
+      dailySales: [
+        { day: "Mon", sales: 4200, orders: 45 },
+        { day: "Tue", sales: 5800, orders: 62 },
+        { day: "Wed", sales: 5100, orders: 54 },
+        { day: "Thu", sales: 7200, orders: 78 },
+        { day: "Fri", sales: 8900, orders: 91 },
+        { day: "Sat", sales: 11500, orders: 104 },
+        { day: "Sun", sales: 9800, orders: 87 },
+      ],
     },
-    topProducts: topProducts || [],
-  }), [dashboardStats, salesData, topProducts, orders, products]);
+    topProducts: [
+      {
+        id: 1,
+        name: "Wireless Headphones",
+        price: 99.99,
+        sales: 142,
+        revenue: 14198.58,
+        rating: 4.5,
+      },
+      {
+        id: 2,
+        name: "Smart Watch",
+        price: 199.99,
+        sales: 89,
+        revenue: 17799.11,
+        rating: 4.3,
+      },
+      {
+        id: 3,
+        name: "Phone Case",
+        price: 19.99,
+        sales: 234,
+        revenue: 4677.66,
+        rating: 4.7,
+      },
+      {
+        id: 4,
+        name: "Laptop Stand",
+        price: 49.99,
+        sales: 78,
+        revenue: 3899.22,
+        rating: 4.4,
+      },
+    ],
+  }), [dashboardStats, orders, products]);
 
   const getStatusColor = (status) => {
     switch (status) {
@@ -399,7 +436,7 @@ const DashboardLayout = () => {
                   {order.date}
                 </td>
                 <td className="py-2 sm:py-3 px-2 sm:px-4 text-xs sm:text-sm font-medium text-gray-900">
-                  ${order.amount}
+                  ${order.amount.toFixed(2)}
                 </td>
                 <td className="py-2 sm:py-3 px-2 sm:px-4">
                   <span
@@ -471,133 +508,66 @@ const DashboardLayout = () => {
   );
 
   return (
-    <div className="flex min-h-screen bg-gray-50 ">
-      {" "}
-      {/* Added pt-16 for navbar spacing */}
-      {/* Mobile Overlay */}
-      {sidebarOpen && isMobile && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-20"
-          onClick={() => setSidebarOpen(false)}
-        />
-      )}
-      {/* Sidebar */}
-      
+    <div className="min-h-screen bg-gray-50  w-full">
       {/* Main Content */}
-      <div className="flex-1 overflow-auto min-w-0">
-        
-
+      <div className="flex-1 overflow-auto">
         {/* Dashboard Content */}
         <main className="p-3 sm:p-4 md:p-6">
-          {activeTab === "overview" && (
-            <div className="space-y-4 sm:space-y-6">
-              {/* Stats Grid */}
-              <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
-                <StatCard
-                  title="Total Revenue"
-                  value={`$${dashboardData.overview.totalRevenue.toLocaleString()}`}
-                  change={dashboardData.overview.revenueChange}
-                  icon={<FaDollarSign />}
-                  color="bg-green-500"
-                />
-                <StatCard
-                  title="Total Orders"
-                  value={dashboardData.overview.totalOrders.toLocaleString()}
-                  change={dashboardData.overview.ordersChange}
-                  icon={<FaShoppingBag />}
-                  color="bg-blue-500"
-                />
-                <StatCard
-                  title="Total Customers"
-                  value={dashboardData.overview.totalCustomers.toLocaleString()}
-                  change={dashboardData.overview.customersChange}
-                  icon={<FaUsers />}
-                  color="bg-purple-500"
-                />
-                <StatCard
-                  title="Total Products"
-                  value={dashboardData.overview.totalProducts.toLocaleString()}
-                  change={dashboardData.overview.productsChange}
-                  icon={<FaBoxOpen />}
-                  color="bg-orange-500"
-                />
-              </div>
-
-              {/* Charts Section */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-                <SalesChart />
-                <CategoryChart />
-              </div>
-
-              <div className="grid grid-cols-1">
-                <DailySalesChart />
-              </div>
-
-              {/* Tables Section */}
-              <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6">
-                <div className="xl:col-span-2">
-                  <RecentOrdersTable />
-                </div>
-                <div className="xl:col-span-1">
-                  <TopProducts />
-                </div>
-              </div>
+          <div className="space-y-4 sm:space-y-6">
+            {/* Stats Grid */}
+            <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+              <StatCard
+                title="Total Revenue"
+                value={`$${dashboardData.overview.totalRevenue.toLocaleString()}`}
+                change={dashboardData.overview.revenueChange}
+                icon={<FaDollarSign />}
+                color="bg-green-500"
+              />
+              <StatCard
+                title="Total Orders"
+                value={dashboardData.overview.totalOrders.toLocaleString()}
+                change={dashboardData.overview.ordersChange}
+                icon={<FaShoppingBag />}
+                color="bg-blue-500"
+              />
+              <StatCard
+                title="Total Customers"
+                value={dashboardData.overview.totalCustomers.toLocaleString()}
+                change={dashboardData.overview.customersChange}
+                icon={<FaUsers />}
+                color="bg-purple-500"
+              />
+              <StatCard
+                title="Total Products"
+                value={dashboardData.overview.totalProducts.toLocaleString()}
+                change={dashboardData.overview.productsChange}
+                icon={<FaBoxOpen />}
+                color="bg-orange-500"
+              />
             </div>
-          )}
 
-          {/* Other tabs */}
-          {activeTab === "orders" && (
-            <div className="space-y-6">
-              <RecentOrdersTable />
+            {/* Charts Section */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+              <SalesChart />
+              <CategoryChart />
             </div>
-          )}
 
-          {activeTab === "products" && (
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Products Management
-              </h2>
-              <TopProducts />
-              <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-                <p className="text-blue-700">
-                  Full products management interface coming soon...
-                </p>
-              </div>
-            </div>
-          )}
-
-          {activeTab === "customers" && (
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Customers
-              </h2>
-              <p className="text-gray-600">
-                Customer management interface coming soon...
-              </p>
-            </div>
-          )}
-
-          {activeTab === "analytics" && (
-            <div className="space-y-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <SalesChart />
-                <CategoryChart />
-              </div>
+            <div className="grid grid-cols-1">
               <DailySalesChart />
             </div>
-          )}
 
-          {activeTab === "settings" && (
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Settings
-              </h2>
-              <p className="text-gray-600">Settings interface coming soon...</p>
+            {/* Tables Section */}
+            <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6">
+              <div className="xl:col-span-2">
+                <RecentOrdersTable />
+              </div>
+              <div className="xl:col-span-1">
+                <TopProducts />
+              </div>
             </div>
-          )}
+          </div>
         </main>
       </div>
-  
     </div>
   );
 };

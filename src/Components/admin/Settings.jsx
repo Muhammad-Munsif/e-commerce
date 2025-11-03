@@ -10,6 +10,9 @@ import {
   FaBell,
   FaGlobe,
   FaPalette,
+  FaKey,
+  FaUserShield,
+  FaLock,
 } from "react-icons/fa";
 import Footer from "../Footer";
 
@@ -50,19 +53,55 @@ const Settings = () => {
       smtpPort: "587",
       smtpUsername: "noreply@easyshop.com",
       smtpPassword: "********",
+      smtpEncryption: "tls",
+      fromName: "EasyShop",
+      fromEmail: "noreply@easyshop.com",
       orderNotifications: true,
       marketingEmails: true,
       adminNotifications: true,
+      customerWelcomeEmail: true,
+      orderConfirmationEmail: true,
+      shippingUpdateEmail: true,
     },
     // Notification Settings
     notifications: {
-      newOrder: true,
-      lowStock: true,
-      newUser: false,
-      paymentFailed: true,
-      orderShipped: true,
+      // Email Notifications
       emailNotifications: true,
+      newOrderEmail: true,
+      lowStockEmail: true,
+      newUserEmail: false,
+      paymentFailedEmail: true,
+      orderShippedEmail: true,
+      
+      // Push Notifications
       pushNotifications: false,
+      newOrderPush: true,
+      lowStockPush: false,
+      newUserPush: false,
+      paymentFailedPush: true,
+      
+      // SMS Notifications
+      smsNotifications: false,
+      newOrderSMS: false,
+      orderShippedSMS: true,
+      
+      // Admin Notifications
+      notifyAdminOnOrder: true,
+      notifyAdminOnRefund: true,
+      notifyAdminOnStock: true,
+    },
+    // Security Settings
+    security: {
+      twoFactorAuth: false,
+      loginAttempts: 5,
+      sessionTimeout: 30,
+      passwordMinLength: 8,
+      forceStrongPasswords: true,
+      ipWhitelist: [],
+      apiRateLimit: 100,
+      sslEnabled: true,
+      corsEnabled: true,
+      auditLog: true,
     },
   });
 
@@ -371,6 +410,491 @@ const Settings = () => {
     </div>
   );
 
+  const renderEmailSettings = () => (
+    <div className="space-y-6">
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+        <div className="flex items-start">
+          <FaEnvelope className="w-5 h-5 text-blue-600 mt-0.5 mr-3" />
+          <div>
+            <h4 className="font-medium text-blue-900">SMTP Configuration</h4>
+            <p className="text-blue-700 text-sm mt-1">
+              Configure your email server settings for sending transactional emails.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              SMTP Host
+            </label>
+            <input
+              type="text"
+              value={settings.email.smtpHost}
+              onChange={(e) =>
+                handleInputChange("email", "smtpHost", e.target.value)
+              }
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              placeholder="smtp.gmail.com"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              SMTP Port
+            </label>
+            <input
+              type="number"
+              value={settings.email.smtpPort}
+              onChange={(e) =>
+                handleInputChange("email", "smtpPort", parseInt(e.target.value))
+              }
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              placeholder="587"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Encryption
+            </label>
+            <select
+              value={settings.email.smtpEncryption}
+              onChange={(e) =>
+                handleInputChange("email", "smtpEncryption", e.target.value)
+              }
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="tls">TLS</option>
+              <option value="ssl">SSL</option>
+              <option value="none">None</option>
+            </select>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              SMTP Username
+            </label>
+            <input
+              type="text"
+              value={settings.email.smtpUsername}
+              onChange={(e) =>
+                handleInputChange("email", "smtpUsername", e.target.value)
+              }
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              SMTP Password
+            </label>
+            <input
+              type="password"
+              value={settings.email.smtpPassword}
+              onChange={(e) =>
+                handleInputChange("email", "smtpPassword", e.target.value)
+              }
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              From Email
+            </label>
+            <input
+              type="email"
+              value={settings.email.fromEmail}
+              onChange={(e) =>
+                handleInputChange("email", "fromEmail", e.target.value)
+              }
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-gray-200 pt-6">
+        <h4 className="font-medium text-gray-900 mb-4">Email Preferences</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="flex items-center">
+            <input
+              type="checkbox"
+              id="orderNotifications"
+              checked={settings.email.orderNotifications}
+              onChange={(e) =>
+                handleInputChange("email", "orderNotifications", e.target.checked)
+              }
+              className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            />
+            <label htmlFor="orderNotifications" className="ml-2 text-sm text-gray-700">
+              Order Notifications
+            </label>
+          </div>
+          <div className="flex items-center">
+            <input
+              type="checkbox"
+              id="customerWelcomeEmail"
+              checked={settings.email.customerWelcomeEmail}
+              onChange={(e) =>
+                handleInputChange("email", "customerWelcomeEmail", e.target.checked)
+              }
+              className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            />
+            <label htmlFor="customerWelcomeEmail" className="ml-2 text-sm text-gray-700">
+              Welcome Emails
+            </label>
+          </div>
+          <div className="flex items-center">
+            <input
+              type="checkbox"
+              id="orderConfirmationEmail"
+              checked={settings.email.orderConfirmationEmail}
+              onChange={(e) =>
+                handleInputChange("email", "orderConfirmationEmail", e.target.checked)
+              }
+              className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            />
+            <label htmlFor="orderConfirmationEmail" className="ml-2 text-sm text-gray-700">
+              Order Confirmations
+            </label>
+          </div>
+          <div className="flex items-center">
+            <input
+              type="checkbox"
+              id="shippingUpdateEmail"
+              checked={settings.email.shippingUpdateEmail}
+              onChange={(e) =>
+                handleInputChange("email", "shippingUpdateEmail", e.target.checked)
+              }
+              className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            />
+            <label htmlFor="shippingUpdateEmail" className="ml-2 text-sm text-gray-700">
+              Shipping Updates
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderNotificationSettings = () => (
+    <div className="space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Email Notifications */}
+        <div className="bg-white border border-gray-200 rounded-lg p-6">
+          <div className="flex items-center mb-4">
+            <FaEnvelope className="w-5 h-5 text-blue-600 mr-2" />
+            <h4 className="font-medium text-gray-900">Email Notifications</h4>
+          </div>
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-700">Email Notifications</span>
+              <label className="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={settings.notifications.emailNotifications}
+                  onChange={(e) =>
+                    handleInputChange("notifications", "emailNotifications", e.target.checked)
+                  }
+                  className="sr-only peer"
+                />
+                <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
+              </label>
+            </div>
+            {settings.notifications.emailNotifications && (
+              <>
+                <div className="flex items-center justify-between ml-4">
+                  <span className="text-sm text-gray-600">New Orders</span>
+                  <input
+                    type="checkbox"
+                    checked={settings.notifications.newOrderEmail}
+                    onChange={(e) =>
+                      handleInputChange("notifications", "newOrderEmail", e.target.checked)
+                    }
+                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                </div>
+                <div className="flex items-center justify-between ml-4">
+                  <span className="text-sm text-gray-600">Low Stock</span>
+                  <input
+                    type="checkbox"
+                    checked={settings.notifications.lowStockEmail}
+                    onChange={(e) =>
+                      handleInputChange("notifications", "lowStockEmail", e.target.checked)
+                    }
+                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                </div>
+                <div className="flex items-center justify-between ml-4">
+                  <span className="text-sm text-gray-600">Payment Failed</span>
+                  <input
+                    type="checkbox"
+                    checked={settings.notifications.paymentFailedEmail}
+                    onChange={(e) =>
+                      handleInputChange("notifications", "paymentFailedEmail", e.target.checked)
+                    }
+                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+
+        {/* Push Notifications */}
+        <div className="bg-white border border-gray-200 rounded-lg p-6">
+          <div className="flex items-center mb-4">
+            <FaBell className="w-5 h-5 text-green-600 mr-2" />
+            <h4 className="font-medium text-gray-900">Push Notifications</h4>
+          </div>
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-700">Push Notifications</span>
+              <label className="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={settings.notifications.pushNotifications}
+                  onChange={(e) =>
+                    handleInputChange("notifications", "pushNotifications", e.target.checked)
+                  }
+                  className="sr-only peer"
+                />
+                <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-green-600"></div>
+              </label>
+            </div>
+            {settings.notifications.pushNotifications && (
+              <>
+                <div className="flex items-center justify-between ml-4">
+                  <span className="text-sm text-gray-600">New Orders</span>
+                  <input
+                    type="checkbox"
+                    checked={settings.notifications.newOrderPush}
+                    onChange={(e) =>
+                      handleInputChange("notifications", "newOrderPush", e.target.checked)
+                    }
+                    className="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500"
+                  />
+                </div>
+                <div className="flex items-center justify-between ml-4">
+                  <span className="text-sm text-gray-600">Payment Failed</span>
+                  <input
+                    type="checkbox"
+                    checked={settings.notifications.paymentFailedPush}
+                    onChange={(e) =>
+                      handleInputChange("notifications", "paymentFailedPush", e.target.checked)
+                    }
+                    className="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500"
+                  />
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+
+        {/* Admin Notifications */}
+        <div className="bg-white border border-gray-200 rounded-lg p-6">
+          <div className="flex items-center mb-4">
+            <FaUserShield className="w-5 h-5 text-purple-600 mr-2" />
+            <h4 className="font-medium text-gray-900">Admin Alerts</h4>
+          </div>
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-700">New Orders</span>
+              <input
+                type="checkbox"
+                checked={settings.notifications.notifyAdminOnOrder}
+                onChange={(e) =>
+                  handleInputChange("notifications", "notifyAdminOnOrder", e.target.checked)
+                }
+                className="w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
+              />
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-700">Refund Requests</span>
+              <input
+                type="checkbox"
+                checked={settings.notifications.notifyAdminOnRefund}
+                onChange={(e) =>
+                  handleInputChange("notifications", "notifyAdminOnRefund", e.target.checked)
+                }
+                className="w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
+              />
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-700">Low Stock</span>
+              <input
+                type="checkbox"
+                checked={settings.notifications.notifyAdminOnStock}
+                onChange={(e) =>
+                  handleInputChange("notifications", "notifyAdminOnStock", e.target.checked)
+                }
+                className="w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderSecuritySettings = () => (
+    <div className="space-y-6">
+      <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+        <div className="flex items-start">
+          <FaShieldAlt className="w-5 h-5 text-red-600 mt-0.5 mr-3" />
+          <div>
+            <h4 className="font-medium text-red-900">Security Settings</h4>
+            <p className="text-red-700 text-sm mt-1">
+              Configure security preferences to protect your store and customer data.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="space-y-6">
+          <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+            <div>
+              <h4 className="font-medium text-gray-900">Two-Factor Authentication</h4>
+              <p className="text-sm text-gray-600">Require 2FA for admin access</p>
+            </div>
+            <label className="relative inline-flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                checked={settings.security.twoFactorAuth}
+                onChange={(e) =>
+                  handleInputChange("security", "twoFactorAuth", e.target.checked)
+                }
+                className="sr-only peer"
+              />
+              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+            </label>
+          </div>
+
+          <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+            <div>
+              <h4 className="font-medium text-gray-900">SSL Certificate</h4>
+              <p className="text-sm text-gray-600">Enable HTTPS for secure connections</p>
+            </div>
+            <label className="relative inline-flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                checked={settings.security.sslEnabled}
+                onChange={(e) =>
+                  handleInputChange("security", "sslEnabled", e.target.checked)
+                }
+                className="sr-only peer"
+              />
+              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+            </label>
+          </div>
+
+          <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+            <div>
+              <h4 className="font-medium text-gray-900">Audit Log</h4>
+              <p className="text-sm text-gray-600">Log all admin activities</p>
+            </div>
+            <label className="relative inline-flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                checked={settings.security.auditLog}
+                onChange={(e) =>
+                  handleInputChange("security", "auditLog", e.target.checked)
+                }
+                className="sr-only peer"
+              />
+              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+            </label>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Max Login Attempts
+            </label>
+            <input
+              type="number"
+              value={settings.security.loginAttempts}
+              onChange={(e) =>
+                handleInputChange("security", "loginAttempts", parseInt(e.target.value))
+              }
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              min="1"
+              max="10"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Session Timeout (minutes)
+            </label>
+            <input
+              type="number"
+              value={settings.security.sessionTimeout}
+              onChange={(e) =>
+                handleInputChange("security", "sessionTimeout", parseInt(e.target.value))
+              }
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              min="5"
+              max="240"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Minimum Password Length
+            </label>
+            <input
+              type="number"
+              value={settings.security.passwordMinLength}
+              onChange={(e) =>
+                handleInputChange("security", "passwordMinLength", parseInt(e.target.value))
+              }
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              min="6"
+              max="20"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-gray-200 pt-6">
+        <h4 className="font-medium text-gray-900 mb-4">Advanced Security</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="flex items-center">
+            <input
+              type="checkbox"
+              id="forceStrongPasswords"
+              checked={settings.security.forceStrongPasswords}
+              onChange={(e) =>
+                handleInputChange("security", "forceStrongPasswords", e.target.checked)
+              }
+              className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            />
+            <label htmlFor="forceStrongPasswords" className="ml-2 text-sm text-gray-700">
+              Require Strong Passwords
+            </label>
+          </div>
+          <div className="flex items-center">
+            <input
+              type="checkbox"
+              id="corsEnabled"
+              checked={settings.security.corsEnabled}
+              onChange={(e) =>
+                handleInputChange("security", "corsEnabled", e.target.checked)
+              }
+              className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            />
+            <label htmlFor="corsEnabled" className="ml-2 text-sm text-gray-700">
+              Enable CORS Protection
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   const renderTabContent = () => {
     switch (activeTab) {
       case "general":
@@ -380,11 +904,11 @@ const Settings = () => {
       case "shipping":
         return renderShippingSettings();
       case "email":
-        return <div>Email settings coming soon...</div>;
+        return renderEmailSettings();
       case "notifications":
-        return <div>Notification settings coming soon...</div>;
+        return renderNotificationSettings();
       case "security":
-        return <div>Security settings coming soon...</div>;
+        return renderSecuritySettings();
       default:
         return renderGeneralSettings();
     }
@@ -392,7 +916,7 @@ const Settings = () => {
 
   return (
     <>
-      <div className="space-y-6  w-full ">
+      <div className="space-y-6 w-full px-4 bg-red-700 sm:px-6 lg:px-8 py-6">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
           <div>
@@ -403,7 +927,7 @@ const Settings = () => {
           </div>
           <button
             onClick={handleSaveSettings}
-            className="mt-4 sm:mt-0 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg flex items-center"
+            className="mt-4 sm:mt-0 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg flex items-center transition-colors duration-200"
           >
             <FaSave className="w-4 h-4 mr-2" />
             Save Settings
@@ -419,9 +943,9 @@ const Settings = () => {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`flex items-center px-6 py-4 border-b-2 font-medium text-sm ${
+                    className={`flex items-center px-4 py-3 border-b-2 font-medium text-sm whitespace-nowrap ${
                       activeTab === tab.id
-                        ? "border-blue-500 text-blue-600"
+                        ? "border-blue-500 text-blue-600 bg-blue-50"
                         : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
                     }`}
                   >
@@ -433,7 +957,7 @@ const Settings = () => {
             </nav>
           </div>
 
-          <div className="p-6">{renderTabContent()}</div>
+          <div className="p-4 sm:p-6">{renderTabContent()}</div>
         </div>
       </div>
       <Footer />

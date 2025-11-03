@@ -64,6 +64,46 @@ export const productsData = [
   },
   {
     id: 7,
+    name: "Tablet Pro 12.9",
+    price: 899.99,
+    category: "Electronics",
+    rating: 4.6,
+    image:
+    "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=300&h=300&fit=crop&crop=center",
+    description: "Professional tablet with stunning display and performance",
+  },
+  {
+    id: 8,
+    name: "Digital Camera Mirrorless",
+    price: 1199.99,
+    category: "Electronics",
+    rating: 4.7,
+    image:
+    "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=300&h=300&fit=crop&crop=center",
+    description: "Professional mirrorless camera with 4K video",
+  },
+  {
+    id: 9,
+    name: "Noise Cancelling Headphones",
+    price: 349.99,
+    category: "Electronics",
+    rating: 4.8,
+    image:
+    "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=300&h=300&fit=crop&crop=center",
+    description: "Premium over-ear headphones with active noise cancellation",
+  },
+  {
+    id: 10,
+    name: "Portable Bluetooth Speaker",
+    price: 89.99,
+    category: "Electronics",
+    rating: 4.3,
+    image:
+    "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=300&fit=crop&crop=center",
+    description: "Waterproof portable speaker with 360° sound",
+  },
+  {
+    id: 11,
     name: "Wireless Earbuds Pro",
     price: 149.99,
     category: "Electronics",
@@ -71,46 +111,6 @@ export const productsData = [
     image:
       "https://images.unsplash.com/photo-1590658165737-15a047b8b5e0?w=300&h=300&fit=crop&crop=center",
     description: "True wireless earbuds with superior sound quality",
-  },
-  {
-    id: 8,
-    name: "Tablet Pro 12.9",
-    price: 899.99,
-    category: "Electronics",
-    rating: 4.6,
-    image:
-      "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=300&h=300&fit=crop&crop=center",
-    description: "Professional tablet with stunning display and performance",
-  },
-  {
-    id: 9,
-    name: "Digital Camera Mirrorless",
-    price: 1199.99,
-    category: "Electronics",
-    rating: 4.7,
-    image:
-      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=300&h=300&fit=crop&crop=center",
-    description: "Professional mirrorless camera with 4K video",
-  },
-  {
-    id: 10,
-    name: "Noise Cancelling Headphones",
-    price: 349.99,
-    category: "Electronics",
-    rating: 4.8,
-    image:
-      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=300&h=300&fit=crop&crop=center",
-    description: "Premium over-ear headphones with active noise cancellation",
-  },
-  {
-    id: 11,
-    name: "Portable Bluetooth Speaker",
-    price: 89.99,
-    category: "Electronics",
-    rating: 4.3,
-    image:
-      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=300&fit=crop&crop=center",
-    description: "Waterproof portable speaker with 360° sound",
   },
   {
     id: 12,

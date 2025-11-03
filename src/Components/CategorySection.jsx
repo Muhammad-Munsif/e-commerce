@@ -18,7 +18,7 @@ const CategorySection = () => {
     },
   ];
   return (
-    <div className="bg-white w-full max-w-7xl" >
+    <div className="bg-white ">
       <div className="container mx-auto mt-2 px-4 md:px-16 lg:px-24 grid grid-cols-1 sm:grid-cols-3 gap-6">
         {categories.map((category, index) => (
           <div

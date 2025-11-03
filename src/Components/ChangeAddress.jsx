@@ -21,10 +21,7 @@ const ChangeAddress = ({ setAddress, setIsModelOpen }) => {
         >
           Cancel
         </button>
-        <button
-          className="bg-red-500 rounded px-4 py-2"
-          onClick={onCloseModel}
-        >
+        <button className="bg-red-500 rounded px-4 py-2" onClick={onCloseModel}>
           Save Address
         </button>
       </div>

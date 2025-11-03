@@ -168,12 +168,7 @@ const Navbar = () => {
         >
           Shop
         </Link>
-        {/* <Link
-          to="/dashboard"
-          className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
-        >
-          Dashboard
-        </Link> */}
+
         <Link
           to="/admin"
           className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
@@ -228,95 +223,89 @@ const Navbar = () => {
           />
           <div className="fixed top-[64px] md:top-[72px] left-0 right-0 lg:hidden bg-white border-t shadow-lg max-h-[calc(100vh-64px)] md:max-h-[calc(100vh-72px)] overflow-y-auto z-50">
             <div className="container mx-auto px-4 py-4">
-            {/* Main Links */}
-            <div className="grid grid-cols-2 gap-4 mb-2">
-              <Link
-                to="/"
-                className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
-                onClick={closeMobileMenu}
-              >
-                Home
-              </Link>
-              <Link
-                to="/about"
-                className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
-                onClick={closeMobileMenu}
-              >
-                About
-              </Link>
-              <Link
-                to="/shop"
-                className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
-                onClick={closeMobileMenu}
-              >
-                Shop
-              </Link>
-              <Link
-                to="/contact-support"
-                className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
-                onClick={closeMobileMenu}
-              >
-                Contact
-              </Link>
-              {/* <Link
-                to="/dashboard"
-                className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
-                onClick={closeMobileMenu}
-              >
-                Dashboard
-              </Link> */}
-              <Link
-                to="/admin/*"
-                className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
-                onClick={closeMobileMenu}
-              >
-                AdminLayout
-              </Link>
-            </div>
+              {/* Main Links */}
+              <div className="grid grid-cols-2 gap-4 mb-2">
+                <Link
+                  to="/"
+                  className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
+                  onClick={closeMobileMenu}
+                >
+                  Home
+                </Link>
+                <Link
+                  to="/about"
+                  className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
+                  onClick={closeMobileMenu}
+                >
+                  About
+                </Link>
+                <Link
+                  to="/shop"
+                  className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
+                  onClick={closeMobileMenu}
+                >
+                  Shop
+                </Link>
+                <Link
+                  to="/contact-support"
+                  className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
+                  onClick={closeMobileMenu}
+                >
+                  Contact
+                </Link>
 
-            {/* Category Links */}
-            <div className="mb-6">
-              <h3 className="text-sm font-semibold text-gray-500 uppercase mb-3">
-                Categories
-              </h3>
-              <div className="grid grid-cols-2 gap-2">
                 <Link
-                  to="/electronics"
-                  className="p-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors text-sm"
+                  to="/admin/*"
+                  className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
                   onClick={closeMobileMenu}
                 >
-                  Electronics
-                </Link>
-                <Link
-                  to="/fashion"
-                  className="p-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors text-sm"
-                  onClick={closeMobileMenu}
-                >
-                  Fashion
-                </Link>
-                <Link
-                  to="/home-kitchen"
-                  className="p-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors text-sm"
-                  onClick={closeMobileMenu}
-                >
-                  Home & Kitchen
-                </Link>
-                <Link
-                  to="/beauty"
-                  className="p-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors text-sm"
-                  onClick={closeMobileMenu}
-                >
-                  Beauty
-                </Link>
-                <Link
-                  to="/sports"
-                  className="p-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors text-sm"
-                  onClick={closeMobileMenu}
-                >
-                  Sports
+                  AdminLayout
                 </Link>
               </div>
-            </div>
+
+              {/* Category Links */}
+              <div className="mb-6">
+                <h3 className="text-sm font-semibold text-gray-500 uppercase mb-3">
+                  Categories
+                </h3>
+                <div className="grid grid-cols-2 gap-2">
+                  <Link
+                    to="/electronics"
+                    className="p-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors text-sm"
+                    onClick={closeMobileMenu}
+                  >
+                    Electronics
+                  </Link>
+                  <Link
+                    to="/fashion"
+                    className="p-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors text-sm"
+                    onClick={closeMobileMenu}
+                  >
+                    Fashion
+                  </Link>
+                  <Link
+                    to="/home-kitchen"
+                    className="p-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors text-sm"
+                    onClick={closeMobileMenu}
+                  >
+                    Home & Kitchen
+                  </Link>
+                  <Link
+                    to="/beauty"
+                    className="p-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors text-sm"
+                    onClick={closeMobileMenu}
+                  >
+                    Beauty
+                  </Link>
+                  <Link
+                    to="/sports"
+                    className="p-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors text-sm"
+                    onClick={closeMobileMenu}
+                  >
+                    Sports
+                  </Link>
+                </div>
+              </div>
 
               {/* Mobile Login Button */}
               <button

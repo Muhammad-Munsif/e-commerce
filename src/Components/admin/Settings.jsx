@@ -72,19 +72,19 @@ const Settings = () => {
       newUserEmail: false,
       paymentFailedEmail: true,
       orderShippedEmail: true,
-      
+
       // Push Notifications
       pushNotifications: false,
       newOrderPush: true,
       lowStockPush: false,
       newUserPush: false,
       paymentFailedPush: true,
-      
+
       // SMS Notifications
       smsNotifications: false,
       newOrderSMS: false,
       orderShippedSMS: true,
-      
+
       // Admin Notifications
       notifyAdminOnOrder: true,
       notifyAdminOnRefund: true,
@@ -418,7 +418,8 @@ const Settings = () => {
           <div>
             <h4 className="font-medium text-blue-900">SMTP Configuration</h4>
             <p className="text-blue-700 text-sm mt-1">
-              Configure your email server settings for sending transactional emails.
+              Configure your email server settings for sending transactional
+              emails.
             </p>
           </div>
         </div>
@@ -524,11 +525,18 @@ const Settings = () => {
               id="orderNotifications"
               checked={settings.email.orderNotifications}
               onChange={(e) =>
-                handleInputChange("email", "orderNotifications", e.target.checked)
+                handleInputChange(
+                  "email",
+                  "orderNotifications",
+                  e.target.checked
+                )
               }
               className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
             />
-            <label htmlFor="orderNotifications" className="ml-2 text-sm text-gray-700">
+            <label
+              htmlFor="orderNotifications"
+              className="ml-2 text-sm text-gray-700"
+            >
               Order Notifications
             </label>
           </div>
@@ -538,11 +546,18 @@ const Settings = () => {
               id="customerWelcomeEmail"
               checked={settings.email.customerWelcomeEmail}
               onChange={(e) =>
-                handleInputChange("email", "customerWelcomeEmail", e.target.checked)
+                handleInputChange(
+                  "email",
+                  "customerWelcomeEmail",
+                  e.target.checked
+                )
               }
               className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
             />
-            <label htmlFor="customerWelcomeEmail" className="ml-2 text-sm text-gray-700">
+            <label
+              htmlFor="customerWelcomeEmail"
+              className="ml-2 text-sm text-gray-700"
+            >
               Welcome Emails
             </label>
           </div>
@@ -552,11 +567,18 @@ const Settings = () => {
               id="orderConfirmationEmail"
               checked={settings.email.orderConfirmationEmail}
               onChange={(e) =>
-                handleInputChange("email", "orderConfirmationEmail", e.target.checked)
+                handleInputChange(
+                  "email",
+                  "orderConfirmationEmail",
+                  e.target.checked
+                )
               }
               className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
             />
-            <label htmlFor="orderConfirmationEmail" className="ml-2 text-sm text-gray-700">
+            <label
+              htmlFor="orderConfirmationEmail"
+              className="ml-2 text-sm text-gray-700"
+            >
               Order Confirmations
             </label>
           </div>
@@ -566,11 +588,18 @@ const Settings = () => {
               id="shippingUpdateEmail"
               checked={settings.email.shippingUpdateEmail}
               onChange={(e) =>
-                handleInputChange("email", "shippingUpdateEmail", e.target.checked)
+                handleInputChange(
+                  "email",
+                  "shippingUpdateEmail",
+                  e.target.checked
+                )
               }
               className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
             />
-            <label htmlFor="shippingUpdateEmail" className="ml-2 text-sm text-gray-700">
+            <label
+              htmlFor="shippingUpdateEmail"
+              className="ml-2 text-sm text-gray-700"
+            >
               Shipping Updates
             </label>
           </div>
@@ -596,7 +625,11 @@ const Settings = () => {
                   type="checkbox"
                   checked={settings.notifications.emailNotifications}
                   onChange={(e) =>
-                    handleInputChange("notifications", "emailNotifications", e.target.checked)
+                    handleInputChange(
+                      "notifications",
+                      "emailNotifications",
+                      e.target.checked
+                    )
                   }
                   className="sr-only peer"
                 />
@@ -611,7 +644,11 @@ const Settings = () => {
                     type="checkbox"
                     checked={settings.notifications.newOrderEmail}
                     onChange={(e) =>
-                      handleInputChange("notifications", "newOrderEmail", e.target.checked)
+                      handleInputChange(
+                        "notifications",
+                        "newOrderEmail",
+                        e.target.checked
+                      )
                     }
                     className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                   />
@@ -622,7 +659,11 @@ const Settings = () => {
                     type="checkbox"
                     checked={settings.notifications.lowStockEmail}
                     onChange={(e) =>
-                      handleInputChange("notifications", "lowStockEmail", e.target.checked)
+                      handleInputChange(
+                        "notifications",
+                        "lowStockEmail",
+                        e.target.checked
+                      )
                     }
                     className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                   />
@@ -633,7 +674,11 @@ const Settings = () => {
                     type="checkbox"
                     checked={settings.notifications.paymentFailedEmail}
                     onChange={(e) =>
-                      handleInputChange("notifications", "paymentFailedEmail", e.target.checked)
+                      handleInputChange(
+                        "notifications",
+                        "paymentFailedEmail",
+                        e.target.checked
+                      )
                     }
                     className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                   />
@@ -657,7 +702,11 @@ const Settings = () => {
                   type="checkbox"
                   checked={settings.notifications.pushNotifications}
                   onChange={(e) =>
-                    handleInputChange("notifications", "pushNotifications", e.target.checked)
+                    handleInputChange(
+                      "notifications",
+                      "pushNotifications",
+                      e.target.checked
+                    )
                   }
                   className="sr-only peer"
                 />
@@ -672,7 +721,11 @@ const Settings = () => {
                     type="checkbox"
                     checked={settings.notifications.newOrderPush}
                     onChange={(e) =>
-                      handleInputChange("notifications", "newOrderPush", e.target.checked)
+                      handleInputChange(
+                        "notifications",
+                        "newOrderPush",
+                        e.target.checked
+                      )
                     }
                     className="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500"
                   />
@@ -683,7 +736,11 @@ const Settings = () => {
                     type="checkbox"
                     checked={settings.notifications.paymentFailedPush}
                     onChange={(e) =>
-                      handleInputChange("notifications", "paymentFailedPush", e.target.checked)
+                      handleInputChange(
+                        "notifications",
+                        "paymentFailedPush",
+                        e.target.checked
+                      )
                     }
                     className="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500"
                   />
@@ -706,7 +763,11 @@ const Settings = () => {
                 type="checkbox"
                 checked={settings.notifications.notifyAdminOnOrder}
                 onChange={(e) =>
-                  handleInputChange("notifications", "notifyAdminOnOrder", e.target.checked)
+                  handleInputChange(
+                    "notifications",
+                    "notifyAdminOnOrder",
+                    e.target.checked
+                  )
                 }
                 className="w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
               />
@@ -717,7 +778,11 @@ const Settings = () => {
                 type="checkbox"
                 checked={settings.notifications.notifyAdminOnRefund}
                 onChange={(e) =>
-                  handleInputChange("notifications", "notifyAdminOnRefund", e.target.checked)
+                  handleInputChange(
+                    "notifications",
+                    "notifyAdminOnRefund",
+                    e.target.checked
+                  )
                 }
                 className="w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
               />
@@ -728,7 +793,11 @@ const Settings = () => {
                 type="checkbox"
                 checked={settings.notifications.notifyAdminOnStock}
                 onChange={(e) =>
-                  handleInputChange("notifications", "notifyAdminOnStock", e.target.checked)
+                  handleInputChange(
+                    "notifications",
+                    "notifyAdminOnStock",
+                    e.target.checked
+                  )
                 }
                 className="w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
               />
@@ -747,7 +816,8 @@ const Settings = () => {
           <div>
             <h4 className="font-medium text-red-900">Security Settings</h4>
             <p className="text-red-700 text-sm mt-1">
-              Configure security preferences to protect your store and customer data.
+              Configure security preferences to protect your store and customer
+              data.
             </p>
           </div>
         </div>
@@ -757,15 +827,23 @@ const Settings = () => {
         <div className="space-y-6">
           <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
             <div>
-              <h4 className="font-medium text-gray-900">Two-Factor Authentication</h4>
-              <p className="text-sm text-gray-600">Require 2FA for admin access</p>
+              <h4 className="font-medium text-gray-900">
+                Two-Factor Authentication
+              </h4>
+              <p className="text-sm text-gray-600">
+                Require 2FA for admin access
+              </p>
             </div>
             <label className="relative inline-flex items-center cursor-pointer">
               <input
                 type="checkbox"
                 checked={settings.security.twoFactorAuth}
                 onChange={(e) =>
-                  handleInputChange("security", "twoFactorAuth", e.target.checked)
+                  handleInputChange(
+                    "security",
+                    "twoFactorAuth",
+                    e.target.checked
+                  )
                 }
                 className="sr-only peer"
               />
@@ -776,7 +854,9 @@ const Settings = () => {
           <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
             <div>
               <h4 className="font-medium text-gray-900">SSL Certificate</h4>
-              <p className="text-sm text-gray-600">Enable HTTPS for secure connections</p>
+              <p className="text-sm text-gray-600">
+                Enable HTTPS for secure connections
+              </p>
             </div>
             <label className="relative inline-flex items-center cursor-pointer">
               <input
@@ -819,7 +899,11 @@ const Settings = () => {
               type="number"
               value={settings.security.loginAttempts}
               onChange={(e) =>
-                handleInputChange("security", "loginAttempts", parseInt(e.target.value))
+                handleInputChange(
+                  "security",
+                  "loginAttempts",
+                  parseInt(e.target.value)
+                )
               }
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               min="1"
@@ -834,7 +918,11 @@ const Settings = () => {
               type="number"
               value={settings.security.sessionTimeout}
               onChange={(e) =>
-                handleInputChange("security", "sessionTimeout", parseInt(e.target.value))
+                handleInputChange(
+                  "security",
+                  "sessionTimeout",
+                  parseInt(e.target.value)
+                )
               }
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               min="5"
@@ -849,7 +937,11 @@ const Settings = () => {
               type="number"
               value={settings.security.passwordMinLength}
               onChange={(e) =>
-                handleInputChange("security", "passwordMinLength", parseInt(e.target.value))
+                handleInputChange(
+                  "security",
+                  "passwordMinLength",
+                  parseInt(e.target.value)
+                )
               }
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               min="6"
@@ -868,11 +960,18 @@ const Settings = () => {
               id="forceStrongPasswords"
               checked={settings.security.forceStrongPasswords}
               onChange={(e) =>
-                handleInputChange("security", "forceStrongPasswords", e.target.checked)
+                handleInputChange(
+                  "security",
+                  "forceStrongPasswords",
+                  e.target.checked
+                )
               }
               className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
             />
-            <label htmlFor="forceStrongPasswords" className="ml-2 text-sm text-gray-700">
+            <label
+              htmlFor="forceStrongPasswords"
+              className="ml-2 text-sm text-gray-700"
+            >
               Require Strong Passwords
             </label>
           </div>
@@ -916,7 +1015,7 @@ const Settings = () => {
 
   return (
     <>
-      <div className="space-y-6 w-full px-4 bg-red-700 sm:px-6 lg:px-8 py-6">
+      <div className="space-y-6 w-full px-4 sm:px-6 lg:px-8 py-6">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
           <div>

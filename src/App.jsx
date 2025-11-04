@@ -1,6 +1,6 @@
 // src/App.jsx
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Home from "./pages/Home";
@@ -24,6 +24,7 @@ import Wishlist from "./pages/Wishlist";
 import TrackYourOrder from "./Components/TrackYourOrder";
 import DashboardLayout from "./Components/DashboardLayout";
 import AdminLayout from "./Components/admin/AdminLayout";
+import Error404 from "./Components/Error404";
 
 function App() {
   const [order, setOrder] = useState(null);
@@ -60,7 +61,6 @@ function App() {
             <Route path="/beauty" element={<Beauty />} />
             <Route path="/sports" element={<Sports />} />
             <Route path="/wishlist" element={<Wishlist />} />
-            {/* // In your App.js or routing file */}
             <Route path="/track-order" element={<TrackYourOrder />} />
             <Route path="/track-order/:orderId" element={<TrackYourOrder />} />
             <Route path="/dashboard" element={<DashboardLayout />} />
@@ -70,16 +70,7 @@ function App() {
             {/* 404 Page - Add this if you want */}
             <Route
               path="*"
-              element={
-                <div className="min-h-screen flex items-center justify-center">
-                  <div className="text-center">
-                    <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                      404
-                    </h1>
-                    <p className="text-xl text-gray-600">Page not found</p>
-                  </div>
-                </div>
-              }
+              element={<Error404/> }
             />
           </Routes>
         </main>

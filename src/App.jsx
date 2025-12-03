@@ -25,6 +25,7 @@ import TrackYourOrder from "./Components/TrackYourOrder";
 import DashboardLayout from "./Components/DashboardLayout";
 import AdminLayout from "./Components/admin/AdminLayout";
 import Error404 from "./Components/Error404";
+import Category from "./pages/Category";
 
 function App() {
   const [order, setOrder] = useState(null);
@@ -60,6 +61,7 @@ function App() {
             <Route path="/home-kitchen" element={<HomeKitchen />} />
             <Route path="/beauty" element={<Beauty />} />
             <Route path="/sports" element={<Sports />} />
+            <Route path="/category" element={<Category />} />
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/track-order" element={<TrackYourOrder />} />
             <Route path="/track-order/:orderId" element={<TrackYourOrder />} />

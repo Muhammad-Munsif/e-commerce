@@ -38,15 +38,12 @@ const Navbar = () => {
     dispatch(setSearchTerm(search));
     navigate("/filter-data");
   };
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
-
   const products = useSelector((state) => state.cart.products);
 
   // Close mobile menu on route change and ESC key for better UX

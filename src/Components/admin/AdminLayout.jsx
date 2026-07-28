@@ -32,8 +32,7 @@ const AdminLayout = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-
-  const isAdmin = true; 
+  const isAdmin = true;
 
   if (!isAdmin) {
     navigate("/");

@@ -118,7 +118,7 @@ const OrderManagement = () => {
                 </div>
                 <span
                   className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(
-                    order.status
+                    order.status,
                   )}`}
                 >
                   <StatusIcon className="w-4 h-4 mr-1" />

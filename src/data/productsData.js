@@ -69,7 +69,7 @@ export const productsData = [
     category: "Electronics",
     rating: 4.6,
     image:
-    "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=300&h=300&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=300&h=300&fit=crop&crop=center",
     description: "Professional tablet with stunning display and performance",
   },
   {
@@ -79,7 +79,7 @@ export const productsData = [
     category: "Electronics",
     rating: 4.7,
     image:
-    "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=300&h=300&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=300&h=300&fit=crop&crop=center",
     description: "Professional mirrorless camera with 4K video",
   },
   {
@@ -89,7 +89,7 @@ export const productsData = [
     category: "Electronics",
     rating: 4.8,
     image:
-    "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=300&h=300&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=300&h=300&fit=crop&crop=center",
     description: "Premium over-ear headphones with active noise cancellation",
   },
   {
@@ -99,7 +99,7 @@ export const productsData = [
     category: "Electronics",
     rating: 4.3,
     image:
-    "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=300&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=300&fit=crop&crop=center",
     description: "Waterproof portable speaker with 360° sound",
   },
   {

@@ -36,7 +36,7 @@ const TrackYourOrder = () => {
           o.id === orderId ||
           o.orderNumber === orderId ||
           o.id === searchOrderId ||
-          o.orderNumber === searchOrderId
+          o.orderNumber === searchOrderId,
       );
       if (foundOrder) {
         // Transform order data for tracking view
@@ -291,10 +291,10 @@ const TrackYourOrder = () => {
                 {order.status === "delivered"
                   ? "Your order has been delivered"
                   : order.status === "cancelled"
-                  ? "Your order has been cancelled"
-                  : `Estimated delivery: ${formatDate(
-                      order.estimatedDelivery
-                    )}`}
+                    ? "Your order has been cancelled"
+                    : `Estimated delivery: ${formatDate(
+                        order.estimatedDelivery,
+                      )}`}
               </p>
             </div>
 

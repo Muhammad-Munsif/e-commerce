@@ -26,7 +26,7 @@ const ProductManagement = () => {
   const filteredProducts = products.filter(
     (product) =>
       product.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      (selectedCategory === "all" || product.category === selectedCategory)
+      (selectedCategory === "all" || product.category === selectedCategory),
   );
 
   const categories = [

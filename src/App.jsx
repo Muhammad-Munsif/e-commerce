@@ -1,6 +1,11 @@
 // src/App.jsx
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Home from "./pages/Home";
@@ -70,10 +75,7 @@ function App() {
             <Route path="/admin/*" element={<AdminLayout />} />
 
             {/* 404 Page - Add this if you want */}
-            <Route
-              path="*"
-              element={<Error404/> }
-            />
+            <Route path="*" element={<Error404 />} />
           </Routes>
         </main>
         <Footer />

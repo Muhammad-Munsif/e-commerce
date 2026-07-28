@@ -345,7 +345,7 @@ const Settings = () => {
               handleInputChange(
                 "shipping",
                 "freeShippingEnabled",
-                e.target.checked
+                e.target.checked,
               )
             }
             className="sr-only peer"
@@ -366,7 +366,7 @@ const Settings = () => {
               handleInputChange(
                 "shipping",
                 "freeShippingThreshold",
-                parseFloat(e.target.value)
+                parseFloat(e.target.value),
               )
             }
             className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
@@ -386,7 +386,7 @@ const Settings = () => {
             handleInputChange(
               "shipping",
               "flatRateShipping",
-              parseFloat(e.target.value)
+              parseFloat(e.target.value),
             )
           }
           className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
@@ -528,7 +528,7 @@ const Settings = () => {
                 handleInputChange(
                   "email",
                   "orderNotifications",
-                  e.target.checked
+                  e.target.checked,
                 )
               }
               className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
@@ -549,7 +549,7 @@ const Settings = () => {
                 handleInputChange(
                   "email",
                   "customerWelcomeEmail",
-                  e.target.checked
+                  e.target.checked,
                 )
               }
               className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
@@ -570,7 +570,7 @@ const Settings = () => {
                 handleInputChange(
                   "email",
                   "orderConfirmationEmail",
-                  e.target.checked
+                  e.target.checked,
                 )
               }
               className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
@@ -591,7 +591,7 @@ const Settings = () => {
                 handleInputChange(
                   "email",
                   "shippingUpdateEmail",
-                  e.target.checked
+                  e.target.checked,
                 )
               }
               className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
@@ -628,7 +628,7 @@ const Settings = () => {
                     handleInputChange(
                       "notifications",
                       "emailNotifications",
-                      e.target.checked
+                      e.target.checked,
                     )
                   }
                   className="sr-only peer"
@@ -647,7 +647,7 @@ const Settings = () => {
                       handleInputChange(
                         "notifications",
                         "newOrderEmail",
-                        e.target.checked
+                        e.target.checked,
                       )
                     }
                     className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
@@ -662,7 +662,7 @@ const Settings = () => {
                       handleInputChange(
                         "notifications",
                         "lowStockEmail",
-                        e.target.checked
+                        e.target.checked,
                       )
                     }
                     className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
@@ -677,7 +677,7 @@ const Settings = () => {
                       handleInputChange(
                         "notifications",
                         "paymentFailedEmail",
-                        e.target.checked
+                        e.target.checked,
                       )
                     }
                     className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
@@ -705,7 +705,7 @@ const Settings = () => {
                     handleInputChange(
                       "notifications",
                       "pushNotifications",
-                      e.target.checked
+                      e.target.checked,
                     )
                   }
                   className="sr-only peer"
@@ -724,7 +724,7 @@ const Settings = () => {
                       handleInputChange(
                         "notifications",
                         "newOrderPush",
-                        e.target.checked
+                        e.target.checked,
                       )
                     }
                     className="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500"
@@ -739,7 +739,7 @@ const Settings = () => {
                       handleInputChange(
                         "notifications",
                         "paymentFailedPush",
-                        e.target.checked
+                        e.target.checked,
                       )
                     }
                     className="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500"
@@ -766,7 +766,7 @@ const Settings = () => {
                   handleInputChange(
                     "notifications",
                     "notifyAdminOnOrder",
-                    e.target.checked
+                    e.target.checked,
                   )
                 }
                 className="w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
@@ -781,7 +781,7 @@ const Settings = () => {
                   handleInputChange(
                     "notifications",
                     "notifyAdminOnRefund",
-                    e.target.checked
+                    e.target.checked,
                   )
                 }
                 className="w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
@@ -796,7 +796,7 @@ const Settings = () => {
                   handleInputChange(
                     "notifications",
                     "notifyAdminOnStock",
-                    e.target.checked
+                    e.target.checked,
                   )
                 }
                 className="w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
@@ -842,7 +842,7 @@ const Settings = () => {
                   handleInputChange(
                     "security",
                     "twoFactorAuth",
-                    e.target.checked
+                    e.target.checked,
                   )
                 }
                 className="sr-only peer"
@@ -902,7 +902,7 @@ const Settings = () => {
                 handleInputChange(
                   "security",
                   "loginAttempts",
-                  parseInt(e.target.value)
+                  parseInt(e.target.value),
                 )
               }
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
@@ -921,7 +921,7 @@ const Settings = () => {
                 handleInputChange(
                   "security",
                   "sessionTimeout",
-                  parseInt(e.target.value)
+                  parseInt(e.target.value),
                 )
               }
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
@@ -940,7 +940,7 @@ const Settings = () => {
                 handleInputChange(
                   "security",
                   "passwordMinLength",
-                  parseInt(e.target.value)
+                  parseInt(e.target.value),
                 )
               }
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
@@ -963,7 +963,7 @@ const Settings = () => {
                 handleInputChange(
                   "security",
                   "forceStrongPasswords",
-                  e.target.checked
+                  e.target.checked,
                 )
               }
               className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"

@@ -79,11 +79,11 @@ const UserManagement = () => {
     .filter(
       (user) =>
         user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        user.email.toLowerCase().includes(searchTerm.toLowerCase())
+        user.email.toLowerCase().includes(searchTerm.toLowerCase()),
     )
     .filter((user) => selectedRole === "all" || user.role === selectedRole)
     .filter(
-      (user) => selectedStatus === "all" || user.status === selectedStatus
+      (user) => selectedStatus === "all" || user.status === selectedStatus,
     );
 
   const getRoleColor = (role) => {
@@ -132,8 +132,8 @@ const UserManagement = () => {
               ...user,
               status: user.status === "active" ? "inactive" : "active",
             }
-          : user
-      )
+          : user,
+      ),
     );
   };
 
@@ -319,7 +319,7 @@ const UserManagement = () => {
                   <td className="px-6 py-4 whitespace-nowrap">
                     <span
                       className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getRoleColor(
-                        user.role
+                        user.role,
                       )}`}
                     >
                       {getRoleText(user.role)}

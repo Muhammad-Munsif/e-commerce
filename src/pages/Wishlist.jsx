@@ -135,7 +135,7 @@ const Wishlist = () => {
                     className="w-12 h-12 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-lg transition-colors flex items-center justify-center"
                     aria-label="Remove from wishlist"
                   >
-                    <FaTrash />
+                    <FaTrash  className="w-75 h-75" />
                   </button>
                 </div>
               </div>

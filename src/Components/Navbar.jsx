@@ -167,12 +167,15 @@ const Navbar = () => {
         </Link>
 
         <Link
-          to="/admin"
+          to="/category"
           className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
         >
-          AdminLayout
+          Category
+          <select>
+            <option value="">ring</option>
+          </select>
         </Link>
-        <Link
+        {/* <Link
           to="/electronics"
           className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
         >
@@ -201,7 +204,7 @@ const Navbar = () => {
           className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
         >
           Sports
-        </Link>
+        </Link> */}
         <Link
           to="/contact-support"
           className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
@@ -244,6 +247,13 @@ const Navbar = () => {
                   Shop
                 </Link>
                 <Link
+                  to="/admin/*"
+                  className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
+                  onClick={closeMobileMenu}
+                >
+                  Category
+                </Link>
+                <Link
                   to="/contact-support"
                   className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
                   onClick={closeMobileMenu}
@@ -251,17 +261,10 @@ const Navbar = () => {
                   Contact
                 </Link>
 
-                <Link
-                  to="/admin/*"
-                  className="p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium"
-                  onClick={closeMobileMenu}
-                >
-                  AdminLayout
-                </Link>
               </div>
 
               {/* Category Links */}
-              <div className="mb-6">
+              {/* <div className="mb-6">
                 <h3 className="text-sm font-semibold text-gray-500 uppercase mb-3">
                   Categories
                 </h3>
@@ -302,7 +305,7 @@ const Navbar = () => {
                     Sports
                   </Link>
                 </div>
-              </div>
+              </div> */}
 
               {/* Mobile Login Button */}
               <button

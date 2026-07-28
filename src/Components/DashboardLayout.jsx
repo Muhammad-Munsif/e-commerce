@@ -33,7 +33,6 @@ import {
   Cell,
 } from "recharts";
 
-
 const DashboardLayout = () => {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -41,18 +40,26 @@ const DashboardLayout = () => {
   // Get data from Redux store
   const orders = useSelector((state) => state.orders?.orders || []);
   const products = useSelector((state) => state.product?.products || []);
-  const dashboardStats = useSelector((state) => state.admin?.dashboardStats || {});
+  const dashboardStats = useSelector(
+    (state) => state.admin?.dashboardStats || {},
+  );
 
   // Transform orders for recent orders table
   const recentOrders = useMemo(() => {
     return orders
       .slice()
-      .sort((a, b) => new Date(b.createdAt || b.date) - new Date(a.createdAt || a.date))
+      .sort(
+        (a, b) =>
+          new Date(b.createdAt || b.date) - new Date(a.createdAt || a.date),
+      )
       .slice(0, 5)
       .map((order) => ({
         id: order.id || order.orderNumber,
         customer: order.shippingInformation?.name || order.customer || "Guest",
-        date: order.date || order.createdAt?.split("T")[0] || new Date().toISOString().split("T")[0],
+        date:
+          order.date ||
+          order.createdAt?.split("T")[0] ||
+          new Date().toISOString().split("T")[0],
         amount: order.totalPrice || 0,
         status: order.status || "processing",
         items: order.products?.length || 0,
@@ -70,79 +77,87 @@ const DashboardLayout = () => {
   }, []);
 
   // Dashboard data
-  const dashboardData = useMemo(() => ({
-    overview: {
-      totalRevenue: dashboardStats.totalRevenue || orders.reduce((sum, order) => sum + (order.totalPrice || 0), 0),
-      totalOrders: dashboardStats.totalOrders || orders.length,
-      totalCustomers: dashboardStats.totalCustomers || new Set(orders.map(o => o.shippingInformation?.email || o.customer)).size,
-      totalProducts: dashboardStats.totalProducts || products.length,
-      revenueChange: dashboardStats.revenueChange || 12.5,
-      ordersChange: dashboardStats.ordersChange || 8.3,
-      customersChange: dashboardStats.customersChange || 15.7,
-      productsChange: dashboardStats.productsChange || 5.2,
-    },
-    sales: {
-      monthlyData: [
-        { month: "Jan", sales: 12000, revenue: 11000 },
-        { month: "Feb", sales: 19000, revenue: 18000 },
-        { month: "Mar", sales: 15000, revenue: 14000 },
-        { month: "Apr", sales: 22000, revenue: 21000 },
-        { month: "May", sales: 28000, revenue: 26500 },
-        { month: "Jun", sales: 32000, revenue: 30000 },
-        { month: "Jul", sales: 45236, revenue: 42000 },
+  const dashboardData = useMemo(
+    () => ({
+      overview: {
+        totalRevenue:
+          dashboardStats.totalRevenue ||
+          orders.reduce((sum, order) => sum + (order.totalPrice || 0), 0),
+        totalOrders: dashboardStats.totalOrders || orders.length,
+        totalCustomers:
+          dashboardStats.totalCustomers ||
+          new Set(orders.map((o) => o.shippingInformation?.email || o.customer))
+            .size,
+        totalProducts: dashboardStats.totalProducts || products.length,
+        revenueChange: dashboardStats.revenueChange || 12.5,
+        ordersChange: dashboardStats.ordersChange || 8.3,
+        customersChange: dashboardStats.customersChange || 15.7,
+        productsChange: dashboardStats.productsChange || 5.2,
+      },
+      sales: {
+        monthlyData: [
+          { month: "Jan", sales: 12000, revenue: 11000 },
+          { month: "Feb", sales: 19000, revenue: 18000 },
+          { month: "Mar", sales: 15000, revenue: 14000 },
+          { month: "Apr", sales: 22000, revenue: 21000 },
+          { month: "May", sales: 28000, revenue: 26500 },
+          { month: "Jun", sales: 32000, revenue: 30000 },
+          { month: "Jul", sales: 45236, revenue: 42000 },
+        ],
+        categories: [
+          { name: "Electronics", value: 45, color: "#3b82f6" },
+          { name: "Clothing", value: 25, color: "#ef4444" },
+          { name: "Home & Garden", value: 15, color: "#10b981" },
+          { name: "Books", value: 10, color: "#f59e0b" },
+          { name: "Other", value: 5, color: "#8b5cf6" },
+        ],
+        dailySales: [
+          { day: "Mon", sales: 4200, orders: 45 },
+          { day: "Tue", sales: 5800, orders: 62 },
+          { day: "Wed", sales: 5100, orders: 54 },
+          { day: "Thu", sales: 7200, orders: 78 },
+          { day: "Fri", sales: 8900, orders: 91 },
+          { day: "Sat", sales: 11500, orders: 104 },
+          { day: "Sun", sales: 9800, orders: 87 },
+        ],
+      },
+      topProducts: [
+        {
+          id: 1,
+          name: "Wireless Headphones",
+          price: 99.99,
+          sales: 142,
+          revenue: 14198.58,
+          rating: 4.5,
+        },
+        {
+          id: 2,
+          name: "Smart Watch",
+          price: 199.99,
+          sales: 89,
+          revenue: 17799.11,
+          rating: 4.3,
+        },
+        {
+          id: 3,
+          name: "Phone Case",
+          price: 19.99,
+          sales: 234,
+          revenue: 4677.66,
+          rating: 4.7,
+        },
+        {
+          id: 4,
+          name: "Laptop Stand",
+          price: 49.99,
+          sales: 78,
+          revenue: 3899.22,
+          rating: 4.4,
+        },
       ],
-      categories: [
-        { name: "Electronics", value: 45, color: "#3b82f6" },
-        { name: "Clothing", value: 25, color: "#ef4444" },
-        { name: "Home & Garden", value: 15, color: "#10b981" },
-        { name: "Books", value: 10, color: "#f59e0b" },
-        { name: "Other", value: 5, color: "#8b5cf6" },
-      ],
-      dailySales: [
-        { day: "Mon", sales: 4200, orders: 45 },
-        { day: "Tue", sales: 5800, orders: 62 },
-        { day: "Wed", sales: 5100, orders: 54 },
-        { day: "Thu", sales: 7200, orders: 78 },
-        { day: "Fri", sales: 8900, orders: 91 },
-        { day: "Sat", sales: 11500, orders: 104 },
-        { day: "Sun", sales: 9800, orders: 87 },
-      ],
-    },
-    topProducts: [
-      {
-        id: 1,
-        name: "Wireless Headphones",
-        price: 99.99,
-        sales: 142,
-        revenue: 14198.58,
-        rating: 4.5,
-      },
-      {
-        id: 2,
-        name: "Smart Watch",
-        price: 199.99,
-        sales: 89,
-        revenue: 17799.11,
-        rating: 4.3,
-      },
-      {
-        id: 3,
-        name: "Phone Case",
-        price: 19.99,
-        sales: 234,
-        revenue: 4677.66,
-        rating: 4.7,
-      },
-      {
-        id: 4,
-        name: "Laptop Stand",
-        price: 49.99,
-        sales: 78,
-        revenue: 3899.22,
-        rating: 4.4,
-      },
-    ],
-  }), [dashboardStats, orders, products]);
+    }),
+    [dashboardStats, orders, products],
+  );
 
   const getStatusColor = (status) => {
     switch (status) {
@@ -441,7 +456,7 @@ const DashboardLayout = () => {
                 <td className="py-2 sm:py-3 px-2 sm:px-4">
                   <span
                     className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${getStatusColor(
-                      order.status
+                      order.status,
                     )}`}
                   >
                     {getStatusIcon(order.status)}

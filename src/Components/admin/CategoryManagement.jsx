@@ -1,6 +1,6 @@
 // src/components/admin/CategoryManagement.js
 import React, { useState } from "react";
-import Footer from '../Footer'
+import Footer from "../Footer";
 import {
   FaPlus,
   FaEdit,
@@ -66,17 +66,17 @@ const CategoryManagement = () => {
     .filter(
       (category) =>
         category.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        category.description.toLowerCase().includes(searchTerm.toLowerCase())
+        category.description.toLowerCase().includes(searchTerm.toLowerCase()),
     )
     .filter(
       (category) =>
-        selectedStatus === "all" || category.status === selectedStatus
+        selectedStatus === "all" || category.status === selectedStatus,
     );
 
   const handleDeleteCategory = (categoryId) => {
     if (window.confirm("Are you sure you want to delete this category?")) {
       setCategories(
-        categories.filter((category) => category.id !== categoryId)
+        categories.filter((category) => category.id !== categoryId),
       );
     }
   };
@@ -89,8 +89,8 @@ const CategoryManagement = () => {
               ...category,
               status: category.status === "active" ? "inactive" : "active",
             }
-          : category
-      )
+          : category,
+      ),
     );
   };
 

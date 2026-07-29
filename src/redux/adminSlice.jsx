@@ -32,7 +32,7 @@ const adminSlice = createSlice({
     },
     markNotificationAsRead: (state, action) => {
       const notification = state.notifications.find(
-        (n) => n.id === action.payload
+        (n) => n.id === action.payload,
       );
       if (notification) {
         notification.read = true;

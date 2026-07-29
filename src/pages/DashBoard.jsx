@@ -22,10 +22,10 @@ const Dashboard = () => {
   const stats = useMemo(() => {
     const totalRevenue = orders.reduce(
       (sum, order) => sum + (order.totalPrice || 0),
-      0
+      0,
     );
     const uniqueCustomers = new Set(
-      orders.map((o) => o.shippingInformation?.email || o.customer)
+      orders.map((o) => o.shippingInformation?.email || o.customer),
     ).size;
 
     return [
@@ -70,7 +70,7 @@ const Dashboard = () => {
       .slice()
       .sort(
         (a, b) =>
-          new Date(b.createdAt || b.date) - new Date(a.createdAt || a.date)
+          new Date(b.createdAt || b.date) - new Date(a.createdAt || a.date),
       )
       .slice(0, 5)
       .map((order) => ({
@@ -187,7 +187,7 @@ const Dashboard = () => {
                     <td className="py-3">
                       <span
                         className={`px-2 py-1 text-xs font-medium rounded-full ${getStatusColor(
-                          order.status
+                          order.status,
                         )}`}
                       >
                         {order.status}

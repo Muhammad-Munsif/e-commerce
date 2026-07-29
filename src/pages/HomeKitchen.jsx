@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 const HomeKitchen = () => {
   const navigate = useNavigate();
   const homeKitchenProducts = productsData.filter(
-    (product) => product.category === "Home & Kitchen"
+    (product) => product.category === "Home & Kitchen",
   );
 
   return (

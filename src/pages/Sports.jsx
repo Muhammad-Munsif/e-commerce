@@ -16,7 +16,7 @@ import { productsData } from "../data/productsData";
 
 const Sports = () => {
   const sportsProducts = productsData.filter(
-    (product) => product.category === "Sports"
+    (product) => product.category === "Sports",
   );
 
   return (
